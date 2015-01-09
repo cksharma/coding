@@ -1,1 +1,6 @@
-GeeksForGeeks/.project
+**/.project
+**/.settings/
+**/bin/
+**/.project
+**/Debug
+**/Release
