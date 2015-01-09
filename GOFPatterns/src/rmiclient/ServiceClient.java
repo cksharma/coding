@@ -5,7 +5,7 @@ import java.rmi.Naming;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 
-import com.onmobile.training.facade.TransferServiceFacade;
+import edu.cksharma.designpatterns.facade.TransferServiceFacade;
 
 public class ServiceClient {
 	public static void main(String[] args) {
