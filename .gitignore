@@ -6,3 +6,6 @@
 **/Release
 **/.classpath
 **/.pydevproject
+**/a.out
+**/*.gch
+**/*~

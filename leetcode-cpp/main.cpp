@@ -207,6 +207,21 @@ void testPathSumII() {
 	}
 }
 
+void testGrayCode() {
+	GrayCode sol;
+	vector <int> v = sol.grayCode(3);
+	for (int i = 0; i < v.size(); i++) {
+		cout << v[i] << " " ;
+	}
+	cout << endl;
+}
+
+void testContainerWithMostWater() {
+	ContainerWithMostWater sol;
+	vector <int> v1 = { 5, 4, 7, 8, 6, 3 };
+	cout << sol.maxArea(v1) << endl;
+}
+
 int main() {
 	//testBalancedBinaryTree();
 	//testExcelSheetColumnTitle();
@@ -224,5 +239,7 @@ int main() {
 	//testLetterCombinationsOfAPhoneNumber();
 	//testLongestSubstringWithoutRepeatingCharacters();
 	//testPopulatingNextRightPointersInEachNode();
-	testPathSumII();
+	//testPathSumII();
+	//testGrayCode();
+	testContainerWithMostWater();
 }

@@ -7,6 +7,7 @@
 #include <time.h>
 #include <unordered_map>
 #include <array>
+#include <limits.h>
 using namespace std;
 
 struct TreeNode {
@@ -127,4 +128,14 @@ class PathSumII {
 	void recurse(TreeNode* root, int running_sum, int height, vector <int> v);
 	vector<vector<int> > pathSum(TreeNode *root, int sum);
 	
+};
+
+class GrayCode {
+	public:
+		vector<int> grayCode(int n);
+};
+
+class ContainerWithMostWater {
+	public:
+		int maxArea(vector<int> &height);
 };
