@@ -8,6 +8,8 @@
 #include <unordered_map>
 #include <array>
 #include <limits.h>
+#include <bits/stdc++.h>
+
 using namespace std;
 
 struct TreeNode {
@@ -138,4 +140,14 @@ class GrayCode {
 class ContainerWithMostWater {
 	public:
 		int maxArea(vector<int> &height);
+};
+
+class LargestNumber {
+	public:
+ 	   string largestNumber(vector<int> &num);
+};
+
+class GasStation {
+	public:
+    	int canCompleteCircuit(vector<int> &gas, vector<int> &cost);
 };

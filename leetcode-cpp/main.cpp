@@ -222,6 +222,29 @@ void testContainerWithMostWater() {
 	cout << sol.maxArea(v1) << endl;
 }
 
+void testLargestNumber() {
+	LargestNumber sol;
+	vector <int> v1 = {3, 30, 34, 5, 9};
+	cout << sol.largestNumber(v1) << endl;
+	
+	vector <int> v2 = {987, 9, 89, 5, 51};
+	cout << sol.largestNumber(v2) << endl;
+
+	vector <int> v3 = {824, 938, 1399, 5607, 6973, 5703, 9609, 4398, 8247};
+	cout << sol.largestNumber(v3) << endl;
+}
+
+void testGasStation() {
+	GasStation sol;
+	vector <int> gas = {10, 5, 7, 14, 9};
+	vector <int> cost = {8, 5, 14, 3, 1};
+	cout << (sol.canCompleteCircuit(gas, cost)) << endl;
+	
+	gas = {10};
+	cost = {8};
+	cout << (sol.canCompleteCircuit(gas, cost)) << endl;
+}
+
 int main() {
 	//testBalancedBinaryTree();
 	//testExcelSheetColumnTitle();
@@ -238,8 +261,10 @@ int main() {
 	//testBestTimeToBuyAndSellStockII();
 	//testLetterCombinationsOfAPhoneNumber();
 	//testLongestSubstringWithoutRepeatingCharacters();
-	//testPopulatingNextRightPointersInEachNode();
+	//testPopulatingNextRightPointersInEachNod	e();
 	//testPathSumII();
 	//testGrayCode();
-	testContainerWithMostWater();
+	//testContainerWithMostWater();
+	//testLargestNumber();
+	testGasStation();
 }
