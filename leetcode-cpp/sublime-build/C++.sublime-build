@@ -11,7 +11,7 @@
    {
      "name": "Run",
      //"cmd":["bash", "-c", "g++ -std=c++0x '${file}' -o '${file_path}/${file_base_name}' && '${file_path}/${file_base_name}'"]
-     //this is how we run the built project.
+     //this is how cks runs the built project.
      "cmd":["./main"]
    }
  ]

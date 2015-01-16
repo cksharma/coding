@@ -2,7 +2,9 @@ package medium;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class CombinationSumII {
     	
@@ -10,25 +12,39 @@ public class CombinationSumII {
     	this.ans = new ArrayList<>();
         this.target = target;
         Arrays.sort(num);
-        subsets_recurse(num, 0, new ArrayList<>(), 0);
-		return ans;
+        subsets_recurse(num, 0, new int[num.length], 0);
+        Set <List <Integer>> set = new HashSet<>();
+        for (List <Integer> list : ans) {
+        	set.add(list);
+        }
+        List <List<Integer>> res = new ArrayList<>();
+        for (List <Integer> list : set) {
+        	res.add(list);
+        }
+		return res;
     }    
+    
     private List <List <Integer>> ans;
     private int target;
     
-	@SuppressWarnings("unchecked")
-	private void subsets_recurse(int[] S, int index, ArrayList<Integer> list, int runningSum) {
-		if (index == S.length) return;
-		if (runningSum == target) {
-			ans.add((List<Integer>) list.clone());
-			return;
+	private void subsets_recurse(int[] S, int index, int[] arr, int runningSum) {
+		
+		arr[index] = 1;		
+		if (runningSum + S[index] == target) {
+			List <Integer> list = new ArrayList <>();
+			for (int i = 0; i <= index; i++) {
+				if (arr[i] != 0) 
+					list.add(S[i]);
+			}
+			ans.add(list);
 		}
-		if (runningSum < target) {
-			list.add(S[index]);
-			subsets_recurse(S, index + 1, list, runningSum + S[index]);
-			list.remove(list.size() - 1);
-			subsets_recurse(S, index + 1, list, runningSum - S[index]);
-		}	
+		else if (index + 1 < S.length && runningSum + S[index] < target) {
+			subsets_recurse(S, index + 1, arr, runningSum + S[index]);
+		}
+		if (index + 1 < S.length && runningSum + S[index + 1] <= target) {
+			arr[index] = 0;
+			subsets_recurse(S, index + 1, arr, runningSum);
+		}
 	}
  	
     public static void main(String[] args) {
