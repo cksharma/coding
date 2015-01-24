@@ -245,6 +245,12 @@ void testGasStation() {
 	cout << (sol.canCompleteCircuit(gas, cost)) << endl;
 }
 
+void testRemoveDuplicates() {
+	RemoveDuplicatesFromSortedArray sol;
+	int arr[] = {1, 1, 2, 2, 3, 3, 4};
+	cout << sol.removeDuplicates(arr, 7) << endl;
+}
+
 int main() {
 	//testBalancedBinaryTree();
 	//testExcelSheetColumnTitle();
@@ -266,5 +272,6 @@ int main() {
 	//testGrayCode();
 	//testContainerWithMostWater();
 	//testLargestNumber();
-	testGasStation();
+	//testGasStation();
+	testRemoveDuplicates();
 }

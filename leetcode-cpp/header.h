@@ -9,7 +9,6 @@
 #include <array>
 #include <limits.h>
 #include <bits/stdc++.h>
-
 using namespace std;
 
 struct TreeNode {
@@ -95,7 +94,7 @@ class BestTimeToBuyAndSellStockII {
 
 class LetterCombinationsOfAPhoneNumber {
 	public:
-		unordered_map<char, string> mp;
+		map<char, string> mp;
 	
 		vector <string> ans;
 		string digits;
@@ -150,4 +149,9 @@ class LargestNumber {
 class GasStation {
 	public:
     	int canCompleteCircuit(vector<int> &gas, vector<int> &cost);
+};
+
+class RemoveDuplicatesFromSortedArray {
+	public:
+    	int removeDuplicates(int A[], int n);
 };
