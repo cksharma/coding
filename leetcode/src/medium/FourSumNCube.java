@@ -3,6 +3,7 @@ package medium;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -15,27 +16,42 @@ public class FourSumNCube {
 		ansList = new ArrayList<>();
 		Set <List <Integer>> st = new HashSet <>();
 		for (int i = 0; i < num.length; i++) {
-			for (int j = i + 1; j < num.length; j++) {
+			for (int j = 0; j < num.length; j++) {
+				if (i == j) continue;
 				int twoSum = num[i] + num[j];				
-				int[] ans = getMoreTwoElements(num, target - twoSum, i, j);
-				if (ans[0] != Integer.MIN_VALUE || ans[1] != Integer.MIN_VALUE) {
+				List <Integer> ans = getMoreTwoElements(num, target - twoSum, i, j);
+				if (ans.size() > 0) {
 					//out.println(num[i] + " " + num[j] + " " + ans[0] + " " + ans[1]);
-					List <Integer> ll = new ArrayList<Integer>(Arrays.asList(num[i], num[j], ans[0], ans[1])); 
-					Collections.sort(ll);
-					st.add(ll);
+					for (int it = 0; it < ans.size(); it+=2) {
+						List <Integer> ll = new ArrayList<Integer>(Arrays.asList(num[i], num[j], ans.get(it), ans.get(it+1))); 
+						Collections.sort(ll);
+						st.add(ll);
+					}					
 				}		
 			}
 		}
 		for (List <Integer> item : st) {
 			ansList.add(item);
 		}
+		Collections.sort(ansList, new Comparator<List <Integer>>() {
+
+			@Override
+			public int compare(List<Integer> o1, List<Integer> o2) {
+				for (int i = 0; i < Math.min(o1.size(), o2.size()); i++) {
+					if (o1.get(i) == o2.get(i)) continue;
+					return o1.get(i) - o2.get(i);
+				}
+				return o1.size() - o2.size();
+			}
+			
+		});
 		return ansList;
 	}
 
-	public int[] getMoreTwoElements(int[] arr, int sum, int i, int j) {
-		int k = 0, l = arr.length - 1;
-		int[] ans = new int[2];
-		Arrays.fill(ans, Integer.MIN_VALUE);
+	public List <Integer> getMoreTwoElements(int[] arr, int sum, int i, int j) {
+		int k = i, l = arr.length - 1;
+		List <Integer> ans = new ArrayList <>();
+		
 		while (k < l && k < arr.length && l < arr.length) {
 			if (k == i || k == j) {
 				k++;
@@ -46,9 +62,25 @@ public class FourSumNCube {
 				continue;
 			}
 			if (arr[k] + arr[l] == sum) {
-				ans[0] = arr[k];
-				ans[1] = arr[l];
-				break;
+				ans.add(arr[k]);
+				ans.add(arr[l]);
+				boolean flag = false;
+				while (k + 1 < l && arr[k + 1] == arr[k]) {
+					ans.add(arr[k]);
+					ans.add(arr[l]);
+					flag = true;
+					k++;
+				}
+				while (l - 1 > k && arr[l - 1] == arr[l]) {
+					ans.add(arr[k]);
+					ans.add(arr[l]);
+					flag = true;
+					l--;
+				}
+				if (!flag) {
+					l--;
+					k++;
+				}	
 			} else if (arr[k] + arr[l] > sum) {
 				l--;
 			} else if (arr[k] + arr[l] < sum) {
