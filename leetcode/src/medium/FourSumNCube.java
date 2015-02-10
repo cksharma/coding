@@ -102,5 +102,6 @@ public class FourSumNCube {
 				
 		List <List <Integer>> ans = fourSum.fourSum(num, target);
 		System.out.println(ans);
+		System.out.println(ans.size());
 	}
 }

@@ -3,6 +3,7 @@ package medium;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -34,9 +35,7 @@ public class FourSumNSquareLogN {
 				res = 0;
 			return res;
 		}
-	}
-
-	
+	}	
 
 	private void getAllFourElements(Test[] test, int sum, int[] arr) {
 		Set <List <Integer>> st = new HashSet <>();
@@ -56,7 +55,7 @@ public class FourSumNSquareLogN {
 					st.add(l1);
 					//System.out.println(arr[ans[0]] + " " + arr[ans[1]] + " " + arr[ans[2]] + " " + arr[ans[3]]);
 					
-					//i++;
+					
 					//j--; 
 			} else if (firstTwo + lastTwo < sum) {
 				i++;
@@ -67,6 +66,17 @@ public class FourSumNSquareLogN {
 		for (List <Integer> item : st) {
 			ansList.add(item);
 		}
+		Collections.sort(ansList, new Comparator<List <Integer>>() {
+
+			@Override
+			public int compare(List<Integer> o1, List<Integer> o2) {
+				for (int i = 0; i < Math.min(o1.size(), o2.size()); i++) {
+					if (o1.get(i) == o2.get(i)) continue;
+					return o1.get(i) - o2.get(i);
+				}
+				return o1.size() - o2.size();
+			}			
+		});
 	}
 
 	public List<List<Integer>> fourSum(int[] num, int target) {
@@ -99,5 +109,6 @@ public class FourSumNSquareLogN {
 		
 		List <List <Integer>> ans = fourSum.fourSum(num, target);
 		System.out.println(ans);
+		System.out.println(ans.size());
 	}
 }
