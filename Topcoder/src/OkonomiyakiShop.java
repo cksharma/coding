@@ -5,10 +5,10 @@ public class OkonomiyakiShop {
 		int ans = 0;
 		Arrays.sort(osize);
 		for (int i = 0; i < osize.length; i++) {
-			for (int j = i + 1; j < osize.length; j++) {
-				if (osize[j] - osize[i] <= K) ans++;
-			} 
-		}
+            for (int j = i + 1; j < osize.length; j++) {
+                if (osize[j] - osize[i] <= K) ans++;
+            }
+        }
 		return ans;
 	}
 
