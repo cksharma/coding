@@ -1,3 +1,4 @@
+package pastchallenges;
 
 public class ORSolitaireDiv2 {
 

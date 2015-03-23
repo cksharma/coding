@@ -1,3 +1,4 @@
+package pastchallenges;
 
 public class TallShoes {
 	public int maxHeight(int N, int[] X, int[] Y, int[] height, long B) {

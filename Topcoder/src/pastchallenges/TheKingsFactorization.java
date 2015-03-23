@@ -1,31 +1,50 @@
-import java.util.Arrays;
+package pastchallenges;
 
-public class TheKingsFactorization_Petr {
+import java.math.BigInteger;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
+public class TheKingsFactorization {
+	
+	private long getSmallestPrimeFactorInRange(long start, long end, long N) {
+		long factor = -1;
+		for (long k = start; k <= end; k++) {
+			if (N % k == 0) return k;
+		}
+		return factor;
+	}
+	
 	public long[] getVector(long N, long[] primes) {
-		for (long x : primes)
-			N /= x;
-		long[] res = new long[2 * primes.length - 1];
-		for (int i = 0; i < primes.length - 1; ++i) {
-			res[i * 2] = primes[i];
-			if (N <= primes[i + 1]) {
-				res[i * 2 + 1] = N;
-				N = 1;
-			} else {
-				for (long u = primes[i]; u <= primes[i + 1]; ++u)
-					if (N % u == 0) {
-						N /= u;
-						res[i * 2 + 1] = u;
-						break;
-					}
+		List <Long> list = new ArrayList <>();
+		for (int i = 0; i < primes.length; i++) {
+			while (N % primes[i] == 0) {
+				N = N / primes[i];
+				list.add(primes[i]);
 			}
 		}
-		res[res.length - 1] = primes[primes.length - 1];
-		if (N > 1) {
-			res = Arrays.copyOf(res, res.length + 1);
-			res[res.length - 1] = N;
+		if (primes.length == 1 && N > 1) {
+			list.add(N);
+		} else {
+			int index = 1;
+			while (N > 1 && new BigInteger(N + "").isProbablePrime(5) == false && index < primes.length) {
+				long factor = getSmallestPrimeFactorInRange(primes[index - 1] + 1, primes[index] - 1, N);
+				if (factor != -1) {
+					list.add(factor);
+					N /= factor;
+				}				
+				index++;
+			}
+			if (N > 1) {
+				list.add(N);
+			}
 		}
-		return res;
+		Collections.sort(list);
+		long[] ans = new long[list.size()];
+		for (int i = 0; i < list.size(); i++) {
+			ans[i] = list.get(i);
+		}
+		return ans;
 	}
 
 	// BEGIN KAWIGIEDIT TESTING
@@ -40,9 +59,9 @@ public class TheKingsFactorization_Petr {
 		}
 		System.out.print("}");
 		System.out.println("]");
-		TheKingsFactorization_Petr obj;
+		TheKingsFactorization obj;
 		long[] answer;
-		obj = new TheKingsFactorization_Petr();
+		obj = new TheKingsFactorization();
 		long startTime = System.currentTimeMillis();
 		answer = obj.getVector(p0, p1);
 		long endTime = System.currentTimeMillis();
@@ -149,7 +168,7 @@ public class TheKingsFactorization_Petr {
 		all_right = (disabled || KawigiEdit_RunTest(4, p0, p1, true, p2)) && all_right;
 		tests_disabled = tests_disabled || disabled;
 		// ------------------
-
+		
 		// ----- test 5 -----
 		disabled = false;
 		p0 = 100000L;
@@ -158,15 +177,15 @@ public class TheKingsFactorization_Petr {
 		all_right = (disabled || KawigiEdit_RunTest(5, p0, p1, true, p2)) && all_right;
 		tests_disabled = tests_disabled || disabled;
 		// ------------------
-
+	
 		// ----- test 5 -----
 		disabled = false;
 		p0 = 444279237316L;
-		p1 = new long[] { 2, 111069809329L };
-		p2 = new long[] { 2, 2, 111069809329L };
+		p1 = new long[] {2, 111069809329L} ;
+		p2 = new long[]  {2, 2, 111069809329L};
 		all_right = (disabled || KawigiEdit_RunTest(5, p0, p1, true, p2)) && all_right;
 		tests_disabled = tests_disabled || disabled;
-
+		
 		if (all_right) {
 			if (tests_disabled) {
 				System.out.println("You're a stud (but some test cases were disabled)!");
