@@ -11,7 +11,7 @@ public class RobotOnMoon {
 		int x;
 		int y;
 	}
-	
+
 	public int longestSafeCommand(String[] board) {
 		int ans = 0;
 		int x = 0, y = 0;
