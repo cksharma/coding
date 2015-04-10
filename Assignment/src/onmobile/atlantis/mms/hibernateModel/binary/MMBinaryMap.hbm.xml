@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class table="MMBINARYMAP" name="onmobile.atlantis.mms.hibernateModel.binary.MMBinaryMap" >
+     <id column="BINARYMAPID" name="binaryMapId">
+	<generator class="guid"/>
+  	</id>
+  	<property name="whSongId" column="WHSONGID"/>
+	<property name="binaryId" column="BINARYID"/>
+	<property name="created" column="CREATED" update="false" insert="false"/>
+	<property name="createdBy" column="CREATEDBY"/>
+	<property name="lastModified" column="LASTMODIFIED" update="false" insert="false"/>
+	<property name="lastModifiedBy" column="LASTMODIFIEDBY"/>
+	<property name="stateOn" column="STATEON" update="false" insert="false"/>
+	<property name="stateBy" column="STATEBY"/>
+	<property name="stateName" column="STATENAME"/>
+	<property name="stateReason" column="STATEREASON"/>
+	<property name="callFromTrigger" column="CALLFROMTRIGGER"/>
+	<property name="holderContentTypeName" column="HOLDERCONTENTTYPENAME"/>
+	<property name="holderContentSubTypeId" column="HOLDERCONTENTSUBTYPEID"/>
+    </class>
+</hibernate-mapping>

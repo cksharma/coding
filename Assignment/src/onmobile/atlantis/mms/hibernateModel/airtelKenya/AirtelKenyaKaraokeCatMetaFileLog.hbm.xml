@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+
+<hibernate-mapping>
+  <class table="DIST_LOG_AIRKENKRKCATMETAFILE" name="onmobile.atlantis.mms.hibernateModel.airtelKenya.AirtelKenyaKaraokeCatMetaFileLog" dynamic-update="true" dynamic-insert="true">
+   <id column="ID" name="id">
+      <generator class="guid"/>
+   </id>
+		<property name="clipId" column="CLIPID"/>
+		<property name="clipUpdateCounter" column="CLIPUPDATECOUNTER"/>
+		<property name="priority" column="PRIORITY"/>
+		<property name="distributorStatus" column="DISTRIBUTORSTATUS"/>
+		<property name="chngDate" column="CHNGDATE"/>
+		<property name="kenyaStatus" column="KENYASTATUS"/>
+		<property name="kenyaTrnsfrDate" column="KENYATRNSFRDATE"/>
+		<property name="kenyaPckDate" column="KENYAPCKDATE"/>
+		<property name="kenyaDesc" column="KENYADESC"/>
+		<property name="startPromptFileName" column="STARTPROMPT_FILENAME" />
+		<property name="confirmPromptFileName" column="CONFIRMPROMPT_FILENAME" />
+		<property name="startPromptFileId" column="STARTPROMPT_FILE_ID" />
+		<property name="confirmPromptFileId" column="CONFIRMPROMPT_FILE_ID" />
+		<property name="startPromptExt" column="STARTPROMPT_EXT" />
+		<property name="confirmPromptExt" column="CONFIRMPROMPT_EXT" />
+		<property name="startPromptSubFolder" column="STARTPROMPT_SUBFOLDER" />
+		<property name="confirmPromptSubFolder" column="CONFIRMPROMPT_SUBFOLDER" />
+		
+		<property name="artwork1FileId" column="ARTWORK_1_FILE_ID" />
+		<property name="artwork1Filename" column="ARTWORK_1_FILENAME" />
+		<property name="artwork1Subfolder" column="ARTWORK_1_SUBFOLDER" />
+		<property name="artwork1Ext" column="ARTWORK_1_EXT" />
+		
+		<property name="artwork2FileId" column="ARTWORK_2_FILE_ID" />
+		<property name="artwork2Filename" column="ARTWORK_2_FILENAME" />
+		<property name="artwork2Subfolder" column="ARTWORK_2_SUBFOLDER" />
+		<property name="artwork2Ext" column="ARTWORK_2_EXT" />
+		
+ </class>
+</hibernate-mapping>

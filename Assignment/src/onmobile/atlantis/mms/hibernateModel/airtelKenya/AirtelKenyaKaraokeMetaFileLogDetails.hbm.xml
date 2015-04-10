@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+
+<hibernate-mapping>
+	<class table="DISTLOGAirKenKARAOKMETFLEDTLS" name="onmobile.atlantis.mms.hibernateModel.airtelKenya.AirtelKenyaKaraokeMetaFileLogDetails" dynamic-update="false" dynamic-insert="false">
+		<id column="ID" name="id">
+			<generator class="guid" />
+		</id>
+		<property name="clipid" column="CLIPID" />
+		<property name="clipUpdateCounter" column="CLIPUPDATECOUNTER" />
+		<property name="priority" column="PRIORITY" />
+		<property name="kenyaStatus" column="KENYASTATUS" />
+		<property name="chngDate" column="CHNGDATE" update="false" insert="false" />
+		<property name="kenyaTrnsfrDate" column="KENYATRNSFRDATE" update="false" insert="false" />
+		<property name="kenyaPckDate" column="KENYAPCKDATE" update="false" insert="false" />
+		<property name="kenyaDesc" column="KENYADESC" />
+		<property name="distributorStatus" column="DISTRIBUTORSTATUS" update="false" insert="false" />
+		<property name="startPromptFileName" column="STARTPROMPT_FILENAME" />
+		<property name="confirmPromptFileName" column="CONFIRMPROMPT_FILENAME" />
+		<property name="songMixFileName" column="SONG_MIX_FILENAME" />
+		<property name="musicMixFileName" column="MUSIC_MIX_FILENAME" />
+		<property name="annotationFileName" column="ANNOTATION_FILENAME" />
+		<property name="startPromptFileId" column="STARTPROMPT_FILE_ID" />
+		<property name="confirmPromptFileId" column="CONFIRMPROMPT_FILE_ID" />
+		<property name="songMixFileId" column="SONG_MIX_FILE_ID" />
+		<property name="musicMixFileId" column="MUSIC_MIX_FILE_ID" />
+		<property name="annotationFileId" column="ANNOTATION_FILE_ID" />
+		<property name="startPromptExt" column="STARTPROMPT_EXT" />
+		<property name="confirmPromptExt" column="CONFIRMPROMPT_EXT" />
+		<property name="songMixExt" column="SONG_MIX_EXT" />
+		<property name="musicMixExt" column="MUSIC_MIX_EXT" />
+		<property name="annotationExt" column="ANNOTATION_EXT" />
+		<property name="startPromptSubFolder" column="STARTPROMPT_SUBFOLDER" />
+		<property name="confirmPromptSubFolder" column="CONFIRMPROMPT_SUBFOLDER" />
+		<property name="songMixSubFolder" column="SONG_MIX_SUBFOLDER" />
+		<property name="musicMixSubFolder" column="MUSIC_MIX_SUBFOLDER" />
+		<property name="annotationSubFolder" column="ANNOTATION_SUBFOLDER" />
+	
+		<property name="artwork1FileId" column="ARTWORK_1_FILE_ID" />
+		<property name="artwork1Filename" column="ARTWORK_1_FILENAME" />
+		<property name="artwork1Subfolder" column="ARTWORK_1_SUBFOLDER" />
+		<property name="artwork1Ext" column="ARTWORK_1_EXT" />
+		
+		<property name="artwork2FileId" column="ARTWORK_2_FILE_ID" />
+		<property name="artwork2Filename" column="ARTWORK_2_FILENAME" />
+		<property name="artwork2Subfolder" column="ARTWORK_2_SUBFOLDER" />
+		<property name="artwork2Ext" column="ARTWORK_2_EXT" />
+		
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class table="CpOperatorRightsProvision"
+		name="onmobile.atlantis.mms.hibernateModel.binary.CpOperatorRightsProvision"
+		dynamic-update="false" dynamic-insert="false">
+		<id column="CONTENTPROVIDERID" name="contentProviderId">
+			<generator class="guid" />
+		</id>
+		<property name="ideaRbtAllowed" column="IDEARBTALLOWED" />
+		<property name="ideaFTAllowed" column="IDEAFTALLOWED" />
+		<property name="ideaRTAllowed" column="IDEARTALLOWED" />
+		<property name="ideaRadioAllowed" column="IDEARADIOALLOWED" />
+		
+		<property name="airtelRbtAllowed" column="AIRTELRBTALLOWED" />
+		<property name="airtelFTAllowed" column="AIRTELFTALLOWED" />
+		<property name="airtelRTAllowed" column="AIRTELRTALLOWED" />
+		<property name="airtelRadioAllowed" column="AIRTELRADIOALLOWED" />
+		
+		<property name="aircelRbtAllowed" column="AIRCELRBTALLOWED" />
+		<property name="aircelFTAllowed" column="AIRCELFTALLOWED" />
+		<property name="aircelRTAllowed" column="AIRCELRTALLOWED" />
+		<property name="aircelRadioAllowed" column="AIRCELRADIOALLOWED" />
+		
+		<property name="virginRbtAllowed" column="VIRGINRBTALLOWED" />
+		<property name="virginFTAllowed" column="VIRGINFTALLOWED" />
+		<property name="virginRTAllowed" column="VIRGINRTALLOWED" />
+		<property name="virginRadioAllowed" column="VIRGINRADIOALLOWED" />
+		
+		<property name="vodafoneRbtAllowed" column="VODAFONERBTALLOWED" />
+		<property name="vodafoneFTAllowed" column="VODAFONEFTALLOWED" />
+		<property name="vodafoneRTAllowed" column="VODAFONERTALLOWED" />
+		<property name="vodafoneRadioAllowed" column="VODAFONERADIOALLOWED" />
+		
+		<property name="bsnlSouthLLRbtAllowed" column="BSNLSOUTHLLRBTALLOWED" />
+		
+		<property name="bsnlSouthRbtAllowed" column="BSNLSOUTHRBTALLOWED" />
+			
+		<property name="bsnlEastRbtAllowed" column="BSNLEASTRBTALLOWED" />
+			
+		<property name="bsnlCdmaRbtAllowed" column="BSNLCDMARBTALLOWED" />
+		
+		<property name="bsnlFTAllowed" column="BSNLFTALLOWED" />
+		<property name="bsnlRadioAllowed" column="BSNLRADIOALLOWED" />
+		<property name="bsnlRTAllowed" column="BSNLRTALLOWED" />
+				
+		<property name="mtnlRbtAllowed" column="MTNLRBTALLOWED" />
+		<property name="mtnlFTAllowed" column="MTNLFTALLOWED" />
+		<property name="mtnlRTAllowed" column="MTNLRTALLOWED" />
+		<property name="mtnlRadioAllowed" column="MTNLRADIOALLOWED" />
+		
+		<property name="relianceRbtAllowed" column="RELIANCERBTALLOWED" />
+		<property name="relianceFTAllowed" column="RELIANCEFTALLOWED" />
+		<property name="relianceRTAllowed" column="RELIANCERTALLOWED" />
+		<property name="relianceRadioAllowed" column="RELIANCERADIOALLOWED" />
+		
+		<property name="uninorRbtAllowed" column="UNINORRBTALLOWED" />
+		<property name="uninorFTAllowed" column="UNINORFTALLOWED" />
+		<property name="uninorRTAllowed" column="UNINORRTALLOWED" />
+		<property name="uninorRadioAllowed" column="UNINORRADIOALLOWED" />
+		
+		<property name="docomoRbtAllowed" column="DOCOMORBTALLOWED" />
+		<property name="docomoFTAllowed" column="DOCOMOFTALLOWED" />
+		<property name="docomoRTAllowed" column="DOCOMORTALLOWED" />
+		<property name="docomoRadioAllowed" column="DOCOMORADIOALLOWED" />
+		
+		<property name="created" column="CREATED" update="false" insert="false"/>
+	    <property name="createdBy" column="CREATEDBY"/>
+	    <property name="lastModified" column="LASTMODIFIED" update="false" insert="false"/>
+	    <property name="lastModifiedBy" column="LASTMODIFIEDBY"/>
+	</class>
+</hibernate-mapping>

@@ -44,7 +44,6 @@ int main() {
 	}
 	v = by_two(v);
 	cout << "==============================================" << endl;
-	int *first = v.data();
 	for (auto& x : v) {
 		cout << x << endl;
 	}

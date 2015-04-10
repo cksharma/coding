@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+
+<hibernate-mapping>
+	<class table="AirtelKenyaKaraokeSongDetails" name="onmobile.atlantis.mms.hibernateModel.airtelKenya.AirtelKenyaKaraokeSongDetails" dynamic-update="true" dynamic-insert="true">
+		<id column="airtelKenyaKaraokeClipId" name="airtelKenyaKaraokeClipId">
+			<generator class="sequence">
+				<param name="sequence">AirtelKenya_KARAOKE_NCLIPID</param>
+			</generator>
+		</id>
+		<property column="BINARYMAPID" name="binaryMapId"/>
+		<property column="CREATED" name="created" update="false" insert="false"/>
+		<property column="CREATEDBY" name="createdBy"/>
+		<property column="LASTMODIFIED" name="lastModified" update="false" insert="false"/>
+		<property column="LASTMODIFIEDBY" name="lastModifiedBy"/>
+		<property column="HOLDERSTARTDATE" name="holderStartDate"/>
+		<property column="HOLDERENDDATE" name="holderEndDate"/>
+		<property column="WHSONGID" name="whSongid"/>
+		<property column="BINARYID" name="binaryId"/>
+		<property column="WHSONGNAME" name="whSongName"/>
+		<property column="WHMOVIENAME" name="whMovieName"/>
+		<property column="LANGUAGENAME" name="languageName"/>
+		<property column="CONTENTPROVIDERID" name="contentProviderId"/>
+		<property column="RIGHTSBODYID" name="rightsBodyId"/>
+		<property column="LABELID" name="labelId"/>
+		<property column="CONTENTPROVIDERNAME" name="contentProviderName"/>
+		<property column="RIGHTSBODYNAME" name="rightsBodyName"/>
+		<property column="LABELNAME" name="labelName"/>
+		<property column="ACTOR" name="actor"/>
+		<property column="SINGER" name="singer"/>
+		<property column="MUSICDIRECTOR" name="musicDirector"/>
+		<property column="MOVIEDIRECTOR" name="movieDirector"/>
+		<property column="PROMOCODE" name="promocode"/>
+		<property column="ALIASPROMOCODE" name="aliasPromocode"/>
+		<property column="CONTENTTYPENAME" name="contentTypeName"/>
+		<property column="FILEPATH" name="filePath"/>
+		<property column="FILEEXTENSION" name="fileExtension"/>
+		<property column="FILESIZEINBYTES" name="fileSizeinBytes"/>
+		<property column="KARAOKEMUSICCONTENTTYPENAME" name="karaokeMusicContentTypeName"/>
+		<property column="KARAOKEMUSICFILEPATH" name="karaokeMusicFilePath"/>
+		<property column="KARAOKEMUSICFILEEXTENSION" name="karaokeMusicFileExtension"/>
+		<property column="KARAOKEMUSICFILESIZEINBYTES" name="karaokeMusicFileSizeInBytes"/>
+		
+		<property column="ARTWORKBINARYID_1" name="artworkBinaryId_1"/>
+		<property column="ARTWORKBINARYID_2" name="artworkBinaryId_2"/>
+		
+	</class>
+</hibernate-mapping>

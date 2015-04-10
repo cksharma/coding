@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+<class table="MMSUPPORTINGFILEMAPDETAILS" name="onmobile.atlantis.mms.hibernateModel.binary.MMSupportingFileMapDetails" dynamic-update="false" dynamic-insert="false">
+	<id column="BINARYMAPID" name="binaryMapId">
+		<generator class="guid"/>
+	</id>
+	<property name="created" column="CREATED" update="false" insert="false"/>
+	<property name="createdBy" column="CREATEDBY"/>
+	<property name="lastModified" column="LASTMODIFIED" update="false" insert="false"/>
+	<property name="lastModifiedBy" column="LASTMODIFIEDBY"/>
+	<property name="editedBinaryId" column="EDITEDBINARYID"/>
+	<property name="editedFilePath" column="EDITEDFILEPATH"/>
+	<property name="whSongName" column="WHSONGNAME"/>
+	<property name="whSongNameRx" column="WHSONGNAMERX"/>
+	<property name="whMovieName" column="WHMOVIENAME"/>
+	<property name="whMovieNameRx" column="WHMOVIENAMERX"/>
+	<property name="editedContentTypeName" column="EDITEDCONTENTTYPENAME"/>
+	<property name="shortPromptBinaryId" column="SHORTPROMPTBINARYID"/>
+	<property name="shortPromptFilePath" column="SHORTPROMPTFILEPATH"/>
+	<property name="shortPromptContentTypeName" column="SHORTPROMPTCONTENTTYPENAME"/>
+	<property name="longPromptBinaryId" column="LONGPROMPTBINARYID"/>
+	<property name="longPromptFilePath" column="LONGPROMPTFILEPATH"/>
+	<property name="longPromptContentTypeName" column="LONGPROMPTCONTENTTYPENAME"/>
+	<property name="option1PromptBinaryId" column="OPTION1PROMPTBINARYID"/>
+	<property name="option1PromptFilePath" column="OPTION1PROMPTFILEPATH"/>
+	<property name="option1ContentTypeName" column="OPTION1CONTENTTYPENAME"/>	
+	<property name="option2PromptBinaryId" column="OPTION2PROMPTBINARYID"/>
+	<property name="option2PromptFilePath" column="OPTION2PROMPTFILEPATH"/>
+	<property name="option2ContentTypeName" column="OPTION2CONTENTTYPENAME"/>
+	<property name="option3PromptBinaryId" column="OPTION3PROMPTBINARYID"/>
+	<property name="option3PromptFilePath" column="OPTION3PROMPTFILEPATH"/>
+	<property name="option3ContentTypeName" column="OPTION3CONTENTTYPENAME"/>
+	<property name="option4PromptBinaryId" column="OPTION4PROMPTBINARYID"/>
+	<property name="option4PromptFilePath" column="OPTION4PROMPTFILEPATH"/>
+	<property name="option4ContentTypeName" column="OPTION4CONTENTTYPENAME"/>
+	<property name="songNameGrammar" column="SONGNAMEGRAMMAR"/>
+	<property name="artistGrammar" column="ARTISTGRAMMAR"/>
+	<property name="albumGrammar" column="ALBUMGRAMMAR"/>
+	<property name="option1Script" column="OPTION1SCRIPT"/>
+	<property name="option2Script" column="OPTION2SCRIPT"/>
+	<property name="option3Script" column="OPTION3SCRIPT"/>
+	<property name="option4Script" column="OPTION4SCRIPT"/>
+	<property name="answer" column="ANSWER"/>
+	<property name="confidence" column="CONFIDENCE"/>
+	<property name="grammarLanguageModel" column="GRAMMARLANGUAGEMODEL"/>
+	<property name="languageName" column="LANGUAGENAME"/>
+	<property name="contentProviderId" column="CONTENTPROVIDERID"/>
+	<property name="rightsBodyId" column="RIGHTSBODYID"/>
+	<property name="labelId" column="LABELID"/>
+	<property name="cpContentId" column="CPCONTENTID"/>
+	<property name="songReleaseDate" column="SONGRELEASEDATE"/>
+	<property name="movieReleaseDate" column="MOVIERELEASEDATE"/>
+	<property name="actor" column="ACTOR"/>
+	<property name="singer" column="SINGER"/>
+	<property name="musicDirector" column="MUSICDIRECTOR"/>
+	<property name="movieDirector" column="MOVIEDIRECTOR"/>
+	<property name="movieProducer" column="MOVIEPRODUCER"/>
+	<property name="rightsBodyName" column="RIGHTSBODYNAME"/>
+	<property name="labelName" column="LABELNAME"/>
+	<property name="contentProviderName" column="CONTENTPROVIDERNAME"/>
+	<property name="songReleaseYear" column="SONGRELEASEYEAR"/>
+	<property name="movieReleaseYear" column="MOVIERELEASEYEAR"/>
+	<property name="stateName" column="STATENAME"/>
+	<property name="stateBy" column="STATEBY"/>
+	<property name="stateOn" column="STATEON" update="false" insert="false"/>
+	<property name="stateReason" column="STATEREASON"/>
+	<property name="callFromTrigger" column="CALLFROMTRIGGER"/>
+	<property name="holderContentSubTypeId" column="HOLDERCONTENTSUBTYPEID"/>
+	<property name="holderContentSubTypeName" column="HOLDERCONTENTSUBTYPENAME"/>
+ </class>
+</hibernate-mapping>

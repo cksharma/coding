@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+
+<hibernate-mapping>
+<class table="MMBINARYWAREHOUSE" name="onmobile.atlantis.mms.hibernateModel.binary.MMBinaryWarehouse" dynamic-update="true" dynamic-insert="true">
+        <id column="BINARYID" name="binaryId">
+		<generator class="guid"/>
+  		</id>
+                   
+        <property name="contentProviderId" column="CONTENTPROVIDERID" />
+         
+        <property name="filePath" column="FILEPATH" />
+           
+        <property name="fileSizeInBytes" column="FILESIZEINBYTES"  />
+           
+        <property name="startDate" column="STARTDATE" />
+            
+        <property name="endDate" column="ENDDATE" />
+            
+        <property name="contentTypeName" column="CONTENTTYPENAME" />
+            
+        <property name="contentSubTypeId" column="CONTENTSUBTYPEID" />
+            
+        <property name="fileExtension" column="FILEEXTENSION" />
+            
+        <property name="created" column="CREATED" update="false" insert="false" />
+            
+        <property name="createdBy" column="CREATEDBY" />
+            
+        <property name="lastModified" column="LASTMODIFIED" />
+            
+        <property name="lastModifiedBy" column="LASTMODIFIEDBY" update="false" insert="false" />
+            
+        <property name="stateOn" column="STATEON" update="false" insert="false" />
+            
+        <property name="stateBy" column="STATEBY" />
+            
+        <property name="stateName" column="STATENAME" />
+            
+        <property name="stateReason" column="STATEREASON" />
+            
+        <property name="callFromTrigger" column="CALLFROMTRIGGER" />
+            
+    </class>
+</hibernate-mapping>

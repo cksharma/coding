@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+
+<hibernate-mapping>
+	<class table="AIRTELKENYAKARAOKESONG" name="onmobile.atlantis.mms.hibernateModel.airtelKenya.AirtelKenyaKaraokeSong" dynamic-update="true" dynamic-insert="true">
+		<id column="AIRTELKENYAKARAOKECLIPID" name="airtelKenyaKaraokeClipId">
+			<generator class="sequence">
+				<param name="sequence">AirtelKenya_KARAOKE_NCLIPID</param>
+			</generator>
+		</id>
+		<property column="BINARYMAPID" name="binaryMapId"/>
+		<property column="MAPCHANGEFLAG" name="mapChangeFlag"/>
+		<property column="CREATED" name="created" update="false" insert="false"/>
+		<property column="CREATEDBY" name="createdBy"/>
+		<property column="LASTMODIFIED" name="lastModified" update="false" insert="false"/>
+		<property column="LASTMODIFIEDBY" name="lastModifiedBy"/>
+		<property column="STATEON" name="stateOn" update="false" insert="false"/>
+		<property column="STATEBY" name="stateBy"/>
+		<property column="STATENAME" name="stateName"/>
+		<property column="STATEREASON" name="stateReason"/>
+		<property column="HOLDERSTARTDATE" name="holderStartDate" update="false" insert="false"/>
+		<property column="HOLDERENDDATE" name="holderEndDate" update="false" insert="false"/>		
+	</class>
+</hibernate-mapping>

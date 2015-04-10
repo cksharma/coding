@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+
+<hibernate-mapping>
+<class table="MMSUPPORTINGFILEMAP" name="onmobile.atlantis.mms.hibernateModel.binary.MMSupportingFileMap" dynamic-update="false" dynamic-insert="false">
+	<id column="BINARYMAPID" name="binaryMapId">
+		<generator class="guid"/>
+	</id>
+	<property name="editedBinaryId" column="EDITEDBINARYID"/>  
+	<property name="shortPromptBinaryId" column="SHORTPROMPTBINARYID"/>  
+	<property name="longPromptBinaryId" column="LONGPROMPTBINARYID"/>
+	<property name="option1PromptBinaryId" column="OPTION1PROMPTBINARYID"/>
+	<property name="option2PromptBinaryId" column="OPTION2PROMPTBINARYID"/>
+	<property name="option3PromptBinaryId" column="OPTION3PROMPTBINARYID"/>
+	<property name="option4PromptBinaryId" column="OPTION4PROMPTBINARYID"/>	
+	<property name="songNameGrammar" column="SONGNAMEGRAMMAR"/>
+	<property name="artistGrammar" column="ARTISTGRAMMAR"/>
+	<property name="albumGrammar" column="albumGrammar"/>
+	<property name="option1Script" column="option1Script"/>
+	<property name="option2Script" column="option2Script"/>
+	<property name="option3Script" column="option3Script"/>
+	<property name="option4Script" column="option4Script"/>	
+	<property name="answer" column="ANSWER"/>
+	<property name="confidence" column="CONFIDENCE"/>
+	<property name="grammarLanguageModel" column="GRAMMARLANGUAGEMODEL"/>	
+	<property name="created" column="CREATED" update="false" insert="false"/>
+	<property name="createdBy" column="CREATEDBY"/>
+	<property name="lastModified" column="LASTMODIFIED" update="false" insert="false"/>
+	<property name="lastModifiedBy" column="LASTMODIFIEDBY"/>
+	
+	<property name="stateName" column="STATENAME"/>
+	<property name="stateBy" column="STATEBY"/>
+	<property name="stateOn" column="STATEON" update="false" insert="false"/>
+	<property name="stateReason" column="STATEREASON"/>
+	<property name="callFromTrigger" column="CALLFROMTRIGGER"/>
+	<property name="holderContentSubTypeId" column="HOLDERCONTENTSUBTYPEID"/>
+	<property name="holderContentSubTypeName" column="HOLDERCONTENTSUBTYPENAME"/>
+	
+ </class>
+</hibernate-mapping>

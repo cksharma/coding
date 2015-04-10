@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+
+<hibernate-mapping>
+	<class table="AIRTELKENYAKARAOKECATEGORY" name="onmobile.atlantis.mms.hibernateModel.airtelKenya.AirtelKenyaKaraokeCategory" dynamic-update="true" dynamic-insert="true">
+		<id column="CATALOGID" name="catalogId">
+			<generator class="sequence">
+				<param name="sequence">AIRTELKENYAKARAOKE_NCATEGORYID</param>
+			</generator>
+		</id>
+		<property column="ARTWORKBINARYID_1" name="artworkBinaryID_1"/>
+		<property column="ARTWORKBINARYID_2" name="artworkBinaryID_2"/>
+		<property column="CATALOGNAME" name="catalogName"/>
+		<property column="CATALOGORDER" name="catalogOrder"/>
+		<property column="STARTPROMPTID" name="startPromptId"/>
+		<property column="CATALOGGRAMMAR" name="catalogGrammar"/>
+		<property column="CONFIRMPROMPTID" name="confirmPromptId"/>
+		<property column="CATALOGLANGUAGEMODEL" name="catalogLanguageModel"/>
+		<property column="STARTDATE" name="startDate"/>
+		<property column="ENDDATE" name="endDate"/>
+		<property column="PARENTCATALOGID" name="parentCatalogId"/>
+		<property column="CREATED" name="created" update="false" insert="false"/>
+		<property column="CREATEDBY" name="createdBy"/>
+		<property column="LASTMODIFIED" name="lastModified" update="false" insert="false"/>
+		<property column="LASTMODIFIEDBY" name="lastModifiedBy"/>
+		<property column="CATALOGDESC" name="catalogDesc"/>
+		
+	</class>
+</hibernate-mapping>
+

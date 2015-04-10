@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+
+<hibernate-mapping>
+<class table="WH_MMMETADATADETAILS" name="onmobile.atlantis.mms.hibernateModel.binary.MMMetadataWarehouseDetails" dynamic-update="true" dynamic-insert="true">
+        <id column="WHSONGID" name="whSongId">
+		<generator class="guid"/>
+  		</id>
+  		<property name="whSongName" column="WHSONGNAME"/>
+		<property name="whSongNameRx" column="WHSONGNAMERX"/>
+		<property name="whMovieName" column="WHMOVIENAME"/>
+		<property name="whMovieNameRx" column="WHMOVIENAMERX"/>
+		<property name="languageName" column="LANGUAGENAME"/>
+		<property name="rightsBodyId" column="RIGHTSBODYID"/>
+		<property name="labelId" column="LABELID"/>
+		<property name="contentProviderId" column="CONTENTPROVIDERID"/>
+		<property name="songReleaseDate" column="SONGRELEASEDATE"/>
+		<property name="movieReleaseDate" column="MOVIERELEASEDATE"/>
+		<property name="actor" column="ACTOR"/>
+		<property name="singer" column="SINGER"/>
+		<property name="musicDirector" column="MUSICDIRECTOR"/>
+		<property name="movieDirector" column="MOVIEDIRECTOR"/>
+		<property name="keywords" column="KEYWORDS"/>
+		<property name="created" column="CREATED" update="false" insert="false"/>
+		<property name="createdBy" column="CREATEDBY"/>
+		<property name="lastModified" column="LASTMODIFIED" update="false" insert="false"/>
+		<property name="lastModifiedBy" column="LASTMODIFIEDBY"/>
+		<property name="stateOn" column="STATEON" update="false" insert="false"/>
+		<property name="stateBy" column="STATEBY"/>
+		<property name="stateName" column="STATENAME"/>
+		<property name="stateReason" column="STATEREASON"/>
+		<property name="comments" column="COMMENTS"/>
+		<property name="cpContentId" column="CPCONTENTID"/>
+		<property name="movieProducer" column="MOVIEPRODUCER"/>
+		<property name="isBranded" column="ISBRANDED"/>
+		<property name="brandName" column="BRANDNAME"/>
+		<property name="songReleaseYear" column="SONGRELEASEYEAR"/>
+		<property name="movieReleaseYear" column="MOVIERELEASEYEAR"/>
+		<property name="rightsBodyName" column="RIGHTSBODYNAME"/>
+  		<property name="labelName" column="LABELNAME"/>
+  		<property name="contentProviderName" column="CONTENTPROVIDERNAME"/>
+          </class>
+</hibernate-mapping>

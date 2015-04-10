@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+
+<hibernate-mapping>
+<class table="WH_MMBINARYMAPDETAILS" name="onmobile.atlantis.mms.hibernateModel.binary.MMBinaryMapDetails" dynamic-update="true" dynamic-insert="true">
+        <id column="BINARYMAPID" name="binaryMapId">
+		<generator class="guid"/>
+  		</id>		 
+		<property name="whSongId" column="WHSONGID"/>
+		<property name="binaryId" column="BINARYID"/>
+		<property name="created" column="CREATED" update="false" insert="false"/>
+		<property name="createdBy" column="CREATEDBY"/>
+		<property name="lastModified" column="LASTMODIFIED" update="false" insert="false"/>
+		<property name="lastModifiedBy" column="LASTMODIFIEDBY"/>
+		<property name="stateOn" column="STATEON" update="false" insert="false"/>
+		<property name="stateBy" column="STATEBY"/>
+		<property name="stateName" column="STATENAME"/>
+		<property name="stateReason" column="STATEREASON"/>
+		<property name="filePath" column="FILEPATH"/>
+		<property name="fileSizeInBytes" column="FILESIZEINBYTES"/>
+		<property name="contentTypeName" column="CONTENTTYPENAME"/>
+		<property name="fileExtension" column="FILEEXTENSION"/>
+		<property name="whSongName" column="WHSONGNAME"/>
+		<property name="whSongNameRx" column="WHSONGNAMERX"/>
+		<property name="whMovieName" column="WHMOVIENAME"/>
+		<property name="whMovieNameRx" column="WHMOVIENAMERX"/>
+		<property name="languageName" column="LANGUAGENAME"/>
+		<property name="contentProviderId" column="CONTENTPROVIDERID"/>
+		<property name="rightsBodyId" column="RIGHTSBODYID"/>
+		<property name="labelId" column="LABELID"/>
+		<property name="cpContentId" column="CPCONTENTID"/>
+		<property name="songReleaseDate" column="SONGRELEASEDATE"/>
+		<property name="movieReleaseDate" column="MOVIERELEASEDATE"/>
+		<property name="actor" column="ACTOR"/>
+		<property name="singer" column="SINGER"/>
+		<property name="musicDirector" column="MUSICDIRECTOR"/>
+		<property name="movieDirector" column="MOVIEDIRECTOR"/>
+		<property name="movieProducer" column="MOVIEPRODUCER"/>
+		<property name="rightsBodyName" column="RIGHTSBODYNAME"/>
+		<property name="labelName" column="LABELNAME"/>
+		<property name="contentProviderName" column="CONTENTPROVIDERNAME"/>
+		<property name="songReleaseYear" column="SONGRELEASEYEAR"/>
+		<property name="movieReleaseYear" column="MOVIERELEASEYEAR"/>        
+        <property name="metadataStateName" column="METADATASTATENAME"/>
+		<property name="metadataStateReason" column="METADATASTATEREASON"/>
+		<property name="binaryStateName" column="BINARYSTATENAME"/>
+		<property name="binaryStateReason" column="BINARYSTATEREASON"/>
+        </class>
+</hibernate-mapping>

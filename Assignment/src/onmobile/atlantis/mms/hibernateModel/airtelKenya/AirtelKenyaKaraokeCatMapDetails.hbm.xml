@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class table="AIRTELKENYAKRKCATMAPDtls" name="onmobile.atlantis.mms.hibernateModel.airtelKenya.AirtelKenyaKaraokeCatMapDetails" dynamic-update="true" dynamic-insert="true">
+		<id column="CATMAPID" name="catMapId">
+		  			<generator class="guid"/>
+   		</id>
+		<property name="airtelKenyaKaraokeClipId" column="AIRTELKENYAKARAOKECLIPID"/>
+		<property name="promoCode" column="PROMOCODE"/>
+		<property name="whSongName" column="WHSONGNAME"/>
+		<property name="whMovieName" column="WHMOVIENAME"/>
+		<property name="languageName" column="LANGUAGENAME"/>
+		<property name="contentProviderId" column="CONTENTPROVIDERID"/>
+		<property name="rightsBodyId" column="RIGHTSBODYID"/>
+		<property name="labelId" column="LABELID"/>
+		<property name="rightsBodyName" column="RIGHTSBODYNAME"/>
+		<property name="labelName" column="LABELNAME"/>
+		<property name="contentProviderName" column="CONTENTPROVIDERNAME"/>
+		<property name="catalogId" column="CATALOGID"/>
+		<property name="parentCatalogId" column="PARENTCATALOGID"/>
+		<property name="catalogName" column="CATALOGNAME"/>
+		<property name="contentOrder" column="CONTENTORDER"/>
+		<property name="created" column="CREATED" update="false" insert="false"/>
+		<property name="createdBy" column="CREATEDBY"/>
+		<property name="lastModified" column="LASTMODIFIED" update="false" insert="false"/>
+		<property name="lastModifiedBy" column="LASTMODIFIEDBY"/>
+		<property name="startPromptId" column="STARTPROMPTID"/>
+		<property name="startPromptFilePath" column="STARTPROMPTFILEPATH"/>
+		<property name="confirmPromptId" column="CONFIRMPROMPTID"/>
+		<property name="confirmPromptFilePath" column="CONFIRMPROMPTFILEPATH"/>
+		
+		<property name="artworkBinaryID_1" column="ARTWORKBINARYID_1"/>
+		<property name="artworkFilePath_1" column="ARTWORKFILEPATH_1"/>
+		<property name="artworkFileExtension_1" column="ARTWORKFILEEXTENSION_1"/>
+		
+		<property name="artworkBinaryID_2" column="ARTWORKBINARYID_2"/>
+		<property name="artworkFilePath_2" column="ARTWORKFILEPATH_2"/>
+		<property name="artworkFileExtension_2" column="ARTWORKFILEEXTENSION_2"/>
+	
+	</class>
+</hibernate-mapping>

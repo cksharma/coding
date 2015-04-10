@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+
+<hibernate-mapping>
+<class table="CPRIGHTSMATRIX_MUZIKMIND" name="onmobile.atlantis.mms.hibernateModel.binary.CpRightsMatrixMuzikMind" dynamic-update="false" dynamic-insert="false">
+	<id column="BINARYMAPID" name="binaryMapId">
+		<generator class="guid"/>
+  	</id>  
+  <property name="bsnlStartDate" column="BSNLSTARTDATE"/>
+  <property name="bsnlEndDate" column="BSNLENDDATE"/>
+  <property name="bsnlState" column="BSNLSTATE"/>      
+  <property name="created" column="CREATED" update="false" insert="false"/>
+  <property name="createdBy" column="CREATEDBY"/>
+  <property name="lastModified" column="LASTMODIFIED" update="false" insert="false"/>
+  <property name="lastModifiedBy" column="LASTMODIFIEDBY"/>
+ 
+ </class>
+</hibernate-mapping>

@@ -2,7 +2,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-
 public class CartInSupermarketEasy {
 	public int calc(int N, int K) {
 		int ans = N;
