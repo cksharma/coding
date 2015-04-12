@@ -1,3 +1,5 @@
+package pastchallenges;
+
 import java.util.TreeMap;
 
 

@@ -1,3 +1,4 @@
+package pastchallenges;
 
 public class DecipherabilityEasy {
 	public String check(String s, String t) {

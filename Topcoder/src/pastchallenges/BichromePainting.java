@@ -1,3 +1,5 @@
+package pastchallenges;
+
 public class BichromePainting {
     char[][] desired;
     char[][] initial;

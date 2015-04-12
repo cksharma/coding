@@ -1,66 +1,75 @@
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
-
-class Main {
-	public static void main(String[] a) throws Exception {
-		String storageStr = "30K";
-		String[] arr = storageStr.split("\\D+");
-		String storageSpace = arr[0];
-		String unit = storageStr.substring(storageSpace.length());
-		System.out.println(arr[0] + "  " + unit);
-	}
-	
-	/*public void setIdentityRefAsString(String idenityRef) {
-
-		if (idenityRef != null) {
-			int lastIndex = idenityRef.lastIndexOf("@");
-			if (lastIndex != -1) {
-				String guid = idenityRef.substring(0, lastIndex);
-				String authSource = idenityRef.substring(lastIndex + 1);
-				System.out.println("guid " + guid);
-				System.out.println("authsrc " + authSource);
-			}
-		}
-	}*/
-	
-	/*private static byte[] getByteArrayFromInputStream(InputStream is) throws IOException {
-		int k = is.read();
-		List <Integer> list = new ArrayList <>();
-		while (k != -1) {
-			list.add(k);
-			k = is.read();
-		}
-		byte[] ans = new byte[list.size()];
-		for (int index = 0; index < ans.length; index++) {
-			int g = list.get(index);
-			ans[index] = (byte)g;
-		}
-		System.out.println(Arrays.toString(ans));
-		return Base64.encodeBase64(ans);
-	}*/
-	
-	/*private static String getStringFromInputStream(InputStream is) {
-		 
-		BufferedReader br = null;
-		StringBuilder sb = new StringBuilder();
- 
-		String line;
-		try { 
-			br = new BufferedReader(new InputStreamReader(is));
-			while ((line = br.readLine()) != null) {
-				sb.append(line);
-			} 
-		} catch (IOException e) {
-			e.printStackTrace();
-		} finally {
-			if (br != null) {
-				try {
-					br.close();
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-			}
-		} 
-		byte[]  bytesEncoded = Base64.encodeBase64(sb.toString().getBytes());
-		return "data:image/jpeg;base64," + new String(bytesEncoded);
-	}*/
+public class Main {
+    public static void main(String[] args) {
+        InputStream inputStream = System.in;
+        OutputStream outputStream = System.out;
+        InputReader in = new InputReader(inputStream);
+        PrintWriter out = new PrintWriter(outputStream);
+        Solution solver = new Solution();
+        solver.solve(1, in, out);
+        out.close();
+    }
 }
+
+class Solution {
+
+    int ans;
+    int D;
+    int[] input;
+
+    public void solve(int testNumber, InputReader in, PrintWriter out) {
+        int T = in.nextInt();
+        for (int r = 1; r <= T; r++) {
+            int D = in.nextInt();
+            int[] arr = new int[D];
+            this.input = arr;
+            this.ans = Integer.MAX_VALUE;
+            this.D = D;
+            for (int i = 0; i < D; i++) arr[i] = in.nextInt();
+            preOrder(1, 0, new int[D]);
+            preOrder(2, 0, new int[D]);
+            out.println("Case #" + r + ": " + ans);
+        }
+    }
+
+    private void preOrder(int action, int level, int[] arr) {
+        if (level == D) {
+            ans = Math.min(ans, computeAns(arr));
+            return;
+        }
+        arr[level] = action;
+        preOrder(1, level + 1, arr);
+        preOrder(2, level + 1, arr);
+    }
+    private int computeAns(int[] arr) {
+        int ans = Integer.MAX_VALUE;
+        List<Integer> list = new ArrayList<>();
+        for (int item : input) list.add(item);
+
+        for (int k = 0; k < arr.length; k++) {
+            if (arr[k] == 1) {
+                for (int i = 0; i < list.size(); i++) {
+                    list.set(i, list.get(i) - 1);
+                }
+            } else {
+                list.add(list.get(k) / 2);
+                if (list.get(k) % 2 == 1) {
+                    list.set(k, list.get(k) / 2 + 1);
+                } else {
+                    list.set(k, list.get(k) / 2);
+                }
+            }
+            int maxElement = Arrays.stream(arr).max().getAsInt();
+            if (maxElement <= 0) return k + 1;
+        }
+
+        return ans;
+    }
+}
+

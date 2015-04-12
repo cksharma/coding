@@ -1,3 +1,5 @@
+package pastchallenges;
+
 public class SquareScoresDiv2 {
     public int getscore(String s) {
         int ans = 0;

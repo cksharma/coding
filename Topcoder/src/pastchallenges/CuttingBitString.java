@@ -1,4 +1,4 @@
-import java.util.Arrays;
+package pastchallenges;
 
 public class CuttingBitString {
     int ans = Integer.MAX_VALUE;
