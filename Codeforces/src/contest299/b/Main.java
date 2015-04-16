@@ -1,13 +1,8 @@
-package contest297.a;
+package contest299.b;
 
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.io.PrintWriter;
-import java.util.StringTokenizer;
+import java.io.*;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -15,29 +10,32 @@ public class Main {
         OutputStream outputStream = System.out;
         InputReader in = new InputReader(inputStream);
         PrintWriter out = new PrintWriter(outputStream);
-        SolutionA solver = new SolutionA();
+        SolutionB solver = new SolutionB();
         solver.solve(1, in, out);
         out.close();
     }
 }
 
-class SolutionA {
+class SolutionB {
     public void solve(int testNumber, InputReader in, PrintWriter out) {
-        int n = in.nextInt();
-        String str = in.next();
-        int[] arr = new int[26];
-        int ans = 0;
-        for (int i = 0; i < str.length(); i+= 2) {
-            char key = str.charAt(i);
-            char door = (char)(32 + str.charAt(i + 1));
-            arr[key - 'a']++;
-            if (arr[door - 'a'] > 0) {
-                arr[door - 'a']--;
-            } else {
-                ans++;
+        long num = in.nextInt();
+
+        Queue<Long> queue = new LinkedList<>();
+        queue.add(4L); queue.add(7L);
+        int index = 1;
+
+        while (true) {
+            long n = queue.poll();
+            if (n >= num) {
+                break;
             }
+            long first = n * 10 + 4;
+            long secon = n * 10 + 7;
+            queue.add(first);
+            queue.add(secon);
+            index++;
         }
-        out.println(ans);
+        out.println(index);
     }
 }
 
@@ -64,4 +62,5 @@ class InputReader {
     public int nextInt() {
         return Integer.parseInt(next());
     }
+
 }

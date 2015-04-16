@@ -1,12 +1,7 @@
-package contest297.a;
+package contest298.a;
 
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.io.PrintWriter;
+import java.io.*;
 import java.util.StringTokenizer;
 
 public class Main {
@@ -24,20 +19,26 @@ public class Main {
 class SolutionA {
     public void solve(int testNumber, InputReader in, PrintWriter out) {
         int n = in.nextInt();
-        String str = in.next();
-        int[] arr = new int[26];
-        int ans = 0;
-        for (int i = 0; i < str.length(); i+= 2) {
-            char key = str.charAt(i);
-            char door = (char)(32 + str.charAt(i + 1));
-            arr[key - 'a']++;
-            if (arr[door - 'a'] > 0) {
-                arr[door - 'a']--;
-            } else {
-                ans++;
-            }
+        if (n == 1 || n == 2) {
+            out.println(1);
+            out.println(n);
+            return;
         }
-        out.println(ans);
+        if (n == 3) {
+            out.println(2);
+            out.println("3 1");
+            return;
+        }
+        StringBuilder sb = new StringBuilder();
+        //out.println(n);
+        for (int i = n; i >= 1; i--) {
+            if (i % 2 == 1) sb.append(i + " ");
+        }
+        for (int i = n; i >= 1; i--) {
+            if (i % 2 == 0) sb.append(i + " ");
+        }
+        out.println(n);
+        out.println(sb.substring(0, sb.length() - 1));
     }
 }
 

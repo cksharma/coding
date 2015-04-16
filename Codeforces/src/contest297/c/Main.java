@@ -1,8 +1,5 @@
 package contest297.c;
 
-/**
- * Created by Chandra Kant on 3/26/2015.
- */
 
 import java.io.BufferedReader;
 import java.io.IOException;

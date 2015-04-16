@@ -1,13 +1,6 @@
-package contest297.b;
+package contest298.c;
 
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.io.PrintWriter;
-import java.util.Arrays;
+import java.io.*;
 import java.util.StringTokenizer;
 
 public class Main {
@@ -16,36 +9,44 @@ public class Main {
         OutputStream outputStream = System.out;
         InputReader in = new InputReader(inputStream);
         PrintWriter out = new PrintWriter(outputStream);
-        SolutionB solver = new SolutionB();
+        SolutionC solver = new SolutionC();
         solver.solve(1, in, out);
         out.close();
     }
 }
 
-class SolutionB {
+class SolutionC {
     public void solve(int testNumber, InputReader in, PrintWriter out) {
-        String str = in.next();
-        int m = in.nextInt();
-        int[] arr = new int[m];
-        for (int i = 0; i < m; i++) arr[i] = in.nextInt() - 1;
-        Arrays.sort(arr);
-        char[] ch = str.toCharArray();
-
-        for (int i = 1; i < m; i++) {
-            if (i % 2 == 1)
-                reverseArrayInRange(ch, arr[i - 1], arr[i]);
+        int n = in.nextInt();
+        long A = in.nextLong();
+        int[] d = new int[n];
+        long totalSum = 0;
+        for (int i = 0; i < n; i++) {
+            d[i] = in.nextInt();
+            totalSum += d[i];
         }
-        if (m % 2 == 1)
-            reverseArrayInRange(ch, arr[m - 1], ch.length / 2);
-        out.println(new String(ch));
-    }
+        long[] ans = new long[n];
 
-    private void reverseArrayInRange(char[] ch, int start, int end) {
-        for (int i = start; i < end; i++) {
-            char temp = ch[i];
-            ch[i] = ch[ch.length - 1 - i];
-            ch[ch.length - 1 - i] = temp;
+        for (int i = 0; i < n; i++) {
+            long otherMaxSum = totalSum - d[i];
+            long otherMinSum = n - 1;
+
+            long first = Math.min(d[i], A - otherMinSum);
+            long secon = Math.max(1, Math.min(d[i], A - otherMaxSum));
+
+            if (secon <= 0 || first <= 0) {
+                ans[i] = 0;
+                continue;
+            }
+
+            ans[i] = d[i] - (Math.abs(secon - first) + 1);
+
         }
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < n; i++)
+            sb.append(ans[i] + " ");
+
+        out.println(sb.substring(0, sb.length() - 1));
     }
 }
 
@@ -71,6 +72,10 @@ class InputReader {
 
     public int nextInt() {
         return Integer.parseInt(next());
+    }
+
+    public long nextLong() {
+        return Long.parseLong(next());
     }
 
     public String nextLine() {
