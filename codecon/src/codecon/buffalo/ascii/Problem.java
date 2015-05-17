@@ -52,6 +52,7 @@ class TaskB {
 				}
  			}
 		}
+
 		out.println(ans1);
 		out.println(ans2);
 		out.println(value);
