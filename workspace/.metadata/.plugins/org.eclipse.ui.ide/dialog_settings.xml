@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="CleanDialogSettings">
+		<item value="585" key="DIALOG_WIDTH"/>
+		<item value="true" key="TOGGLE_SELECTED"/>
+		<item value="444" key="DIALOG_HEIGHT"/>
+		<item value="153" key="DIALOG_Y_ORIGIN"/>
+		<item value="434" key="DIALOG_X_ORIGIN"/>
+	</section>
+	<section name="ExternalProjectImportWizard">
+		<item value="false" key="WizardProjectsImportPage.STORE_NESTED_PROJECTS"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
+		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="/home/cksharma/workspace/tp1"/>
+			<item value="/home/cksharma/data/git/coding"/>
+			<item value="/home/cksharma/data/git/coding/GeeksForGeeks"/>
+			<item value="/media/cksharma/CK/workspace/JIL/ExecutorThreadPool"/>
+			<item value="/media/cksharma/CK/GitHub/entps"/>
+		</list>
+		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
+			<item value=""/>
+		</list>
+	</section>
+	<section name="ResourceNavigator">
+		<item value="Aggregate for window 1408047645845" key="ResourceWorkingSetFilter.STORE_WORKING_SET"/>
+		<item value="1" key="ResourceViewer.STORE_SORT_TYPE"/>
+	</section>
+	<section name="NewWizardAction">
+		<item value="org.eclipse.jdt.ui.wizards.JavaProjectWizard" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
+		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
+		</list>
+	</section>
+	<section name="BasicNewProjectResourceWizard">
+	</section>
+	<section name="org.eclipse.ui.dialogs.FilteredResourcesSelectionDialog">
+		<item value="true" key="ShowStatusLine"/>
+		<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0A;&lt;workingSet workingSetName=&quot;&quot;/&gt;" key="WorkingSet"/>
+		<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0A;&lt;History&gt;&#x0A;&lt;historyRootNode&gt;&#x0A;&lt;infoNode path=&quot;/Practise/src/com/amazon/advertising/api/sample/Main.java&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/leetcode/src/medium/CombinationSumII.java&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/leetcode/src/medium/CloneGraph.java&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/DBProject/src/edu/buffalo/cse562/ExpressionResolver.java&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/DBProject/src/edu/buffalo/cse562/ExpressionEvaluator.java&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/DBProject/src/edu/buffalo/cse562/queryplan/CartesianOperatorNode.java&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/DBProject/src/edu/buffalo/cse562/queryplan/RelationNode.java&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/DBProject/src/edu/buffalo/cse562/ProjectItemImpl.java&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/Practise/src/Main.java&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/DBProject/src/edu/buffalo/cse562/Main.java&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/DBProject/src/edu/buffalo/cse562/queryplan/ProjectNode.java&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/AssessmentTest/src/assessment/MainClass.java&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;/historyRootNode&gt;&#x0A;&lt;/History&gt;" key="History"/>
+		<item value="false" key="ShowDerived"/>
+		<section name="DialogBoundsSettings">
+			<item value="1160" key="DIALOG_WIDTH"/>
+			<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+			<item value="720" key="DIALOG_HEIGHT"/>
+			<item value="0" key="DIALOG_Y_ORIGIN"/>
+			<item value="81" key="DIALOG_X_ORIGIN"/>
+		</section>
+	</section>
+</section>

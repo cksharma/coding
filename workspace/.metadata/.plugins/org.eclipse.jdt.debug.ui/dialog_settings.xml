@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item value="1" key="org.eclipse.jdt.debug.ui.jre_preference_page_context.sortColumn"/>
+	<item value="96" key="org.eclipse.jdt.debug.ui.jre_preference_page_context.columnWidth2"/>
+	<item value="178" key="org.eclipse.jdt.debug.ui.jre_preference_page_context.columnWidth1"/>
+	<item value="126" key="org.eclipse.jdt.debug.ui.jre_preference_page_context.columnWidth0"/>
+	<section name="conditionHistory">
+		<item value="(tokenText.length() &lt;= 2 &amp;&amp; tokenText.contains(&apos;\u0915&apos;))" key="conditionHistoryEntry_8"/>
+		<item value="tokenText.length() &lt;= 2 &amp;&amp; tokenText.contains(&apos;\u0915&apos;)" key="conditionHistoryEntry_9"/>
+		<item value="newTermText.length() &lt;= 1" key="conditionHistoryEntry_6"/>
+		<item value="(tokenText.length() &lt;= 2 &amp;&amp; tokenText.contains(&apos;\u0915&apos; + &quot;&quot;))" key="conditionHistoryEntry_7"/>
+		<item value="5" key="conditionHistoryEntryCount"/>
+		<item value="columnMapping == null" key="conditionHistoryEntry_0"/>
+		<item value="columnMapping==null" key="conditionHistoryEntry_1"/>
+		<item value="token.getTermText().contains(&quot;Plca&quot;)" key="conditionHistoryEntry_4"/>
+		<item value="term.equals(&quot;Fievet&quot;)" key="conditionHistoryEntry_5"/>
+		<item value="mid=13" key="conditionHistoryEntry_2"/>
+		<item value="tokenText.contains(&quot;Plca&quot;)" key="conditionHistoryEntry_3"/>
+	</section>
+	<section name="org.eclipse.jdt.debug.ui.MAIN_METHOD_SELECTION_DIALOG">
+		<item value="true" key="ShowStatusLine"/>
+		<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0A;&lt;History&gt;&#x0A;&lt;historyRootNode&gt;&#x0A;&lt;infoNode&gt;=ProjectOne/newsindexer_28_sept&amp;lt;edu.buffalo.cse.irf14{Runner.java[Runner&lt;/infoNode&gt;&#x0A;&lt;infoNode&gt;=NewsIndexerProj/newsindexer&amp;lt;edu.buffalo.cse.irf14{Runner.java[Runner&lt;/infoNode&gt;&#x0A;&lt;infoNode&gt;=tp/src&amp;lt;edu.buffalo.cse562{Main.java[Main&lt;/infoNode&gt;&#x0A;&lt;infoNode&gt;=tp1/src&amp;lt;edu.buffalo.cse562{Main.java[Main&lt;/infoNode&gt;&#x0A;&lt;infoNode&gt;=DBProjectCKS/src&amp;lt;edu.buffalo.cse562{Main.java[Main&lt;/infoNode&gt;&#x0A;&lt;infoNode&gt;=DBProject/src&amp;lt;edu.buffalo.cse562{Main.java[Main&lt;/infoNode&gt;&#x0A;&lt;infoNode&gt;=dm_mid/src&amp;lt;{Main.java[Main&lt;/infoNode&gt;&#x0A;&lt;infoNode&gt;=dm_final/src&amp;lt;{Main.java[Main&lt;/infoNode&gt;&#x0A;&lt;/historyRootNode&gt;&#x0A;&lt;/History&gt;" key="History"/>
+		<section name="DialogBoundsSettings">
+			<item value="598" key="DIALOG_WIDTH"/>
+			<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+			<item value="555" key="DIALOG_HEIGHT"/>
+			<item value="0" key="DIALOG_Y_ORIGIN"/>
+			<item value="149" key="DIALOG_X_ORIGIN"/>
+		</section>
+	</section>
+	<section name="org.eclipse.jdt.internal.debug.ui.ExpressionInformationControlCreator$ExpressionInformationControl">
+		<item value="683" key="SashWeightTree"/>
+		<item value="316" key="SashWeightDetails"/>
+		<item value="814" key="WIDTH"/>
+		<item value="357" key="HEIGHT"/>
+	</section>
+</section>

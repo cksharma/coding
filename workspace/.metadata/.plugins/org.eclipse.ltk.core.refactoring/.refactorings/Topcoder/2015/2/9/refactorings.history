@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;index1&apos; in &apos;TaroFillingAStringDiv1.getNumber(...).new Comparator() {...}.compare(...)&apos; to &apos;pos1&apos;&#x0A;- Original project: &apos;Topcoder&apos;&#x0A;- Original element: &apos;TaroFillingAStringDiv1.getNumber(...).new Comparator() {...}.compare(Integer, Integer).index1&apos;&#x0A;- Renamed element: &apos;index1&apos;&#x0A;- Update references to refactored element" description="Rename local variable &apos;index1&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;{TaroFillingAStringDiv1.java[TaroFillingAStringDiv1~getNumber~I~\[I~QString;[~compare~QInteger;~QInteger;@index1!413!426!421!426!QInteger;!0!true" name="pos1" references="true" stamp="1424686264854" version="1.0"/>
+</session>

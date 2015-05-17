@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<purchase:OrderList xmlns:purchase="http://www.onmobile.com/OrderListType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.onmobile.com/OrderListType OrderListType.xsd ">
+  <purchase:Order>
+    <purchase:orderId>1</purchase:orderId>
+    <purchase:itemId>101</purchase:itemId>
+    <purchase:qtyRequired>3</purchase:qtyRequired>
+  </purchase:Order>
+    <purchase:Order>
+    <purchase:orderId>2</purchase:orderId>
+    <purchase:itemId>102</purchase:itemId>
+    <purchase:qtyRequired>2</purchase:qtyRequired>
+  </purchase:Order>
+</purchase:OrderList>

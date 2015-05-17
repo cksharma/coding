@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript">
+function startTimer() 
+{
+		setInterval("sendRequest()", 1000);
+}
+	
+var validated;
+	
+function checkForEmptyValue(text, labelId) 
+{
+	if (text.value.length == 0) {
+		var msg = "<font color='red'>Should not be empty</font>";
+		document.getElementById(labelId).innerHTML = msg;
+		validated = false;
+	} else 
+	{
+		document.getElementById(labelId).innerHTML = "";
+			
+	}
+}
+	
+function resetValidated() 
+{
+	validated=true;
+
+}
+	
+function valid() 
+{
+	return validated;
+}
+	
+function formReset() 
+{
+	document.getElementById("form1").reset();
+}
+	
+function checkForIntegerValue(text, labelId) 
+{
+	var msg;
+	if (text.value.length == 0) 
+	{
+		msg = "<font color='red'>Should not be empty</font>";
+		document.getElementById(labelId).innerHTML = msg;
+		validated = false;
+	} 
+	else 
+	{
+		if (isNaN(text.value)) 
+		{
+			msg = "<font color='red'>It should have numeric value</font>";
+			document.getElementById(labelId).innerHTML = msg;
+			validated = false;
+		} 
+		else 
+		{
+			if (parseInt(text.value) > 0) 
+			{
+				document.getElementById(labelId).innerHTML = "";
+					
+			} 
+			else 
+			{
+				msg = "<font color='red'>It's value cannot be negative</font>";
+				document.getElementById(labelId).innerHTML = msg;
+				validated = false;
+			}
+		}
+	}
+}
+</script>
+</head>
+<body>
+<form id = "from1" action="EmployeeController?action=add" method = "post" onsubmit="return valid()">
+<pre>
+<font color="green"><h1>EMPLOYEE CREDENTIALS</h1></font>
+<br>
+Employee Id    : <input type="text" id="id" name="id" /> <label	id="msg"></label>
+Employee Name  : <input type="text" id="name" name="name" /> <label	id="msg1"></label>
+
+Designation    <select name = "designation" id = "designation" name = "designation">
+                    <option value = "Developer">Developer</option>
+                    <option value = "Hero">Hero</option>
+                    <option value = "Trainee">Trainee</option>
+                </select> <label id = "msg2"></label>
+
+
+<!-- Designation    : <input type="text" id="designation" name="designation" /><label id="msg2"></label>  -->
+Salary         : <input type="text" id="salary" name="salary" /> <label id="msg3"></label>
+Account Number : <input type = "text" id = "accountnumber" name = "accountnumber"/><label id = "msg4"></label>
+Account Type   : <input type = "text" id = "accounttype" name = "accounttype"/><label id = "msg5"></label>
+Balance        : <input type = "text" id = "balance" name = "balance"/> <label id = "msg6"></label>
+
+<input type="button" onclick="formReset()" value="Reset form" />
+
+<input type = "submit" value = "Add Employee" onclick= "resetValidated();checkForIntegerValue(document.getElementById('id'),'msg');checkForEmptyValue(document.getElementById('name'),'msg1');checkForEmptyValue(document.getElementById('designation'),'msg2');checkForIntegerValue(document.getElementById('salary'),'msg3');checkForIntegerValue(document.getElementById('accountnumber'),'msg4');checkForEmptyValue(document.getElementById('accounttype'),'msg5');checkForIntegerValue(document.getElementById('balance'),'msg6');">
+					
+</pre>
+</form>
+</body>
+</html>

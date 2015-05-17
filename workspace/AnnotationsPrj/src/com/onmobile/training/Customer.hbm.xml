@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 23, 2011 12:22:32 PM by Hibernate Tools 3.3.0.GA -->
+<hibernate-mapping>
+    <class name="com.onmobile.training.Customer" table="CUSTOMER_TABLE">
+        <id name="customerId" type="int">
+            <column name="CUSTOMER_ID" />
+            <generator class="assigned" />
+        </id>
+        <property name="customerName" type="java.lang.String">
+            <column name="CUSTOMER_NAME" />
+        </property>
+        <property name="balance" type="double">
+            <column name="BALANCE" />
+        </property>
+    </class>
+    <query name="findByBalance">  <![CDATA[
+   				 select c from com.onmobile.training.Customer as c where c.balance >= :balance
+    		]]>
+    </query>
+    <sql-query name="findByName">
+    	<![CDATA[
+    		select * from CUSTOMER_TABLE where CUSTOMER_NAME = :name
+    	]]>
+    </sql-query>
+</hibernate-mapping>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ItemList>
+
+<Item>
+<id>1</id>
+<name>FM Radio</name>
+<price>750</price>
+</Item>
+
+<Item>
+<id>2</id>
+<name>MP3 Player</name>
+<price>950</price>
+</Item>
+
+</ItemList>

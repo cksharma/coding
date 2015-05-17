@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="customerDetails" class="com.onmobile.training.CustomerDetails"> 
+	<!-- we make it scope if we are gona share in servlet and jsp.. here we not sharing -->
+		<property name="map">
+			<map>
+
+				<entry>
+					<key>
+						<value>1</value>
+					</key>
+					<ref bean="cust1" />
+				</entry>
+
+				<entry>
+					<key>
+						<value>2</value>
+					</key>
+					<ref bean="cust2" />
+				</entry>
+
+
+				<entry>
+					<key>
+						<value>3</value>
+					</key>
+					<ref bean="cust3" />
+				</entry>
+
+			</map>
+		</property>
+	</bean>
+</beans>

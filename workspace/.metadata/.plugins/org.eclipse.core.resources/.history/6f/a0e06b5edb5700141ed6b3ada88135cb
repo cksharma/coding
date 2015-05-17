@@ -1,0 +1,614 @@
+package edu.buffalo.cse.irf14;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.PrintStream;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.Stack;
+
+import edu.buffalo.cse.irf14.analysis.TokenFilter;
+import edu.buffalo.cse.irf14.analysis.TokenFilterFactory;
+import edu.buffalo.cse.irf14.analysis.TokenFilterType;
+import edu.buffalo.cse.irf14.analysis.TokenStream;
+import edu.buffalo.cse.irf14.analysis.Tokenizer;
+import edu.buffalo.cse.irf14.document.Parser;
+import edu.buffalo.cse.irf14.document.ParserException;
+import edu.buffalo.cse.irf14.index.AuthorDictionary;
+import edu.buffalo.cse.irf14.index.CategoryDictionary;
+import edu.buffalo.cse.irf14.index.CompressPosting;
+import edu.buffalo.cse.irf14.index.Dictionary;
+import edu.buffalo.cse.irf14.index.DocumentDictionary;
+import edu.buffalo.cse.irf14.index.IndexReader;
+import edu.buffalo.cse.irf14.index.IndexType;
+import edu.buffalo.cse.irf14.index.IndexWriter;
+import edu.buffalo.cse.irf14.index.PlaceDictionary;
+import edu.buffalo.cse.irf14.index.Posting;
+import edu.buffalo.cse.irf14.index.TermDictionary;
+import edu.buffalo.cse.irf14.query.Query;
+import edu.buffalo.cse.irf14.query.QueryParser;
+import edu.buffalo.cse.irf14.utils.Constants;
+import edu.buffalo.cse.irf14.utils.QueryUtils;
+import edu.buffalo.cse.irf14.utils.RelevancyModel;
+
+/**
+ * Main class to run the searcher.
+ * As before implement all TODO methods unless marked for bonus
+ * @author nikhillo
+ *
+ */
+public class SearchRunner {
+	public enum ScoringModel {TFIDF, OKAPI};
+		
+	private String indexDir;
+	private String corpusDir;
+	private char mode;
+	private PrintStream stream;
+	
+	private IndexReader termReader;
+	private IndexReader authorReader;
+	private IndexReader cateReader;
+	private IndexReader placeReader;
+	
+	private HashMap <Integer, HashMap <Integer, List <Posting>>> termMap;
+	private HashMap <Integer, HashMap <Integer, List <Posting>>> authorMap;
+	private HashMap <Integer, HashMap <Integer, List <Posting>>> catMap;
+	private HashMap <Integer, HashMap <Integer, List <Posting>>> placeMap;
+	
+	/**
+	 * Default (and only public) constuctor
+	 * @param indexDir : The directory where the index resides
+	 * @param corpusDir : Directory where the (flattened) corpus resides
+	 * @param mode : Mode, one of Q or E
+	 * @param stream: Stream to write output to
+	 */
+	public SearchRunner(String indexDir, String corpusDir, 
+		char mode, PrintStream stream) {
+		//TODO: IMPLEMENT THIS METHOD
+		this.indexDir = indexDir;
+		this.corpusDir = corpusDir;
+		this.mode = mode;
+		this.stream = stream;
+		
+		deserializeFromDisk();	
+		
+	}
+	
+	private void deserializeFromDisk() {
+		this.termReader = new IndexReader(this.indexDir, IndexType.TERM);
+		this.authorReader = new IndexReader(this.indexDir, IndexType.AUTHOR);
+		this.cateReader = new IndexReader(this.indexDir, IndexType.CATEGORY);
+		this.placeReader = new IndexReader(this.indexDir, IndexType.PLACE);
+		
+		Object obj1 = this.termReader.readObjectFromFile();
+		Object obj2 = this.authorReader.readObjectFromFile();
+		Object obj3 = this.cateReader.readObjectFromFile();
+		Object obj4 = this.placeReader.readObjectFromFile();
+		
+		termMap = decompressMap(termReader, obj1);
+		catMap = decompressMap(cateReader, obj2);
+		placeMap = decompressMap(placeReader, obj3);
+		authorMap = decompressMap(authorReader, obj4);		
+	}
+	
+	private HashMap <Integer, HashMap <Integer, List <Posting>>> decompressMap(IndexReader reader, Object obj) {
+		HashMap <Integer, HashMap <Integer, List <Posting>>> decompressMap = new HashMap <Integer, HashMap <Integer, List <Posting>>>();
+		if (obj != null) {
+			@SuppressWarnings("unchecked")
+			HashMap <Integer, Dictionary> map = (HashMap <Integer, Dictionary>) obj;
+			
+			for (Integer id : map.keySet()) {
+				Dictionary dict = map.get(id);
+				int totalFrequency = dict.getTotalFrequency();
+
+				CompressPosting cps = dict.getPosting();		
+			
+				LinkedList<Posting> decodeList = reader.postingListsDecompress(cps);
+				
+				HashMap <Integer, List <Posting>> hmap = new HashMap <Integer, List <Posting>> ();
+				hmap.put(totalFrequency, decodeList);
+				decompressMap.put(id, hmap);	
+			}			
+		}
+		
+		return decompressMap;
+	}
+	
+	static class QueryTermIndexType {
+		String query;
+		IndexType indexType;
+		
+		public QueryTermIndexType(IndexType indexType, String query) {
+			this.indexType = indexType;
+			this.query = query;
+		}
+	}
+	
+	static class Scorer implements Comparable<Scorer> {
+		double score;
+		int documentId;
+		
+		@Override
+		public int compareTo(Scorer s) {
+			double score1 = s.score;
+			if (score < score1)
+				return 1;
+			return -1;
+		}	
+		
+		Scorer(double score, int documentId) {
+			this.score = score;
+			this.documentId = documentId;
+		}
+
+		@Override
+		public String toString() {
+			return DocumentDictionary.getFileIdByDocumentId(documentId) + "#" + score;
+		}
+		
+	}
+	
+	
+	
+	private List <Scorer> calculateTFIDF_OKAPI_Rank(Set <Integer> documentSetId, List <QueryTermIndexType> queryTermsList, ScoringModel model) {
+		List <Scorer> l1 = new ArrayList <Scorer> ();
+		
+		Map <Integer, Double> mm = new HashMap <Integer, Double> ();
+		
+		for (int documentId : documentSetId) {
+					
+			for (QueryTermIndexType q : queryTermsList) {
+				IndexType type = q.indexType;
+				String query = q.query;
+				
+				int totalDocNum = DocumentDictionary.getDocumentDictionarySize();
+				int docNumWithTerm = 0;
+				
+				HashMap <Integer, List <Posting> > map = null;
+				Integer id = null;
+				switch(type) {
+					case TERM:
+						id = TermDictionary.getTermIdByTerm(query);
+						if (id != null) {
+							map = termMap.get(id);
+						}
+						break;
+					case CATEGORY:
+						id = CategoryDictionary.getCategoryIdByCategory(query);
+						if (id != null) {
+							map = catMap.get(id);
+						}
+						break;
+					case AUTHOR:
+						id = AuthorDictionary.getAuthorIdByAuthor(query);
+						if (id != null) {
+							map = authorMap.get(id);
+						}
+						break;
+					case PLACE:
+						id = PlaceDictionary.getPlaceIdByPlace(query);
+						if (id != null) {
+							map = placeMap.get(id);
+						}
+						break;
+				}
+				
+				if (map != null) {
+					for (int totalFreq : map.keySet()) {
+						List <Posting> list = map.get(totalFreq);
+						docNumWithTerm = list.size();
+						for (Posting pos : list) {
+							if (pos.getDocumentId() == documentId) {
+								
+								int termFreqInDoc = pos.getFrequency();
+								Integer wordsInDoc = DocumentDictionary.documentIdToWordCountMapping.get(documentId);
+								if (wordsInDoc == null) wordsInDoc = 1;
+								else wordsInDoc = wordsInDoc + 1;
+								
+								double score_rank = 0.0;
+								if (model == ScoringModel.TFIDF) {
+									score_rank = RelevancyModel.TFIDF(termFreqInDoc, wordsInDoc, totalDocNum, docNumWithTerm);
+								} else {
+									double k1 = 1.3;
+									double k3 = 1.8;
+									double avgDocLength = IndexWriter.totalCorpusLength * 1. /  totalDocNum;
+									score_rank = RelevancyModel.
+										bm25PerTermInShortQuery(k1, termFreqInDoc, totalDocNum, docNumWithTerm, wordsInDoc, avgDocLength);
+								}
+								if (mm.containsKey(documentId)) {
+									mm.put(documentId, mm.get(documentId) + score_rank);
+								} else {
+									mm.put(documentId, score_rank);
+								}
+							}
+						}
+					}
+				}	
+			}
+		}
+		List <SearchRunner.Scorer> kk = new ArrayList<SearchRunner.Scorer>();
+		
+		for (int documentId : mm.keySet()) {
+			kk.add(new Scorer(mm.get(documentId), documentId));
+		}		
+		Collections.sort(kk);
+		
+		for (Scorer score : kk) {
+			l1.add(score);
+		}
+		
+		return l1;
+	}
+			
+	private List <Scorer> calculateRanking(Set <Integer> documentSetId, List <QueryTermIndexType> queryTermsIndexList, ScoringModel model) {
+		//TODO calculate the ranking of the document set using the given model.
+		switch(model) {
+			case TFIDF:
+				List <Scorer> tfidfList = calculateTFIDF_OKAPI_Rank(documentSetId, queryTermsIndexList, ScoringModel.TFIDF);
+				return tfidfList;
+			case OKAPI:
+				List <Scorer> okapiList = calculateTFIDF_OKAPI_Rank(documentSetId, queryTermsIndexList, ScoringModel.OKAPI);
+				return okapiList;
+		}
+		return null;
+	}
+	
+	/**
+	 * Method to execute given query in the Q mode
+	 * @param userQuery : Query to be parsed and executed
+	 * @param model : Scoring Model to use for ranking results
+	 */
+	public void query(String userQuery, ScoringModel model) {
+
+		long startTime = System.currentTimeMillis();
+		
+		Query query = QueryParser.parse(userQuery, QueryUtils.DEFAULT_OPERATOR);
+		
+		//user query as input
+		stream.println();
+		stream.println("USER QUERY : " + userQuery);
+		stream.println("=======================================");
+		
+		List <QueryTermIndexType> termsList = new ArrayList <QueryTermIndexType> ();
+		Set <Integer> documentIdSet = parseQuery(query, QueryUtils.DEFAULT_OPERATOR, termsList);
+		
+		//TODO Rank calculation
+		List <Scorer> rankedList = calculateRanking(documentIdSet, termsList, model);
+		
+		int count = 0;
+		for (Scorer score : rankedList) {
+			int documentId = score.documentId;
+			String filename = DocumentDictionary.getFileIdByDocumentId(documentId);
+			try {
+				String title = Parser.parseTitle(corpusDir + File.separator + filename);
+				stream.println();
+				stream.println("Rank : " + ++count);
+				stream.println("TITLE : " + title);
+											
+				List <String> snippet = calculateSnippet(corpusDir + File.separator + filename, termsList);
+				for (String str : snippet) {
+					stream.println(str);
+				}
+				stream.println("Relevancy score : " + score.score);
+				stream.println();
+			} catch (ParserException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			if (count >= 10) { // in case the document count is more than 10, we will show only the top 10 documents...
+				break;
+			}
+		}
+		
+		//time taken
+		long endTime = System.currentTimeMillis();
+		stream.println("Total time taken to exeute query : " + (endTime - startTime) + " ms .");
+	}
+	
+	
+	/**
+	 * Method to execute queries in E mode
+	 * @param queryFile : The file from which queries are to be read and executed
+	 */
+	public void query(File queryFile) {
+		BufferedReader reader = null;
+		
+		try {
+			FileReader fileReader = new FileReader(queryFile);
+			reader = new BufferedReader(fileReader);
+			String line = null;
+			String firstLine = reader.readLine();
+			int numQuery = Integer.parseInt(firstLine.split("=")[1].trim());
+			
+			int numResults = 0;
+			List <List <Scorer>> totalList = new ArrayList <List <Scorer>>();
+			List <String> queryIdList = new ArrayList <String> ();
+			
+			for (int i = 0; i < numQuery; i++) {
+				line = reader.readLine();
+				String queryId = line.split(":")[0];
+				String userQuery = line.split(":")[1];
+				userQuery = userQuery.replaceAll("\\{", "").replaceAll("\\}", "");
+				Query query = QueryParser.parse(userQuery, QueryUtils.DEFAULT_OPERATOR);
+				List <QueryTermIndexType> termsList = new ArrayList <QueryTermIndexType> ();
+				Set <Integer> documentIdSet = parseQuery(query, QueryUtils.DEFAULT_OPERATOR, termsList);
+				List <Scorer> rankedList = calculateRanking(documentIdSet, termsList, ScoringModel.TFIDF);
+				if (rankedList.isEmpty()) continue;
+				numResults++;
+				totalList.add(rankedList);
+				queryIdList.add(queryId);
+			}
+			stream.println("numResults=" + numResults);
+			for (int i = 0; i < totalList.size(); i++) {
+				String queryId = queryIdList.get(i);
+				List <Scorer> scoreList = totalList.get(i);
+				String res = "";
+				for (Scorer score : scoreList) {
+					res += score.toString() + ", ";
+				}
+				res = res.substring(0, res.length() - 2);
+				res = "{" + res + "}";
+				stream.println(queryId + ":" + res);
+			}			
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+			if (reader != null) {
+				try {
+					reader.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+	}
+	
+	private List <String> calculateSnippet(String filepath, List <QueryTermIndexType> termsList) {
+		List <String> snippetList = new ArrayList <String> ();
+		
+		File file = new File(filepath);
+		
+		List <String> contentList = new ArrayList <String> ();
+		
+		BufferedReader reader = null;
+		
+		try {
+			FileReader fileReader = new FileReader(file);
+			reader = new BufferedReader(fileReader);
+			String line = null;
+			int controlFlow = 0;
+			
+			while ((line = reader.readLine()) != null) {
+
+				line = line.trim();
+
+				if (line.length() == 0)
+					continue;
+
+				switch (controlFlow) {
+				
+					case 0:
+						controlFlow = 1;
+						break;
+					default:
+						contentList.add(line);					
+				}				
+			}		
+			
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+			if (reader != null) {
+				try {
+					reader.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+				
+		outer:for (String str : contentList) {
+			for (QueryTermIndexType qt : termsList) {
+				String query = qt.query;
+				if (str.contains(query)) {
+					snippetList.add(str);
+				}
+				if (snippetList.size() > 3) break outer;
+			}
+		}
+		
+		return snippetList;
+	}
+	
+	
+	private Set <Integer> parseQuery(Query query, String defaultOperator, List <QueryTermIndexType> termsList) {
+		String queryStr = query.getSimpleQuery();
+		Stack <Set <Integer>> stackSet = new Stack <Set <Integer>> ();
+		
+		queryStr = queryStr.replaceAll("\\{", " \\( ").replaceAll("\\}", " \\) ").replaceAll("\\[", " \\( ").replaceAll("\\]", " \\) ");
+	
+		String[] qArr = queryStr.split(" ");
+		
+		String phrase = "";
+		boolean openingPhrase = false;
+
+		Stack <String> stack = new Stack <String> ();
+		
+		for (String item : qArr) {
+			item = item.trim();
+			if (item.isEmpty()) continue;
+			if (item.startsWith("\"") || item.startsWith(QueryUtils.AUTHOR_COLON + "\"") 
+									  || item.startsWith(QueryUtils.CATEGORY_COLON + "\"")
+									  || item.startsWith(QueryUtils.PLACE_COLON + "\"")
+									  || item.startsWith(QueryUtils.TERM_COLON + "\"")) {
+				phrase = item + Constants.EMPTY_SPACE;
+				if (item.endsWith("\"")) {
+					openingPhrase = false;
+				} else {	
+					openingPhrase = true;
+					continue;
+				}	
+			}
+			if (item.endsWith("\"") && openingPhrase) {
+				openingPhrase = false;
+				phrase = phrase + item + Constants.EMPTY_SPACE;
+				item = phrase.trim();
+			}
+			if (openingPhrase == true) {
+				phrase = phrase + item + Constants.EMPTY_SPACE;
+				continue;
+			}
+
+			if (item.isEmpty())
+				continue;
+
+			if (item.equals(")")) {
+				while (stack.size() > 0) {
+					String operator = stack.pop();
+					if (operator.equals("(")) {
+						break;
+					}
+					Set <Integer> top1 = stackSet.pop();
+					Set <Integer> top2 = stackSet.pop();
+					
+					if (operator.equals("NOT")) {
+						top2.removeAll(top1);
+					} else if (operator.equals("OR")) {
+						top2.addAll(top1);
+					} else if (operator.equals("AND")) {
+						top2.retainAll(top1);
+					} else {
+						System.out.println("Not expected as Operator");
+					}
+					stackSet.push(top2);
+				}				
+			}	
+			else {
+				if (item != "(" && item.contains(":")) { //this is not the boolean operator
+					Set <Integer> st = calculatePostingSet(item, termsList);
+					stackSet.push(st);	
+				} else {
+					stack.push(item);
+				}
+			}	
+		}		
+		return stackSet.pop();		
+	}
+	
+	
+	private Set <Integer> calculatePostingSet(String term, List <QueryTermIndexType> termsList) {
+		Set <Integer> set = new HashSet <Integer>();
+		IndexType type = IndexType.valueOf(term.split(":")[0].trim().toUpperCase());
+		term = term.split(":")[1].trim();
+		termsList.add(new QueryTermIndexType(type, term));
+		try {
+			TokenStream stream = new Tokenizer().consume(term);
+			stream.reset();
+			for (TokenFilterType filter : TokenFilterFactory.tokenFilterAllNoCapitalization) {
+				TokenFilter tokenFilter = TokenFilterFactory.getInstance().getFilterByType(filter, stream);
+				while (tokenFilter.increment()) {
+					// Applying respective filters.
+				}
+				stream.reset();
+			}
+			String ss = "";
+			while (stream.hasNext()) {
+				ss = stream.next() + " ";
+			}
+			ss = ss.trim();
+			Integer id = null;
+			HashMap<Integer, List <Posting>> map = null;
+			switch(type) {
+				case CATEGORY:
+					id = CategoryDictionary.getCategoryIdByCategory(ss);
+					if (id != null)
+						map = catMap.get(id);
+					break;
+				case AUTHOR:
+					id = AuthorDictionary.getAuthorIdByAuthor(ss);
+					if (id != null)
+						map = authorMap.get(id);
+					break;
+				case PLACE:
+					id = PlaceDictionary.getPlaceIdByPlace(ss);
+					if (id != null) 
+						map = placeMap.get(id);
+					break;
+				case TERM:
+					id = TermDictionary.getTermIdByTerm(ss);
+					if (id != null) 
+						map = termMap.get(id);
+					break;
+			}
+			if (map != null) {					
+				for (int totalFrq : map.keySet()) {
+					List <Posting> posList = map.get(totalFrq);
+					for (Posting docPos : posList) {
+						set.add(docPos.getDocumentId());
+					}
+				}
+			}			
+		} catch (Exception e) {
+			System.out.println("GOT RTE");
+		}	
+		return set;
+	}
+		
+	/**
+	 * General cleanup method
+	 */
+	public void close() {
+		//TODO : IMPLEMENT THIS METHOD
+	}
+	
+	/**
+	 * Method to indicate if wildcard queries are supported
+	 * @return true if supported, false otherwise
+	 */
+	public static boolean wildcardSupported() {
+		//TODO: CHANGE THIS TO TRUE ONLY IF WILDCARD BONUS ATTEMPTED
+		return false;
+	}
+	
+	/**
+	 * Method to get substituted query terms for a given term with wildcards
+	 * @return A Map containing the original query term as key and list of
+	 * possible expansions as values if exist, null otherwise
+	 */
+	public Map<String, List<String>> getQueryTerms() {
+		//TODO:IMPLEMENT THIS METHOD IFF WILDCARD BONUS ATTEMPTED
+		return null;
+		
+	}
+	
+	/**
+	 * Method to indicate if speel correct queries are supported
+	 * @return true if supported, false otherwise
+	 */
+	public static boolean spellCorrectSupported() {
+		//TODO: CHANGE THIS TO TRUE ONLY IF SPELLCHECK BONUS ATTEMPTED
+		return false;
+	}
+	
+	/**
+	 * Method to get ordered "full query" substitutions for a given misspelt query
+	 * @return : Ordered list of full corrections (null if none present) for the given query
+	 */
+	public List<String> getCorrections() {
+		//TODO: IMPLEMENT THIS METHOD IFF SPELLCHECK EXECUTED
+		return null;
+	}
+}

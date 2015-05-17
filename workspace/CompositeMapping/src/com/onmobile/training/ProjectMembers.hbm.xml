@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Sep 20, 2011 10:05:56 PM by Hibernate Tools 3.3.0.GA -->
+<hibernate-mapping>
+    <class name="com.onmobile.training.ProjectMembers" table="PROJECTMEMBERS">
+        <id name="emp_id" type="int">
+            <column name="EMP_ID" />
+            <generator class="assigned" />
+        </id>
+        <property name="project_id" type="int">
+            <column name="PROJECT_ID" />
+        </property>
+        <property name="status" type="double">
+            <column name="STATUS" />
+        </property>
+    </class>
+</hibernate-mapping>

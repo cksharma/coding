@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>SecurityPrj</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+ 	<!--   <login-config>
+  	<auth-method>BASIC</auth-method>
+  	</login-config>
+  	-->
+  
+  <login-config>
+  <auth-method>FORM</auth-method>
+  <form-login-config>
+  	<form-login-page>/login.html</form-login-page>
+  	<form-error-page>/error.html</form-error-page>
+  </form-login-config>
+  </login-config>
+  
+  <security-constraint>
+	<web-resource-collection>
+  		<web-resource-name>First JSP</web-resource-name>
+  		<url-pattern>/a.jsp</url-pattern>
+  		<http-method>GET</http-method>
+  		<http-method>POST</http-method>
+  	</web-resource-collection>
+  	<auth-constraint>
+  		<role-name>role1</role-name>
+  	</auth-constraint>
+  </security-constraint>
+    
+  <security-constraint>
+	<web-resource-collection>
+  		<web-resource-name>Second JSP</web-resource-name>
+  		<url-pattern>/b.jsp</url-pattern>
+  		<http-method>GET</http-method>
+  		<http-method>POST</http-method>
+  	</web-resource-collection>
+  	<auth-constraint>
+  		<!--  <role-name>admin</role-name> --><!-- if i comment this line then user2 cannot view this page.. -->
+  		<role-name>role2</role-name>
+  	</auth-constraint>
+  </security-constraint>
+
+	 <security-constraint>
+	<web-resource-collection>
+  		<web-resource-name>Third JSP</web-resource-name>
+  		<url-pattern>/c.jsp</url-pattern>
+  		<http-method>GET</http-method>
+  		<http-method>POST</http-method>
+  	</web-resource-collection>
+  	<auth-constraint>
+  		<!-- <role-name>ck</role-name>  -->
+  		<role-name>nk</role-name>
+  	</auth-constraint>
+  </security-constraint>
+
+</web-app>

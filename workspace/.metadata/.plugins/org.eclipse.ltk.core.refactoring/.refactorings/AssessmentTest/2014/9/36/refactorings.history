@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;assessment.EnumHashmapTest&apos; to &apos;EnumHashMapTest&apos;&#x0A;- Original project: &apos;AssessmentTest&apos;&#x0A;- Original element: &apos;assessment.EnumHashmapTest&apos;&#x0A;- Renamed element: &apos;assessment.EnumHashMapTest&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;EnumHashmapTest&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;assessment{EnumHashmapTest.java[EnumHashmapTest" matchStrategy="1" name="EnumHashMapTest" qualified="false" references="true" similarDeclarations="false" stamp="1409677628978" textual="false" version="1.0"/>
+</session>

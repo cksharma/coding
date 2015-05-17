@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE EmployeeList SYSTEM "EmployeeList.dtd"> <!-- system means it will check in the local folder first .. system denotes the localtion of the file in the local file system -->
+
+<EmployeeList>
+	
+	<Employee>
+		<EmployeeId>101</EmployeeId>
+		<name>Rajesh</name>
+		<designation>Developer</designation>
+		<salary>40000</salary>
+	</Employee>
+	                                   
+	<Employee>
+		<EmployeeId>102</EmployeeId> <!--  since we are using dtd . we cannot mismatch the position of the  -->
+		<name>Arjun</name>
+		<designation>DBA</designation>
+		<salary>60000</salary>
+		
+	</Employee>
+	
+	<Employee>
+		<EmployeeId>103</EmployeeId>
+		<name>Rajeev</name>
+		<designation>Software</designation>
+		<salary>70000</salary>
+	</Employee>
+
+</EmployeeList>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id = "school" class = "com.onmobile.training.School">
+<property name="name" value = "OnMobile School"></property>
+<property name="address" ref = "add"></property>
+<property name = "students">
+<list>
+<ref bean = "student1"/>
+<ref bean = "student2"/>
+</list>
+</property>
+<property name = "teachers">
+<list>
+<ref bean = "teacher1"/>
+<ref bean = "teacher2"/>
+</list>
+</property>
+
+</bean>
+
+<bean id = "add" class = "com.onmobile.training.Address">
+<property name = "location" value = "J.P. Nagar"></property>
+<property name = "city" value = "Bangalore"></property>
+</bean>
+
+<bean id = "student1" class = "com.onmobile.training.Student">
+<property name = "name" value = "Arvind"></property>
+<property name = "gender" value = "Male"></property>
+<property name = "rollNumber" value = "101"></property>
+<property name = "address" ref = "add"></property>
+</bean>
+
+<bean id = "student2" class = "com.onmobile.training.Student">
+<property name = "name" value = "Shimran"></property>
+<property name = "gender" value = "Female"></property>
+<property name = "rollNumber" value = "102"></property>
+<property name = "address" ref = "add"></property>
+</bean>
+
+<bean id = "teacher1" class = "com.onmobile.training.Teacher">
+<property name = "name" value = "Rajesh"></property>
+<property name = "gender" value = "Male"></property>
+<property name = "subject" value = "1"></property>
+<property name = "address" ref = "add"></property>
+</bean>
+
+<bean id = "teacher2" class = "com.onmobile.training.Teacher">
+<property name = "name" value = "Rahul"></property>
+<property name = "gender" value = "Male"></property>
+<property name = "subject" value = "2"></property>
+<property name = "address" ref = "add"></property>
+</bean>
+
+</beans>

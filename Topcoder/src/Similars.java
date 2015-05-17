@@ -50,9 +50,10 @@ public class Similars {
             String firstString = i + "";
             if (ans >= arr.length) continue;
             do {
-                int right = 0; int cnt = 0;
+                int right = 0;
+                int cnt = 0;
                 for (int s = arr.length - 1; s >= 0; s--) {
-                    right = right + arr[s] * (int)Math.pow(10, cnt++);
+                    right = right + arr[s] * (int) Math.pow(10, cnt++);
                 }
 
                 String seconString = right + "";
@@ -69,7 +70,7 @@ public class Similars {
     private int computeSimilarity(String s1, String s2) {
         int ans = 0;
         for (char c = '0'; c <= '9'; c++) {
-            if (s1.contains(c+"") && s2.contains(c+"")) ++ans;
+            if (s1.contains(c + "") && s2.contains(c + "")) ++ans;
         }
         return ans;
     }

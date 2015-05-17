@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+
+<script type = "text/javascript">
+var req; /* req is some request object */
+function getRequestObject()
+{
+	if(window.XMLHttpRequest)
+	{
+		req = new XMLHttpRequest();	
+	}
+	else if(window.ActiveXObject)
+	{
+		req = new ActiveXObject("Microsoft.XMLHttp");
+	}
+	else
+	{
+		req = null;
+	}
+}
+function sendRequest()
+{
+	document.getElementById("btnList").style.visibility = "hidden";
+	getRequestObject();
+	if(req != null)
+	{
+		req.onreadystatechange = handleResponse;  // I am just specifying the address of the function .. we are not invoking it..
+		// onreadystatechange we are assigning the address of the handleResponse when any change occurs...change in state will automatically / multiple times invokes that function....
+		
+		
+		req.open("GET", "http://localhost:8080/AjaxPrj/XMLAjaxServlet", true);
+		//asynchronus request means we are not waitin for submit.. if it is false we have to waitt till we get submit from browser/./
+		req.send(null); // since it is get req. this will always be null. for post request it has some relaveance.
+		
+	}
+	else
+	{
+		alert("this browser doesn't support ajax");
+	}
+}
+
+function handleResponse()
+{
+	if(req.readyState == 4 && req.status == 200)
+	{
+		var xmldoc = req.responseXML;
+		var empList = xmldoc.getElementsByTagName("Employee");
+		var list = "<table border = 2>";
+		list += "<tr><th>Employee Id </th><th>Employee Name </th></tr>";
+		for(var i = 0; i < empList.length; i++)
+		{
+			list += "<tr>";
+			var emp = empList[i];
+			list += "<td>" + emp.childNodes[0].text + "</td>";
+			list += "<td>" + emp.childNodes[1].text + "</td>";
+			list += "</tr>"
+		}
+		list += "</table>";
+		document.getElementById("list").innerHTML = list;
+	}
+}
+
+function startTimer()
+{
+	setInterval("sendRequest()", 1000);		
+}
+</script>
+</head>
+<body>
+<input type = "button" id = "btnList" value = "List Employees" onclick = "sendRequest()">
+<br>
+<div id = "list"></div>
+</body>
+</html>

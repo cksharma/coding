@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 15 Sep, 2011 4:56:14 PM by Hibernate Tools 3.3.0.GA -->
+<hibernate-mapping>
+    <class name="com.onmobile.training.School" table="SCHOOL">
+        <id name="name" type="java.lang.String">
+            <column name="NAME" />
+        </id>
+        
+        <set name="students" table="student" inverse="false" lazy="true" cascade="all">
+            <key>
+                <column name="SCHOOL_NAME" />
+            </key>
+            <one-to-many class="com.onmobile.training.Student" />
+        </set>
+    </class>
+</hibernate-mapping>

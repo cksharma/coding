@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Sep 13, 2011 12:53:46 PM by Hibernate Tools 3.3.0.GA -->
+<hibernate-mapping>
+    <class name="com.onmobile.training.Sales" table="SALES_TBL">
+        <id name="salesId" type="int">
+            <column name="SALES_ID" />
+            <generator class="assigned" />
+        </id>
+        <property name="salesTime" type="java.util.Date">
+            <column name="SALES_TIME" />
+        </property>
+        <property name="item" type="int">
+            <column name="ITEM" />
+        </property>
+        <property name="quantitySold" type="int">
+            <column name="QUANTITY_SOLD" />
+        </property>
+    </class>
+</hibernate-mapping>

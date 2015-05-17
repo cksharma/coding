@@ -1,0 +1,98 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                      http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>edu.buffalo.cse</groupId>
+	<artifactId>adserving-main</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<name>IR-parent POM</name>
+	<url>http://www.cse.buffalo.edu/ir</url>
+
+	<properties>
+		<target.version>1.0-0.SNAPSHOT</target.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.war.plugin.version>2.2</maven.war.plugin.version>
+		<version-maven-plugin.version>1.3.1</version-maven-plugin.version>
+		<version-maven-compiler-plugin>2.5.1</version-maven-compiler-plugin>
+		<version.apache.cxf>2.7.5</version.apache.cxf>
+		<version.springframework>4.0.0.RELEASE</version.springframework>
+		<version.javax.servlet>2.5</version.javax.servlet>
+		<version.log4j>1.2.17</version.log4j>
+		<version.apache.httpclient>4.3.1</version.apache.httpclient>
+		<version.aspectj>1.7.4</version.aspectj>
+		<version.codehaus.jettison>1.3.4</version.codehaus.jettison>
+		<version.javax.ws.rs>1.1.1</version.javax.ws.rs>
+		<version.testng>6.8.7</version.testng>
+		<version.junit>4.10	</version.junit>
+		<version.apache.neethi>3.0.0</version.apache.neethi>
+		<sonar.exclusions>com/**/bo/transport/**</sonar.exclusions>
+		<jacoco.version>0.6.4.201312101107</jacoco.version>
+		<version.surefire>2.12.4</version.surefire>
+		<version.jasypt>1.9.0</version.jasypt>
+		<buildnumber.maven.plugin.version>1.2</buildnumber.maven.plugin.version>
+		<!--Build details specific -->
+		<maven.build.timestamp.format>yyyy-MM-dd'T'HH:mm:ssZ</maven.build.timestamp.format>
+    	<build.timestamp>${maven.build.timestamp}</build.timestamp>
+		
+	</properties>
+	
+	<repositories>
+		<repository>
+			<id>project-repository-root</id>
+			<url>file://${basedir}/libs</url>
+		</repository>
+		<repository>
+			<id>project-repository-child</id>
+			<url>file://${basedir}/../libs</url>
+		</repository>
+	</repositories>
+	<dependencies>
+		<dependency>
+			<!-- must be on the classpath -->
+			<groupId>org.jacoco</groupId>
+			<artifactId>org.jacoco.agent</artifactId>
+			<classifier>runtime</classifier>
+			<version>${jacoco.version}</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${version-maven-compiler-plugin}</version>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	<profiles>
+		<profile>
+			<id>default</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<modules>
+				<module>adserving</module>
+			</modules>
+		</profile>
+		<profile>
+			<id>adserving</id>
+			<modules>
+				<module>adserving</module>
+			</modules>
+		</profile>	
+	</profiles>
+	<modules>
+		<module>adserving</module>
+		<!-- <module>adserving-test</module> -->
+	</modules>
+</project>
+

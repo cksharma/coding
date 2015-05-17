@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+       xmlns:jaxrs="http://cxf.apache.org/jaxrs" 
+       xmlns:aop="http://www.springframework.org/schema/aop" 
+       xmlns:context="http://www.springframework.org/schema/context" 
+       xmlns:jpa="http://www.springframework.org/schema/data/jpa" 
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+       		http://www.springframework.org/schema/beans/spring-beans-2.5.xsd       
+            http://cxf.apache.org/jaxrs
+            http://cxf.apache.org/schemas/jaxrs.xsd
+            http://www.springframework.org/schema/aop
+			http://www.springframework.org/schema/aop/spring-aop.xsd
+       		http://www.springframework.org/schema/context 
+			http://www.springframework.org/schema/context/spring-context.xsd
+            http://www.springframework.org/schema/beans 
+    		http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+    		http://www.springframework.org/schema/data/jpa 
+    		http://www.springframework.org/schema/data/jpa/spring-jpa-1.0.xsd">
+	<import resource="classpath:META-INF/cxf/cxf.xml"/>
+	
+	<import resource="classpath:META-INF/cxf/cxf-servlet.xml"/>
+	
+	<context:component-scan base-package="edu.buffalo.cse.adserving.services"/>
+	
+	<context:annotation-config/>
+	
+	<aop:aspectj-autoproxy/>
+	
+	<bean id="adservingDelegateRef" class="edu.buffalo.cse.adserving.services.delegates.AdservingDelegate"/>
+	
+	<bean id="firstService" class="edu.buffalo.cse.adserving.services.FirstServiceImpl">
+		<property name="adservingDelegate" ref="adservingDelegateRef"/>
+	</bean>	
+	
+	<bean id="firstServiceValidator" class="edu.buffalo.cse.adserving.services.validator.FirstServiceAspect" />
+	
+	<jaxrs:server id="adservingService" address="/">
+		<jaxrs:serviceBeans>		
+			<ref bean="firstService"/>
+		</jaxrs:serviceBeans>
+		<jaxrs:providers>
+			<bean class="edu.buffalo.cse.adserving.services.exceptions.AdservingExceptionMapper"/>
+		</jaxrs:providers>
+	</jaxrs:server>
+</beans>

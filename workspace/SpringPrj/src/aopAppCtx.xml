@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+
+<bean id = "aud"  class = "com.onmobile.training.aop.Audience"></bean>
+<bean id = "inst" class = "com.onmobile.training.aop.Instrumentalist"></bean>
+
+<aop:config>
+<aop:pointcut expression="execution(* com.onmobile.training.aop.Instrumentalist.play())" id="play"/>
+<aop:aspect ref = "aud">
+<aop:before method="takeSeats" pointcut-ref = "play"/>
+<aop:before method="switchOffMobilePhones" pointcut-ref="play"/>
+<aop:after-returning method="applaud" pointcut-ref="play"/>
+<aop:after-throwing method="demandRefund" pointcut-ref="play"/>
+
+</aop:aspect>
+</aop:config>
+
+<bean id="number" class="com.onmobile.training.aop.Number"></bean>
+<bean id="numberInterceptor" class="com.onmobile.training.aop.NumberInterceptor"></bean>
+<aop:config>
+<aop:pointcut expression="execution(* com.onmobile.training.aop.Number.getSum(..))" id="numbPointCut"/>
+<aop:advisor advice-ref="numberInterceptor" pointcut-ref="numbPointCut"/>
+</aop:config>
+
+</beans>

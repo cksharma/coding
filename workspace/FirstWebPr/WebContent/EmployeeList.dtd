@@ -1,0 +1,6 @@
+<!ELEMENT EmployeeList (Employee+)> <!--this + means one to many .. Employee* == zero to many ,, Employee? 0 to 1-->
+<!ELEMENT Employee (EmployeeId,name,designation,salary)> <!-- dtd is validating the xml grammer.. checking the grammer -->
+<!ELEMENT EmployeeId (#PCDATA) >
+<!ELEMENT name (#PCDATA) >
+<!ELEMENT designation (#PCDATA) >
+<!ELEMENT salary (#PCDATA) >     

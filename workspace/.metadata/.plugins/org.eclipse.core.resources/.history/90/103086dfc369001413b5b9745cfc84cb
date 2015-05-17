@@ -1,0 +1,41 @@
+public class Main {
+    
+    private static int nthNumber(int n) {
+        int[] dp = new int[n + 1];
+        dp[0] = 1;
+        int i3 = 0, i5 = 0, i7 = 0;
+        int next_3 = dp[i3] * 3;
+        int next_5 = dp[i5] * 5;
+        int next_7 = dp[i7] * 7;
+        
+        for (int i = 1; i <= n; i++) {                       
+            
+        	int min = Math.min(next_3, Math.min(next_5, next_7));
+        	dp[i] = min;
+        	
+            if (min == next_3) {
+            	i3 = i3 + 1;  
+            	next_3 = dp[i3] * 3;
+                              
+            }  
+            else  if (min == next_5) {
+            	i5 = i5 + 1;
+            	next_5 = dp[i5] * 5;
+                
+            } else if (min == next_7)*/ {
+            	i7 = i7 + 1;
+            	next_7 = dp[i7] * 7;
+                
+            }
+            
+        }        
+        return dp[n];
+    }
+   
+    public static void main(String[] args) {
+    	for (int i = 1; i <= 10; i++) {
+    		int ans = nthNumber(i);
+    		System.out.println(ans);
+    	}
+    }
+}

@@ -1,0 +1,24 @@
+package edu.buffalo.cse562;
+
+import net.sf.jsqlparser.expression.BinaryExpression;
+import net.sf.jsqlparser.expression.Expression;
+import edu.buffalo.cse562.queryplan.Node;
+import edu.buffalo.cse562.queryplan.RelationNode;
+
+public class SortedMergeJoin {
+	private Node node1;
+	private Node node2;
+	private Expression expression;
+	
+	public SortedMergeJoin(Node node1, Node node2, BinaryExpression expression) {
+		this.node1 = node1;
+		this.node2 = node2;
+		this.expression = expression;
+	}
+	
+	public RelationNode doMergeJoins() {
+		RelationNode relationNode1 = node1.eval();
+		RelationNode relationNode2 = node2.eval();
+		
+	}	
+}

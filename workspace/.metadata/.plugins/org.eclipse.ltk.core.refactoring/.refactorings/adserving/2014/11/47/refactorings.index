@@ -1,0 +1,83 @@
+1416101927171	Rename package 'com.adobe.cce.entps.services'
+1416101961956	Delete elements
+1416102001600	Rename package 'com.adobe.cce.entps.app.context'
+1416102027183	Rename package 'com.adobe.cce.entps.services.comm'
+1416102037239	Rename package 'com.adobe.cce.entps.services.converter'
+1416102044639	Rename package 'com.adobe.cce.entps.services.delegates'
+1416102052821	Rename package 'com.adobe.cce.entps.services.dto'
+1416102067716	Rename package 'com.adobe.cce.entps.services.exceptions'
+1416102075712	Rename package 'com.adobe.cce.entps.services.threadpool'
+1416102085122	Rename package 'com.adobe.cce.entps.services.utils'
+1416102092561	Rename package 'com.adobe.cce.entps.services.validator'
+1416102203449	Rename resource 'entps-beans.xml'
+1416102626778	Delete elements
+1416102647705	Rename type 'EntpsContextLoaderListener'
+1416102958234	Rename type 'IMSDelegate'
+1416103063217	Rename type 'AvatarServiceAspect'
+1416103126242	Rename type 'AvatarService'
+1416103134139	Rename type 'AvatarServiceImpl'
+1416105658159	Rename package 'edu.buffalo.cse.app.context'
+1416105668066	Rename package 'edu.buffalo.cse.services'
+1416105677458	Rename package 'edu.buffalo.cse.services.comm'
+1416105685225	Rename package 'edu.buffalo.cse.services.converter'
+1416105692870	Rename package 'edu.buffalo.cse.services.delegates'
+1416105700298	Rename package 'edu.buffalo.cse.services.dto'
+1416105707605	Rename package 'edu.buffalo.cse.services.exceptions'
+1416105715930	Rename package 'edu.buffalo.cse.services.threadpool'
+1416105724161	Rename package 'edu.buffalo.cse.services.utils'
+1416105732029	Rename package 'edu.buffalo.cse.services.validator'
+1416105818969	Rename type 'AvatarServiceTest'
+1416106070087	Rename package 'com.adobe.cce.entps.tests'
+1416106089453	Rename package 'com.adobe.cce.entps.tests.dto'
+1416106139204	Delete element
+1416106146172	Delete elements
+1416106161750	Delete element
+1416106200622	Rename resource 'entps-beans-test.xml'
+1416106765184	Rename field 'imsDelegate'
+1416106769889	Rename field 'adserving'
+1416107220581	Rename resource 'adserving-beans.xml'
+1416125796052	Delete element
+1416128018772	Rename package 'edu.buffalo.cse.adserving.tests'
+1416128045351	Rename resource 'adserving-beans-tests.xml'
+1416129532622	Delete element
+1416129629307	Delete element
+1416129633325	Delete element
+1416129645429	Delete elements
+1416130795043	Delete elements
+1416130878160	Delete elements
+1416130898323	Delete element
+1416130912746	Delete element
+1416130980114	Delete element
+1416131016712	Delete element
+1416131342371	Delete elements
+1416131487537	Rename type 'EntpsWebApplicationContext'
+1416131514535	Rename type 'EntpsCommConstants'
+1416131528207	Rename type 'EntpsCommunicator'
+1416131614656	Rename type 'EntpsHttpRequest'
+1416131623131	Rename type 'EntpsHttpResponse'
+1416131630734	Rename type 'EntpsHttpUtil'
+1416131665666	Rename type 'EntpsExceptionMapper'
+1416131676779	Rename type 'EntpsThreadPool'
+1416131691323	Delete element
+1416131705708	Delete element
+1416131736282	Delete elements
+1416132324921	Delete element
+1416132330514	Delete element
+1416132512251	Delete element
+1416246772639	Delete element
+1416246857649	Delete element
+1416246892056	Delete element
+1416246895680	Delete element
+1416247162130	Rename field 'ENTPS_JAVA_DATE_FORMAT_KEY'
+1416247293099	Rename field 'ENTPS_PROPERTIES'
+1416247302331	Rename field 'ENTPSENV_PROPERTIES'
+1416247368094	Rename field 'ENTPS_USER_ID'
+1416247746377	Rename resource 'entps_env.properties'
+1416247819561	Rename type 'EntpsErrorCodes'
+1416248332752	Rename resource 'entps.properties'
+1416286527726	Rename field 'ENTPS_API_CLIENT_IP_KEY'
+1416287997772	Delete element
+1416684997892	Copy compilation unit
+1416685127164	Copy compilation unit
+1416693618147	Copy compilation unit
+1416693665575	Copy compilation unit

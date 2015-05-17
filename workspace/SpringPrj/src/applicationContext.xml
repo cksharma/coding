@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<bean id="circle" class="com.onmobile.training.Circle" >
+<!-- <property name="radius" value="5"></property>  -->
+<constructor-arg index = "0" type = "double" value = "5"></constructor-arg> <!-- if we set value like this then -->
+
+<!-- by this we are invoking the constructor with the arguments... -->
+</bean>
+<bean id="rectangle" class ="com.onmobile.training.Rectangle" scope = "prototype">
+<property name="length" value="10"></property>
+<property name="breadth" value="7"></property>
+</bean>
+
+<bean id = "customer" class = "com.onmobile.training.Customer">
+<property name = "customerId" value = "1"></property>
+<property name = "customerName" value = "Arjun"></property>
+<property name = "address" ref = "add"></property>
+<property name = "accounts">
+<list>
+<ref bean = "account1"/>
+<ref bean = "account2"/>
+</list>
+</property>
+</bean>
+
+<bean id = "add" class = "com.onmobile.training.Address">
+<property name = "location" value = "J.P. Nagar"></property>
+<property name = "city" value = "Bangalore"></property>
+</bean>
+
+<bean id = "account1" class = "com.onmobile.training.Account">
+<property name = "accountNo" value = "101"></property>
+<property name = "accountType" value = "SB"></property>
+<property name = "balance" value = "5000"></property>
+</bean>
+
+<bean id = "account2" class = "com.onmobile.training.Account">
+<property name = "accountNo" value = "102"></property>
+<property name = "accountType" value = "CA"></property>
+<property name = "balance" value = "10000"></property>
+</bean>
+
+
+</beans>

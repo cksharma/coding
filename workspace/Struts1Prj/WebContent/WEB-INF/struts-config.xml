@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+
+
+	<form-beans>
+		<form-bean name="markFormBean" type="com.onmobile.training.Marks"></form-bean>
+	</form-beans>
+	
+
+	<!-- ========== Action Mapping Definitions ======== -->
+	<action-mappings>
+		<action path="/first" type="com.onmobile.training.FirstAction">
+
+			<forward name="success" path="/welcome.jsp" />
+
+		</action>
+
+		<action path="/findResult" type="com.onmobile.training.ResultAction"
+			    name="markFormBean" scope="request">
+			
+		<forward name="pass" path="/success.jsp"></forward>
+		<forward name="fail" path="/failure.jsp"></forward>
+		</action>
+	</action-mappings>	
+</struts-config>

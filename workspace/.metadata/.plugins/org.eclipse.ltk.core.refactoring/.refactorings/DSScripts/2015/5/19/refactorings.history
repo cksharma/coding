@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;GroupMessenger2Part1&apos; to &apos;SimpleDynamo&apos;&#x0A;- Original project: &apos;DSScripts&apos;&#x0A;- Original element: &apos;GroupMessenger2Part1&apos;&#x0A;- Renamed element: &apos;SimpleDynamo&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;GroupMessenger2Part1&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;{GroupMessenger2Part1.java[GroupMessenger2Part1" matchStrategy="1" name="SimpleDynamo" qualified="false" references="true" similarDeclarations="false" stamp="1431139169654" textual="false" version="1.0"/>
+</session>

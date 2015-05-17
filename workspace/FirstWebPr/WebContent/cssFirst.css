@@ -1,0 +1,29 @@
+@CHARSET "ISO-8859-1";
+body
+{
+	/*background-color:#775500; /* RGB color combination*/
+	/*background-image: url("Penguins.jpg"); */ /* this is for body backgorund image */
+	background : gray url("Penguins.jpg") repeat-x top center;	
+}
+h1
+{
+	color: red;
+	font-family: sans-serif;
+}
+p
+{
+	font-family: fantasy;
+	font-size: 10 px;
+	text-align: left;
+}
+#new {	/*id with the new in HTML file will be having thise features */
+	font-size: 25 px;
+	font-family: fantasy;
+	background-color: aqua;
+	color :purple;
+}
+.style1  /* if we have to define class then we have to do using this .symbole... .classname is pattern*/
+{
+	background-color: : yellow;
+	color: maroon;
+}

@@ -1,0 +1,536 @@
+<?xml version="1.0" ?>
+<ItemSearchResponse
+	xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01">
+	<OperationRequest>
+		<HTTPHeaders>
+			<Header Name="UserAgent" Value="Apache-HttpClient/4.3.1 (java 1.5)"></Header>
+		</HTTPHeaders>
+		<RequestId>36367d50-c934-4fa2-aa0a-91b450de39fe</RequestId>
+		<Arguments>
+			<Argument Name="Service" Value="AWSECommerceService"></Argument>
+			<Argument Name="Operation" Value="ItemSearch"></Argument>
+			<Argument Name="Signature"
+				Value="SZbJMJVMHVmzJf3qCCF1mWjG1nD0H1b+nn9CF2ZiwF8="></Argument>
+			<Argument Name="AssociateTag" Value="th0426-20"></Argument>
+			<Argument Name="Version" Value="2009-03-31"></Argument>
+			<Argument Name="Keywords" Value="Introduction To Algorithms"></Argument>
+			<Argument Name="AWSAccessKeyId" Value="AKIAISA4M3LOL52SUIDQ"></Argument>
+			<Argument Name="Timestamp" Value="2014-11-27T09:43:09Z"></Argument>
+			<Argument Name="SearchIndex" Value="All"></Argument>
+		</Arguments>
+		<RequestProcessingTime>0.0566090000000000</RequestProcessingTime>
+	</OperationRequest>
+	<Items>
+		<Request>
+			<IsValid>True</IsValid>
+			<ItemSearchRequest>
+				<Keywords>Introduction To Algorithms</Keywords>
+				<ResponseGroup>Small</ResponseGroup>
+				<SearchIndex>All</SearchIndex>
+			</ItemSearchRequest>
+		</Request>
+		<TotalResults>773</TotalResults>
+		<TotalPages>78</TotalPages>
+		<MoreSearchResultsUrl>http://www.amazon.com/gp/redirect.html?camp=2025&amp;creative=386001&amp;location=http%3A%2F%2Fwww.amazon.com%2Fgp%2Fsearch%3Fkeywords%3DIntroduction%2BTo%2BAlgorithms%26url%3Dsearch-alias%253Daws-amazon-aps&amp;linkCode=xm2&amp;tag=th0426-20&amp;SubscriptionId=AKIAISA4M3LOL52SUIDQ
+		</MoreSearchResultsUrl>
+		<Item>
+			<ASIN>0262033844</ASIN>
+			<DetailPageURL>http://www.amazon.com/Introduction-Algorithms-Edition-Thomas-Cormen/dp/0262033844%3FSubscriptionId%3DAKIAISA4M3LOL52SUIDQ%26tag%3Dth0426-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0262033844
+			</DetailPageURL>
+			<ItemLinks>
+				<ItemLink>
+					<Description>Technical Details</Description>
+					<URL>http://www.amazon.com/Introduction-Algorithms-Edition-Thomas-Cormen/dp/tech-data/0262033844%3FSubscriptionId%3DAKIAISA4M3LOL52SUIDQ%26tag%3Dth0426-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0262033844
+					</URL>
+				</ItemLink>
+				<ItemLink>
+					<Description>Add To Baby Registry</Description>
+					<URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3D0262033844%26SubscriptionId%3DAKIAISA4M3LOL52SUIDQ%26tag%3Dth0426-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0262033844
+					</URL>
+				</ItemLink>
+				<ItemLink>
+					<Description>Add To Wedding Registry</Description>
+					<URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3D0262033844%26SubscriptionId%3DAKIAISA4M3LOL52SUIDQ%26tag%3Dth0426-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0262033844
+					</URL>
+				</ItemLink>
+				<ItemLink>
+					<Description>Add To Wishlist</Description>
+					<URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3D0262033844%26SubscriptionId%3DAKIAISA4M3LOL52SUIDQ%26tag%3Dth0426-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0262033844
+					</URL>
+				</ItemLink>
+				<ItemLink>
+					<Description>Tell A Friend</Description>
+					<URL>http://www.amazon.com/gp/pdp/taf/0262033844%3FSubscriptionId%3DAKIAISA4M3LOL52SUIDQ%26tag%3Dth0426-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0262033844
+					</URL>
+				</ItemLink>
+				<ItemLink>
+					<Description>All Customer Reviews</Description>
+					<URL>http://www.amazon.com/review/product/0262033844%3FSubscriptionId%3DAKIAISA4M3LOL52SUIDQ%26tag%3Dth0426-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0262033844
+					</URL>
+				</ItemLink>
+				<ItemLink>
+					<Description>All Offers</Description>
+					<URL>http://www.amazon.com/gp/offer-listing/0262033844%3FSubscriptionId%3DAKIAISA4M3LOL52SUIDQ%26tag%3Dth0426-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0262033844
+					</URL>
+				</ItemLink>
+			</ItemLinks>
+			<ItemAttributes>
+				<Author>Thomas H. Cormen</Author>
+				<Author>Charles E. Leiserson</Author>
+				<Author>Ronald L. Rivest</Author>
+				<Author>Clifford Stein</Author>
+				<Manufacturer>The MIT Press</Manufacturer>
+				<ProductGroup>Book</ProductGroup>
+				<Title>Introduction to Algorithms, 3rd Edition</Title>
+			</ItemAttributes>
+		</Item>
+		<Item>
+			<ASIN>0070131511</ASIN>
+			<DetailPageURL>http://www.amazon.com/Introduction-Algorithms-Second-Edition-Thomas/dp/0070131511%3FSubscriptionId%3DAKIAISA4M3LOL52SUIDQ%26tag%3Dth0426-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0070131511
+			</DetailPageURL>
+			<ItemLinks>
+				<ItemLink>
+					<Description>Technical Details</Description>
+					<URL>http://www.amazon.com/Introduction-Algorithms-Second-Edition-Thomas/dp/tech-data/0070131511%3FSubscriptionId%3DAKIAISA4M3LOL52SUIDQ%26tag%3Dth0426-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0070131511
+					</URL>
+				</ItemLink>
+				<ItemLink>
+					<Description>Add To Baby Registry</Description>
+					<URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3D0070131511%26SubscriptionId%3DAKIAISA4M3LOL52SUIDQ%26tag%3Dth0426-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0070131511
+					</URL>
+				</ItemLink>
+				<ItemLink>
+					<Description>Add To Wedding Registry</Description>
+					<URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3D0070131511%26SubscriptionId%3DAKIAISA4M3LOL52SUIDQ%26tag%3Dth0426-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0070131511
+					</URL>
+				</ItemLink>
+				<ItemLink>
+					<Description>Add To Wishlist</Description>
+					<URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3D0070131511%26SubscriptionId%3DAKIAISA4M3LOL52SUIDQ%26tag%3Dth0426-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0070131511
+					</URL>
+				</ItemLink>
+				<ItemLink>
+					<Description>Tell A Friend</Description>
+					<URL>http://www.amazon.com/gp/pdp/taf/0070131511%3FSubscriptionId%3DAKIAISA4M3LOL52SUIDQ%26tag%3Dth0426-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0070131511
+					</URL>
+				</ItemLink>
+				<ItemLink>
+					<Description>All Customer Reviews</Description>
+					<URL>http://www.amazon.com/review/product/0070131511%3FSubscriptionId%3DAKIAISA4M3LOL52SUIDQ%26tag%3Dth0426-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0070131511
+					</URL>
+				</ItemLink>
+				<ItemLink>
+					<Description>All Offers</Description>
+					<URL>http://www.amazon.com/gp/offer-listing/0070131511%3FSubscriptionId%3DAKIAISA4M3LOL52SUIDQ%26tag%3Dth0426-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0070131511
+					</URL>
+				</ItemLink>
+			</ItemLinks>
+			<ItemAttributes>
+				<Author>Thomas H Cormen</Author>
+				<Author>Charles E Leiserson</Author>
+				<Author>Ronald L Rivest</Author>
+				<Author>Clifford Stein</Author>
+				<Manufacturer>McGraw-Hill Science/Engineering/Math</Manufacturer>
+				<ProductGroup>Book</ProductGroup>
+				<Title>Introduction to Algorithms, Second Edition</Title>
+			</ItemAttributes>
+		</Item>
+		<Item>
+			<ASIN>0070131430</ASIN>
+			<DetailPageURL>http://www.amazon.com/Introduction-To-Algorithms-Thomas-Cormen/dp/0070131430%3FSubscriptionId%3DAKIAISA4M3LOL52SUIDQ%26tag%3Dth0426-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0070131430
+			</DetailPageURL>
+			<ItemLinks>
+				<ItemLink>
+					<Description>Technical Details</Description>
+					<URL>http://www.amazon.com/Introduction-To-Algorithms-Thomas-Cormen/dp/tech-data/0070131430%3FSubscriptionId%3DAKIAISA4M3LOL52SUIDQ%26tag%3Dth0426-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0070131430
+					</URL>
+				</ItemLink>
+				<ItemLink>
+					<Description>Add To Baby Registry</Description>
+					<URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3D0070131430%26SubscriptionId%3DAKIAISA4M3LOL52SUIDQ%26tag%3Dth0426-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0070131430
+					</URL>
+				</ItemLink>
+				<ItemLink>
+					<Description>Add To Wedding Registry</Description>
+					<URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3D0070131430%26SubscriptionId%3DAKIAISA4M3LOL52SUIDQ%26tag%3Dth0426-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0070131430
+					</URL>
+				</ItemLink>
+				<ItemLink>
+					<Description>Add To Wishlist</Description>
+					<URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3D0070131430%26SubscriptionId%3DAKIAISA4M3LOL52SUIDQ%26tag%3Dth0426-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0070131430
+					</URL>
+				</ItemLink>
+				<ItemLink>
+					<Description>Tell A Friend</Description>
+					<URL>http://www.amazon.com/gp/pdp/taf/0070131430%3FSubscriptionId%3DAKIAISA4M3LOL52SUIDQ%26tag%3Dth0426-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0070131430
+					</URL>
+				</ItemLink>
+				<ItemLink>
+					<Description>All Customer Reviews</Description>
+					<URL>http://www.amazon.com/review/product/0070131430%3FSubscriptionId%3DAKIAISA4M3LOL52SUIDQ%26tag%3Dth0426-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0070131430
+					</URL>
+				</ItemLink>
+				<ItemLink>
+					<Description>All Offers</Description>
+					<URL>http://www.amazon.com/gp/offer-listing/0070131430%3FSubscriptionId%3DAKIAISA4M3LOL52SUIDQ%26tag%3Dth0426-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0070131430
+					</URL>
+				</ItemLink>
+			</ItemLinks>
+			<ItemAttributes>
+				<Author>Thomas H. Cormen</Author>
+				<Author>Charles E. Leiserson</Author>
+				<Author>Ronald L. Rivest</Author>
+				<Author>Ronald Rivest</Author>
+				<Manufacturer>Mcgraw-Hill College</Manufacturer>
+				<ProductGroup>Book</ProductGroup>
+				<Title>Introduction To Algorithms</Title>
+			</ItemAttributes>
+		</Item>
+		<Item>
+			<ASIN>032157351X</ASIN>
+			<DetailPageURL>http://www.amazon.com/Algorithms-4th-Edition-Robert-Sedgewick/dp/032157351X%3FSubscriptionId%3DAKIAISA4M3LOL52SUIDQ%26tag%3Dth0426-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D032157351X
+			</DetailPageURL>
+			<ItemLinks>
+				<ItemLink>
+					<Description>Technical Details</Description>
+					<URL>http://www.amazon.com/Algorithms-4th-Edition-Robert-Sedgewick/dp/tech-data/032157351X%3FSubscriptionId%3DAKIAISA4M3LOL52SUIDQ%26tag%3Dth0426-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D032157351X
+					</URL>
+				</ItemLink>
+				<ItemLink>
+					<Description>Add To Baby Registry</Description>
+					<URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3D032157351X%26SubscriptionId%3DAKIAISA4M3LOL52SUIDQ%26tag%3Dth0426-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D032157351X
+					</URL>
+				</ItemLink>
+				<ItemLink>
+					<Description>Add To Wedding Registry</Description>
+					<URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3D032157351X%26SubscriptionId%3DAKIAISA4M3LOL52SUIDQ%26tag%3Dth0426-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D032157351X
+					</URL>
+				</ItemLink>
+				<ItemLink>
+					<Description>Add To Wishlist</Description>
+					<URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3D032157351X%26SubscriptionId%3DAKIAISA4M3LOL52SUIDQ%26tag%3Dth0426-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D032157351X
+					</URL>
+				</ItemLink>
+				<ItemLink>
+					<Description>Tell A Friend</Description>
+					<URL>http://www.amazon.com/gp/pdp/taf/032157351X%3FSubscriptionId%3DAKIAISA4M3LOL52SUIDQ%26tag%3Dth0426-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D032157351X
+					</URL>
+				</ItemLink>
+				<ItemLink>
+					<Description>All Customer Reviews</Description>
+					<URL>http://www.amazon.com/review/product/032157351X%3FSubscriptionId%3DAKIAISA4M3LOL52SUIDQ%26tag%3Dth0426-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D032157351X
+					</URL>
+				</ItemLink>
+				<ItemLink>
+					<Description>All Offers</Description>
+					<URL>http://www.amazon.com/gp/offer-listing/032157351X%3FSubscriptionId%3DAKIAISA4M3LOL52SUIDQ%26tag%3Dth0426-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D032157351X
+					</URL>
+				</ItemLink>
+			</ItemLinks>
+			<ItemAttributes>
+				<Author>Robert Sedgewick</Author>
+				<Author>Kevin Wayne</Author>
+				<Manufacturer>Addison-Wesley Professional</Manufacturer>
+				<ProductGroup>Book</ProductGroup>
+				<Title>Algorithms (4th Edition)</Title>
+			</ItemAttributes>
+		</Item>
+		<Item>
+			<ASIN>0201120372</ASIN>
+			<DetailPageURL>http://www.amazon.com/Introduction-Algorithms-A-Creative-Approach/dp/0201120372%3FSubscriptionId%3DAKIAISA4M3LOL52SUIDQ%26tag%3Dth0426-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0201120372
+			</DetailPageURL>
+			<ItemLinks>
+				<ItemLink>
+					<Description>Technical Details</Description>
+					<URL>http://www.amazon.com/Introduction-Algorithms-A-Creative-Approach/dp/tech-data/0201120372%3FSubscriptionId%3DAKIAISA4M3LOL52SUIDQ%26tag%3Dth0426-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0201120372
+					</URL>
+				</ItemLink>
+				<ItemLink>
+					<Description>Add To Baby Registry</Description>
+					<URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3D0201120372%26SubscriptionId%3DAKIAISA4M3LOL52SUIDQ%26tag%3Dth0426-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0201120372
+					</URL>
+				</ItemLink>
+				<ItemLink>
+					<Description>Add To Wedding Registry</Description>
+					<URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3D0201120372%26SubscriptionId%3DAKIAISA4M3LOL52SUIDQ%26tag%3Dth0426-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0201120372
+					</URL>
+				</ItemLink>
+				<ItemLink>
+					<Description>Add To Wishlist</Description>
+					<URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3D0201120372%26SubscriptionId%3DAKIAISA4M3LOL52SUIDQ%26tag%3Dth0426-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0201120372
+					</URL>
+				</ItemLink>
+				<ItemLink>
+					<Description>Tell A Friend</Description>
+					<URL>http://www.amazon.com/gp/pdp/taf/0201120372%3FSubscriptionId%3DAKIAISA4M3LOL52SUIDQ%26tag%3Dth0426-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0201120372
+					</URL>
+				</ItemLink>
+				<ItemLink>
+					<Description>All Customer Reviews</Description>
+					<URL>http://www.amazon.com/review/product/0201120372%3FSubscriptionId%3DAKIAISA4M3LOL52SUIDQ%26tag%3Dth0426-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0201120372
+					</URL>
+				</ItemLink>
+				<ItemLink>
+					<Description>All Offers</Description>
+					<URL>http://www.amazon.com/gp/offer-listing/0201120372%3FSubscriptionId%3DAKIAISA4M3LOL52SUIDQ%26tag%3Dth0426-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0201120372
+					</URL>
+				</ItemLink>
+			</ItemLinks>
+			<ItemAttributes>
+				<Author>Udi Manber</Author>
+				<Manufacturer>Addison-Wesley</Manufacturer>
+				<ProductGroup>Book</ProductGroup>
+				<Title>Introduction to Algorithms: A Creative Approach</Title>
+			</ItemAttributes>
+		</Item>
+		<Item>
+			<ASIN>032190575X</ASIN>
+			<DetailPageURL>http://www.amazon.com/Introduction-Analysis-Algorithms-2nd-Edition/dp/032190575X%3FSubscriptionId%3DAKIAISA4M3LOL52SUIDQ%26tag%3Dth0426-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D032190575X
+			</DetailPageURL>
+			<ItemLinks>
+				<ItemLink>
+					<Description>Technical Details</Description>
+					<URL>http://www.amazon.com/Introduction-Analysis-Algorithms-2nd-Edition/dp/tech-data/032190575X%3FSubscriptionId%3DAKIAISA4M3LOL52SUIDQ%26tag%3Dth0426-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D032190575X
+					</URL>
+				</ItemLink>
+				<ItemLink>
+					<Description>Add To Baby Registry</Description>
+					<URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3D032190575X%26SubscriptionId%3DAKIAISA4M3LOL52SUIDQ%26tag%3Dth0426-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D032190575X
+					</URL>
+				</ItemLink>
+				<ItemLink>
+					<Description>Add To Wedding Registry</Description>
+					<URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3D032190575X%26SubscriptionId%3DAKIAISA4M3LOL52SUIDQ%26tag%3Dth0426-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D032190575X
+					</URL>
+				</ItemLink>
+				<ItemLink>
+					<Description>Add To Wishlist</Description>
+					<URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3D032190575X%26SubscriptionId%3DAKIAISA4M3LOL52SUIDQ%26tag%3Dth0426-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D032190575X
+					</URL>
+				</ItemLink>
+				<ItemLink>
+					<Description>Tell A Friend</Description>
+					<URL>http://www.amazon.com/gp/pdp/taf/032190575X%3FSubscriptionId%3DAKIAISA4M3LOL52SUIDQ%26tag%3Dth0426-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D032190575X
+					</URL>
+				</ItemLink>
+				<ItemLink>
+					<Description>All Customer Reviews</Description>
+					<URL>http://www.amazon.com/review/product/032190575X%3FSubscriptionId%3DAKIAISA4M3LOL52SUIDQ%26tag%3Dth0426-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D032190575X
+					</URL>
+				</ItemLink>
+				<ItemLink>
+					<Description>All Offers</Description>
+					<URL>http://www.amazon.com/gp/offer-listing/032190575X%3FSubscriptionId%3DAKIAISA4M3LOL52SUIDQ%26tag%3Dth0426-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D032190575X
+					</URL>
+				</ItemLink>
+			</ItemLinks>
+			<ItemAttributes>
+				<Author>Robert Sedgewick</Author>
+				<Author>Philippe Flajolet</Author>
+				<Manufacturer>Addison-Wesley Professional</Manufacturer>
+				<ProductGroup>Book</ProductGroup>
+				<Title>An Introduction to the Analysis of Algorithms (2nd Edition)
+				</Title>
+			</ItemAttributes>
+		</Item>
+		<Item>
+			<ASIN>098478280X</ASIN>
+			<DetailPageURL>http://www.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/098478280X%3FSubscriptionId%3DAKIAISA4M3LOL52SUIDQ%26tag%3Dth0426-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D098478280X
+			</DetailPageURL>
+			<ItemLinks>
+				<ItemLink>
+					<Description>Technical Details</Description>
+					<URL>http://www.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/tech-data/098478280X%3FSubscriptionId%3DAKIAISA4M3LOL52SUIDQ%26tag%3Dth0426-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D098478280X
+					</URL>
+				</ItemLink>
+				<ItemLink>
+					<Description>Add To Baby Registry</Description>
+					<URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3D098478280X%26SubscriptionId%3DAKIAISA4M3LOL52SUIDQ%26tag%3Dth0426-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D098478280X
+					</URL>
+				</ItemLink>
+				<ItemLink>
+					<Description>Add To Wedding Registry</Description>
+					<URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3D098478280X%26SubscriptionId%3DAKIAISA4M3LOL52SUIDQ%26tag%3Dth0426-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D098478280X
+					</URL>
+				</ItemLink>
+				<ItemLink>
+					<Description>Add To Wishlist</Description>
+					<URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3D098478280X%26SubscriptionId%3DAKIAISA4M3LOL52SUIDQ%26tag%3Dth0426-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D098478280X
+					</URL>
+				</ItemLink>
+				<ItemLink>
+					<Description>Tell A Friend</Description>
+					<URL>http://www.amazon.com/gp/pdp/taf/098478280X%3FSubscriptionId%3DAKIAISA4M3LOL52SUIDQ%26tag%3Dth0426-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D098478280X
+					</URL>
+				</ItemLink>
+				<ItemLink>
+					<Description>All Customer Reviews</Description>
+					<URL>http://www.amazon.com/review/product/098478280X%3FSubscriptionId%3DAKIAISA4M3LOL52SUIDQ%26tag%3Dth0426-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D098478280X
+					</URL>
+				</ItemLink>
+				<ItemLink>
+					<Description>All Offers</Description>
+					<URL>http://www.amazon.com/gp/offer-listing/098478280X%3FSubscriptionId%3DAKIAISA4M3LOL52SUIDQ%26tag%3Dth0426-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D098478280X
+					</URL>
+				</ItemLink>
+			</ItemLinks>
+			<ItemAttributes>
+				<Author>Gayle Laakmann McDowell</Author>
+				<Manufacturer>CareerCup</Manufacturer>
+				<ProductGroup>Book</ProductGroup>
+				<Title>Cracking the Coding Interview: 150 Programming Questions and
+					Solutions</Title>
+			</ItemAttributes>
+		</Item>
+		<Item>
+			<ASIN>1495319288</ASIN>
+			<DetailPageURL>http://www.amazon.com/Introduction-Algorithms-Instructors-Manual-Edition/dp/1495319288%3FSubscriptionId%3DAKIAISA4M3LOL52SUIDQ%26tag%3Dth0426-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D1495319288
+			</DetailPageURL>
+			<ItemLinks>
+				<ItemLink>
+					<Description>Technical Details</Description>
+					<URL>http://www.amazon.com/Introduction-Algorithms-Instructors-Manual-Edition/dp/tech-data/1495319288%3FSubscriptionId%3DAKIAISA4M3LOL52SUIDQ%26tag%3Dth0426-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1495319288
+					</URL>
+				</ItemLink>
+				<ItemLink>
+					<Description>Add To Baby Registry</Description>
+					<URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3D1495319288%26SubscriptionId%3DAKIAISA4M3LOL52SUIDQ%26tag%3Dth0426-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1495319288
+					</URL>
+				</ItemLink>
+				<ItemLink>
+					<Description>Add To Wedding Registry</Description>
+					<URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3D1495319288%26SubscriptionId%3DAKIAISA4M3LOL52SUIDQ%26tag%3Dth0426-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1495319288
+					</URL>
+				</ItemLink>
+				<ItemLink>
+					<Description>Add To Wishlist</Description>
+					<URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3D1495319288%26SubscriptionId%3DAKIAISA4M3LOL52SUIDQ%26tag%3Dth0426-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1495319288
+					</URL>
+				</ItemLink>
+				<ItemLink>
+					<Description>Tell A Friend</Description>
+					<URL>http://www.amazon.com/gp/pdp/taf/1495319288%3FSubscriptionId%3DAKIAISA4M3LOL52SUIDQ%26tag%3Dth0426-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1495319288
+					</URL>
+				</ItemLink>
+				<ItemLink>
+					<Description>All Customer Reviews</Description>
+					<URL>http://www.amazon.com/review/product/1495319288%3FSubscriptionId%3DAKIAISA4M3LOL52SUIDQ%26tag%3Dth0426-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1495319288
+					</URL>
+				</ItemLink>
+				<ItemLink>
+					<Description>All Offers</Description>
+					<URL>http://www.amazon.com/gp/offer-listing/1495319288%3FSubscriptionId%3DAKIAISA4M3LOL52SUIDQ%26tag%3Dth0426-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1495319288
+					</URL>
+				</ItemLink>
+			</ItemLinks>
+			<ItemAttributes>
+				<Author>by Thomas H. Cormen Charles E. Leiserson Ronald L. Rivest
+					Clifford Stein Thomas H. Cormen Clara Lee Erica Lin</Author>
+				<Manufacturer>CreateSpace Independent Publishing Platform
+				</Manufacturer>
+				<ProductGroup>Book</ProductGroup>
+				<Title>Introduction to Algorithms(Instructor's Manual) (Second
+					Edition)</Title>
+			</ItemAttributes>
+		</Item>
+		<Item>
+			<ASIN>0321358287</ASIN>
+			<DetailPageURL>http://www.amazon.com/Introduction-Design-Analysis-Algorithms-Edition/dp/0321358287%3FSubscriptionId%3DAKIAISA4M3LOL52SUIDQ%26tag%3Dth0426-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0321358287
+			</DetailPageURL>
+			<ItemLinks>
+				<ItemLink>
+					<Description>Technical Details</Description>
+					<URL>http://www.amazon.com/Introduction-Design-Analysis-Algorithms-Edition/dp/tech-data/0321358287%3FSubscriptionId%3DAKIAISA4M3LOL52SUIDQ%26tag%3Dth0426-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0321358287
+					</URL>
+				</ItemLink>
+				<ItemLink>
+					<Description>Add To Baby Registry</Description>
+					<URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3D0321358287%26SubscriptionId%3DAKIAISA4M3LOL52SUIDQ%26tag%3Dth0426-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0321358287
+					</URL>
+				</ItemLink>
+				<ItemLink>
+					<Description>Add To Wedding Registry</Description>
+					<URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3D0321358287%26SubscriptionId%3DAKIAISA4M3LOL52SUIDQ%26tag%3Dth0426-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0321358287
+					</URL>
+				</ItemLink>
+				<ItemLink>
+					<Description>Add To Wishlist</Description>
+					<URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3D0321358287%26SubscriptionId%3DAKIAISA4M3LOL52SUIDQ%26tag%3Dth0426-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0321358287
+					</URL>
+				</ItemLink>
+				<ItemLink>
+					<Description>Tell A Friend</Description>
+					<URL>http://www.amazon.com/gp/pdp/taf/0321358287%3FSubscriptionId%3DAKIAISA4M3LOL52SUIDQ%26tag%3Dth0426-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0321358287
+					</URL>
+				</ItemLink>
+				<ItemLink>
+					<Description>All Customer Reviews</Description>
+					<URL>http://www.amazon.com/review/product/0321358287%3FSubscriptionId%3DAKIAISA4M3LOL52SUIDQ%26tag%3Dth0426-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0321358287
+					</URL>
+				</ItemLink>
+				<ItemLink>
+					<Description>All Offers</Description>
+					<URL>http://www.amazon.com/gp/offer-listing/0321358287%3FSubscriptionId%3DAKIAISA4M3LOL52SUIDQ%26tag%3Dth0426-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0321358287
+					</URL>
+				</ItemLink>
+			</ItemLinks>
+			<ItemAttributes>
+				<Author>Anany Levitin</Author>
+				<Manufacturer>Addison Wesley</Manufacturer>
+				<ProductGroup>Book</ProductGroup>
+				<Title>Introduction to the Design and Analysis of Algorithms (2nd
+					Edition)</Title>
+			</ItemAttributes>
+		</Item>
+		<Item>
+			<ASIN>0132316811</ASIN>
+			<DetailPageURL>http://www.amazon.com/Introduction-Design-Analysis-Algorithms-Edition/dp/0132316811%3FSubscriptionId%3DAKIAISA4M3LOL52SUIDQ%26tag%3Dth0426-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0132316811
+			</DetailPageURL>
+			<ItemLinks>
+				<ItemLink>
+					<Description>Technical Details</Description>
+					<URL>http://www.amazon.com/Introduction-Design-Analysis-Algorithms-Edition/dp/tech-data/0132316811%3FSubscriptionId%3DAKIAISA4M3LOL52SUIDQ%26tag%3Dth0426-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0132316811
+					</URL>
+				</ItemLink>
+				<ItemLink>
+					<Description>Add To Baby Registry</Description>
+					<URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3D0132316811%26SubscriptionId%3DAKIAISA4M3LOL52SUIDQ%26tag%3Dth0426-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0132316811
+					</URL>
+				</ItemLink>
+				<ItemLink>
+					<Description>Add To Wedding Registry</Description>
+					<URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3D0132316811%26SubscriptionId%3DAKIAISA4M3LOL52SUIDQ%26tag%3Dth0426-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0132316811
+					</URL>
+				</ItemLink>
+				<ItemLink>
+					<Description>Add To Wishlist</Description>
+					<URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3D0132316811%26SubscriptionId%3DAKIAISA4M3LOL52SUIDQ%26tag%3Dth0426-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0132316811
+					</URL>
+				</ItemLink>
+				<ItemLink>
+					<Description>Tell A Friend</Description>
+					<URL>http://www.amazon.com/gp/pdp/taf/0132316811%3FSubscriptionId%3DAKIAISA4M3LOL52SUIDQ%26tag%3Dth0426-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0132316811
+					</URL>
+				</ItemLink>
+				<ItemLink>
+					<Description>All Customer Reviews</Description>
+					<URL>http://www.amazon.com/review/product/0132316811%3FSubscriptionId%3DAKIAISA4M3LOL52SUIDQ%26tag%3Dth0426-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0132316811
+					</URL>
+				</ItemLink>
+				<ItemLink>
+					<Description>All Offers</Description>
+					<URL>http://www.amazon.com/gp/offer-listing/0132316811%3FSubscriptionId%3DAKIAISA4M3LOL52SUIDQ%26tag%3Dth0426-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0132316811
+					</URL>
+				</ItemLink>
+			</ItemLinks>
+			<ItemAttributes>
+				<Author>Anany Levitin</Author>
+				<Manufacturer>Addison-Wesley</Manufacturer>
+				<ProductGroup>Book</ProductGroup>
+				<Title>Introduction to the Design and Analysis of Algorithms (3rd
+					Edition)</Title>
+			</ItemAttributes>
+		</Item>
+	</Items>
+</ItemSearchResponse>	
+

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<onmobile:EmployeeList xmlns:onmobile="http://www.onmobile.com/EmployeeList"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.onmobile.com/EmployeeList EmployeeList.xsd ">
+	<onmobile:Employee>
+		<onmobile:EmployeeId>2</onmobile:EmployeeId>
+		<onmobile:name>Rajesh</onmobile:name>
+		<onmobile:designation>Developer</onmobile:designation>
+		<onmobile:salary>40000</onmobile:salary>
+	</onmobile:Employee>
+
+	<onmobile:Employee>
+		<onmobile:EmployeeId>1</onmobile:EmployeeId>
+		<onmobile:name>Arvind</onmobile:name>
+		<onmobile:designation>Developer</onmobile:designation>
+		<onmobile:salary>60000</onmobile:salary>
+	</onmobile:Employee>
+
+</onmobile:EmployeeList>

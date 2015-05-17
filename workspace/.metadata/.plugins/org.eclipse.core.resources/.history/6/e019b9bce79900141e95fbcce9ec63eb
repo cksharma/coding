@@ -1,0 +1,88 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.PrintWriter;
+import java.util.Stack;
+import java.util.StringTokenizer;
+
+public class Main {	
+	public static void main(String[] args) {
+		InputStream inputStream = System.in;
+		OutputStream outputStream = System.out;
+		InputReader in = new InputReader(inputStream);
+		PrintWriter out = new PrintWriter(outputStream);
+		TaskB solver = new TaskB();
+		solver.solve(1, in, out);
+		out.close();
+	}	
+}
+
+class TaskB {
+	public void solve(int testNumber, InputReader in, PrintWriter out) {
+		while (true) {
+			int n = in.nextInt();
+			if (n == 0) 
+				break;
+			int[] height = new int[n];
+			for (int i = 0; i < n; i++) 
+				height[i] = in.nextInt();
+			int i = 0;
+	        Stack<Integer> stack = new Stack<Integer>();
+	        long ans = 0;
+	        while (i < n) {
+	        	if (stack.isEmpty() || height[stack.peek()] <= height[i]) {
+	        		stack.push(i++);
+	        	} else {
+	        		int top = stack.pop();
+	        		int base = stack.isEmpty() ? i : i - stack.peek() - 1;
+	        		ans = Math.max(ans, (long)base * (long)height[top]);
+	        	}
+	        }
+	        while (!stack.isEmpty()) {
+	        	int top = stack.pop();
+	    		
+				int base = stack.isEmpty() ? i : i - stack.peek() - 1;
+				ans = Math.max(ans, (long)base * (long)height[top]);
+			
+	        }
+	        out.println(ans);
+		}		
+	}
+}
+
+class InputReader {
+	private BufferedReader reader;
+	private StringTokenizer tokenizer;
+
+	public InputReader(InputStream stream) {
+		reader = new BufferedReader(new InputStreamReader(stream));
+		tokenizer = null;
+	}
+
+	public String next() {
+		while (tokenizer == null || !tokenizer.hasMoreTokens()) {
+			try {
+				tokenizer = new StringTokenizer(reader.readLine());
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
+		}
+		return tokenizer.nextToken();
+	}
+
+	public int nextInt() {
+		return Integer.parseInt(next());
+	}
+
+	public String nextLine() {
+		String inputLine = "";
+		try {
+			inputLine = reader.readLine();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return inputLine;
+	}
+}

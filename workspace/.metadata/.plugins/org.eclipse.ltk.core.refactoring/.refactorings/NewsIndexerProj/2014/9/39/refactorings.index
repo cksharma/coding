@@ -1,0 +1,31 @@
+1411292514444	Rename method 'trimDatePunctuations'
+1411361696226	Rename type 'FileIdDictionary'
+1411363805567	Copy compilation unit
+1411363823455	Copy compilation unit
+1411364399240	Delete element
+1411364661893	Rename local variable 'tokenStream'
+1411366608315	Delete element
+1411369193183	Delete element
+1411375198699	Rename type 'PositionaIndex'
+1411377503177	Rename type 'IndexUtils'
+1411415451725	Rename field 'TERM_INDEX_FILE_NAME'
+1411415456726	Rename field 'AUTHOR_INDEX_FILE_NAME'
+1411415473185	Rename field 'CATEGORY_INDEX_FILE_NAME'
+1411415480743	Rename field 'PLACE_INDEX_FILE_NAME'
+1411421842484	Rename type 'RunnableIndexer'
+1411422975385	Rename local variable 'tl'
+1411435510943	Rename field 'posting'
+1411435547268	Rename field 'postingList'
+1411436232032	Rename type 'CallableIndexer'
+1411436421615	Rename field 'filePath'
+1411588006360	Rename local variable 'place'
+1411588047116	Rename local variable 'place'
+1411608587977	Rename field 'OBJECT_FILE_NAME_LIST'
+1411623041749	Rename compilation unit 'PairTermFrequency.java'
+1411623532469	Rename local variable 'lpif'
+1411711869741	Rename local variable 'indexedCategoryMapping'
+1411713453434	Rename local variable 'category'
+1411778901001	Delete element
+1411778932004	Delete element
+1411852703860	Rename field 'tokenFilterAll'
+1411852719252	Rename field 'tokenFilterAuthorPlace'

@@ -1,0 +1,33 @@
+grant {
+  permission
+    com.game.HighScorePermission
+      "ExampleGame";
+};
+
+// Here is the set of permissions the HighScore
+// class needs:
+grant codeBase "file:/E:/workspace/topcoder/Security/bin/-" {
+  // The HighScore class needs permission to read
+  // "user.home" to find the location of the
+  // highscore file
+
+  permission java.util.PropertyPermission
+    "user.home", "read";
+
+  // It needs permission to read and write the
+  // high score file itself
+
+  permission java.io.FilePermission
+      "${user.home}${/}.highscore", "read,write";
+      //you can change the permission here to none or only read or only write. 
+      //and see the difference that you get in these.
+
+  // It needs to get granted its own permission,
+  // so it can call checkPermission
+  // to see if its caller has permission.
+
+  permission
+    com.game.HighScorePermission 
+      "*";
+};
+

@@ -1,0 +1,71 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.StringTokenizer;
+
+public class Main {
+	public static void main(String[] args) {
+		InputStream inputStream = System.in;
+		OutputStream outputStream = System.out;
+		InputReader in = new InputReader(inputStream);
+		PrintWriter out = new PrintWriter(outputStream);
+		TaskB solver = new TaskB();
+		solver.solve(1, in, out);
+		out.close();
+	}
+}
+
+class TaskB {
+	public void solve(int testNumber, InputReader in, PrintWriter out) {
+		long int i,j,t,g,k,m,s,n;
+		List<Integer> pl = new ArrayList<>(32000);
+		vector<int> pf;
+		pl[0]=pl[1]=1;
+		for(i=2;i<32000;i++){
+			if(pl[i]==0){
+				pf.push_back(i);
+				for(j=i+i;j<32000;j+=i)
+					pl[j]=1;
+			}
+		}
+	}
+}
+class InputReader {
+	private BufferedReader reader;
+	private StringTokenizer tokenizer;
+
+	public InputReader(InputStream stream) {
+		reader = new BufferedReader(new InputStreamReader(stream));
+		tokenizer = null;
+	}
+
+	public String next() {
+		while (tokenizer == null || !tokenizer.hasMoreTokens()) {
+			try {
+				tokenizer = new StringTokenizer(reader.readLine());
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
+		}
+		return tokenizer.nextToken();
+	}
+
+	public int nextInt() {
+		return Integer.parseInt(next());
+	}
+
+	public String nextLine() {
+		String inputLine = "";
+		try {
+			inputLine = reader.readLine();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return inputLine;
+	}
+}

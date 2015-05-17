@@ -1,0 +1,128 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.PrintWriter;
+import java.util.StringTokenizer;
+
+public class Main {	
+	public static void main(String[] args) {
+		InputStream inputStream = System.in;
+		OutputStream outputStream = System.out;
+		InputReader in = new InputReader(inputStream);
+		PrintWriter out = new PrintWriter(outputStream);
+		TaskB solver = new TaskB();
+		solver.solve(1, in, out);
+		out.close();
+	}	
+}
+
+class TaskB {
+	public void solve(int testNumber, InputReader in, PrintWriter out) {
+		int T = in.nextInt();
+		int cnt = 1;
+		while (T-- > 0) {
+			int N = in.nextInt();
+			int min = calculateMin(N);
+			int max = calculateMax(N);
+			out.println("Case #" + cnt + ": " + min + " " + max);
+		}
+	}
+
+	private int calculateMax(int n) {
+		int ans = Integer.MIN_VALUE;
+		String str = n + "";
+		char[] ch = str.toCharArray();
+		for (int i = 0; i < str.length(); i++) {
+			char max = maxChar(str.substring(i));
+			if (max == str.charAt(i) || (max == '0' && i == 0 && ch[i] == max)) {
+				continue;
+			} else {
+				int index = str.lastIndexOf(max);
+				swap(ch, i, index);
+				ans = Integer.parseInt(new String(ch));
+				break;
+			}
+		}
+		return ans == Integer.MIN_VALUE ? n : ans;
+	}
+
+	private int calculateMin(int n) {
+		int ans = Integer.MAX_VALUE;
+		String str = n + "";
+		char[] ch = str.toCharArray();
+		int cnt = 0;
+		for (int i = 0; i < str.length(); i++) {
+			char min = minChar(str.substring(i));
+			if (i == 0) {
+				if (str.charAt(i) == min || min == '0') 
+					continue;
+				
+			}
+		}
+		return ans == Integer.MAX_VALUE ? n : ans;
+	}
+	
+	private char minChar(String str) {
+		char ans = '9';
+		for (char ch : str.toCharArray()) {
+			if (ans > ch) {
+				ans = ch;
+			}
+		}
+		return ans;
+	}
+	
+	private char maxChar(String str) {
+		char ans = '0';
+		for (char ch : str.toCharArray()) {
+			if (ans < ch) {
+				ans = ch;
+			}
+		}
+		return ans;
+	}
+	
+	void swap(char[] a, int i, int j) {
+		char t = a[i];
+		a[i] = a[j];
+		a[j] = t;
+	}
+
+}
+
+class InputReader {
+	private BufferedReader reader;
+	private StringTokenizer tokenizer;
+
+	public InputReader(InputStream stream) {
+		reader = new BufferedReader(new InputStreamReader(stream));
+		tokenizer = null;
+	}
+
+	public String next() {
+		while (tokenizer == null || !tokenizer.hasMoreTokens()) {
+			try {
+				tokenizer = new StringTokenizer(reader.readLine());
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
+		}
+		return tokenizer.nextToken();
+	}
+
+	public int nextInt() {
+		return Integer.parseInt(next());
+	}
+
+	public String nextLine() {
+		String inputLine = "";
+		try {
+			inputLine = reader.readLine();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return inputLine;
+	}
+}

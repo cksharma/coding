@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 22, 2011 4:23:06 PM by Hibernate Tools 3.3.0.GA -->
+<hibernate-mapping>
+    <class name="com.onmobile.training.Address" table="ADDRESS">
+        <id name="addressId" type="int">
+            <column name="ADDRESSID" />
+            <generator class="assigned" />
+        </id>
+        <property name="location" type="java.lang.String">
+            <column name="LOCATION" />
+        </property>
+        <property name="city" type="java.lang.String">
+            <column name="CITY" />
+        </property>
+        
+        <set name="setCustomer" table="Customer_Address">
+        <key column="address_id"></key>
+        <many-to-many class="com.onmobile.training.Customer" column="customer_id">
+        </many-to-many>
+        </set>
+        
+    </class>
+</hibernate-mapping>

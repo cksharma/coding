@@ -1,0 +1,16 @@
+1426546652470	Delete elements
+1426546657273	Delete elements
+1426581926305	Rename type 'MergeJoin'
+1426582453610	Rename type 'MergeJoinNode'
+1426582951048	Rename compilation unit 'SortMergeJoinNode.java'
+1426582965533	Rename compilation unit 'SortMergeJoinOperatorNode.java'
+1426618150200	Rename field 'relationNode1'
+1426618154886	Rename field 'relationNode2'
+1426618199889	Rename method 'mergeSortedFiles'
+1426719093560	Move compilation unit
+1426719982292	Move compilation unit
+1426719994578	Rename type 'SortedMergeJoin'
+1426758733818	Rename local variable 'data'
+1426799386168	Rename type 'MergeJoinOperatorNode'
+1426800306835	Rename type 'SortedMergeJoinImpl'
+1426807434356	Rename local variable 'cartesianOperatorNode'

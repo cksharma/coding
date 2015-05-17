@@ -1,0 +1,82 @@
+1416785288229	Rename local variable 'entpsHttpRequest'
+1416786137822	Rename compilation unit 'DefaultEntpsHttpClient.java'
+1416786850667	Rename local variable 'httpEntpsRequest'
+1416787020677	Rename local variable 'entpsHttpResponse'
+1416787059190	Rename method 'getHttpEntpsResponse'
+1416787273292	Rename local variable 'entpsHttpRequest'
+1416787278156	Rename local variable 'AdservingHttpRequest'
+1416787299180	Rename local variable 'entpsHttpRequest'
+1416787610417	Rename field 'entpsTimeout'
+1416793512912	Copy compilation unit
+1416795587142	Rename method 'logResponse'
+1416795677193	Delete element
+1416795746779	Rename type 'StatusExposingServletResponseWrapper'
+1416806571392	Rename local variable 'aClientIP'
+1416806667195	Rename local variable 'entpsCommunicator'
+1416806671627	Rename local variable 'dservingCommunicator'
+1416806680107	Rename local variable 'entpsHttpResponse'
+1416806713421	Rename local variable 'httpEntpsResponse'
+1416806728510	Rename method 'getEntpsTimeout'
+1416806747578	Rename method 'setEntpsTimeout'
+1416806757920	Rename local variable 'entpsTimeout'
+1416806845386	Rename method 'mkStr'
+1416813675478	Delete element
+1416819869112	Rename type 'AuthFilter'
+1416819910832	Rename type 'AuthenticationFilter'
+1416821114157	Rename local variable 'sc'
+1416823011396	Delete element
+1416823124698	Delete element
+1416827306193	Delete element
+1416951491007	Rename field 'applicationContext'
+1416952274801	Copy compilation unit
+1416954204744	Delete element
+1416990124352	Rename type 'ApplicationException'
+1416990244685	Delete element
+1416991487484	Delete element
+1416991668888	Rename type 'AppProperties'
+1416991833505	Delete elements
+1416992653851	Delete element
+1416992928293	Rename package 'edu.buffalo.cse.adserving.app.context'
+1416993124744	Rename local variable 'propName'
+1416993135242	Rename local variable 'propVal'
+1416993146280	Rename local variable 'propName'
+1416993151803	Rename local variable 'propVal'
+1416993286549	Delete element
+1416993349599	Rename method 'shutdownConnection'
+1417072313546	Rename type 'AmazonAPIDefs'
+1417072409102	Rename type 'TwitterAPIDefs'
+1417072419262	Rename type 'AWSAPIDefs'
+1417072578332	Rename type 'AmazonHTTPCommunicator'
+1417073551932	Rename field 'AWS_SERVICE_VERSION'
+1417073605596	Rename field 'AWS_ECOMMERCE_SERVICE'
+1417073614918	Rename field 'AWS_VERSION'
+1417073622494	Rename field 'AWS_ITEM_SEARCH'
+1417073631655	Rename field 'AWS_SEARCH_INDEX_ALL'
+1417073639223	Rename field 'AWS_ASSOCIATE_TAG'
+1417073709746	Rename local variable 'query'
+1417073788889	Rename field 'AMAZON_HTTP_COMMUNICATOR'
+1417074684165	Rename local variable 'queryMap'
+1417087668972	Delete element
+1417122698580	Rename type 'AdservingDelegate'
+1417122800049	Rename field 'adservingDelegate'
+1417123430539	Rename field 'adservingDelegate'
+1417123969900	Delete element
+1417134341025	Delete element
+1417134344917	Delete element
+1417134713711	Delete element
+1417134774448	Rename field 'SOLR_PUBLIC_HTTP_COMMUNICATOR'
+1417134984756	Rename method 'searchQuery'
+1417135026466	Rename method 'SearchSolr'
+1417135695707	Rename field 'Solr_URL'
+1417135701919	Rename field 'Solr_PORT'
+1417135707148	Rename field 'Solr_News'
+1417138853487	Rename method 'firstServiceTest'
+1417138865657	Rename method 'searchSerice'
+1417158611661	Rename type 'SolrNewsAds'
+1417158643776	Rename type 'SolrNewsAdsResponse'
+1417158743847	Rename method 'convertSolrNewsJsonToObject'
+1417158752830	Rename method 'convertSolrJsonStrToObject'
+1417244846310	Rename method 'convertJsonStrToObject'
+1417247262395	Rename local variable 'news'
+1417247267929	Rename local variable 'newsAds'
+1417249016435	Rename local variable 'ads'

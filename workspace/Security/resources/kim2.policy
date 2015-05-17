@@ -1,0 +1,24 @@
+grant {
+  permission
+    com.game.HighScorePermission
+      "ExampleGame";
+};
+
+// Here is the set of permissions the HighScore
+// class needs:
+grant codeBase "file:/home/gautham/context/jnaapti/content/me/content/java/projects/Security/bin/-" {
+  permission java.util.PropertyPermission
+    "user.home", "read";
+  permission java.io.FilePermission
+      "${user.home}${/}.highscore", "read,write";
+  permission
+    com.game.HighScorePermission 
+      "*";
+  permission
+  	java.lang.RuntimePermission
+  	  "createSecurityManager";
+  permission
+  	java.lang.RuntimePermission
+  	  "setSecurityManager";
+};
+

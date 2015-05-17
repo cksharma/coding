@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 30 Aug, 2011 11:08:14 AM by Hibernate Tools 3.3.0.GA -->
+<hibernate-mapping>
+    <class name="com.onmobile.training.Account" table="ACCOUNT">
+        <id name="accountNumber" type="int">
+            <column name="ACCOUNT_NUMBER" />
+            <!-- <generator class="assigned" /> -->
+        </id>
+        <property name="accountType" type="java.lang.String">
+            <column name="ACCOUNT_TYPE" />
+        </property>
+        <property name="balance" type="double">
+            <column name="BALANCE" />
+        </property>
+        
+    </class>
+</hibernate-mapping>

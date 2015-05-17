@@ -1,0 +1,140 @@
+package com.geeks.linkedlist;
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class LinkedListUtility {
+	
+	public static Node sortLinkedList(Node node) {
+		if (sizeOfNode(node) == 1) return node;
+		Node middle = getMiddleNode(node);
+		Node firstHalf = node;
+		Node secondHalf = middle.next;
+		middle.next = null;
+		/*firstHalf.print();
+		secondHalf.print();*/
+		firstHalf = sortLinkedList(firstHalf);
+		secondHalf = sortLinkedList(secondHalf);
+		return mergeLinkedList(firstHalf, secondHalf);
+	}
+	
+	public static Node mergeLinkedList (Node first, Node second) {
+		Node result = null;
+		Node head = null;
+		
+		if (first == null) return second;
+		if (second == null) return first;
+		
+		if (first.data <= second.data) {
+			result = new Node(first.data);
+			head = result;
+			first = first.next;
+		} else {
+			result = new Node(second.data);
+			head = result;
+			second = second.next;
+		}
+		
+		while (first != null && second != null) {
+			if (first.data <= second.data) {
+				result = result.insert(first.data);
+				first = first.next;
+			} else {
+				result = result.insert(second.data);
+				second = second.next;
+			}
+		}
+		while (first != null) {
+			result = result.insert(first.data);
+			first = first.next;
+		} 
+		while (second != null) {
+			result = result.insert(second.data);
+			second = second.next;
+		}
+		return head;
+	}
+	
+	public static int sizeOfNode(Node node) {
+		int ans = 0;
+		while (node != null) {
+			node = node.next;
+			ans++;
+		}
+		return ans;
+	}
+	
+	public static Node getMiddleNode (Node node) {
+		Node slow = node;
+		Node fast = node;		
+		while (fast != null && fast.next != null) {
+			fast = fast.next;
+			fast = fast.next;
+			if (fast == null) break;
+			slow = slow.next;
+		}
+		return slow;
+	}
+	
+	
+	public static Node reverseLinkedList (Node node, Node prev) {
+		if (node == null) 
+			return null;
+		if (node.next == null) {
+			node.next = prev;
+			return node;
+		} 
+		Node temp = node.next;
+		node.next = prev;
+		prev = node;
+		node = temp;
+		return reverseLinkedList(node, prev);
+	}
+	
+	public static Node insertNode(Node node, int data) {
+		if (node == null) {
+			return new Node(data);
+		}
+		while (node.next != null) {
+			node = node.next;
+		}
+		node.next = new Node(data);
+		Node ss = node;
+		return ss;
+	}
+	
+	public static void printLinkedList(Node node) {
+		if (node == null) return;
+		while (node != null) {
+			System.out.println(node.data);
+			node = node.next;
+		}
+	}
+
+	public static Node reverseLinkedList(Node node) {
+		Node newNext = null;
+		Node head = node;
+		Node ans = null;
+		while (node != null) {
+			Node ahead = node.next;
+			node.next = newNext;
+			newNext = node;
+			//ans = node;
+			node = ahead;			
+		}
+		return newNext;
+	}
+	
+	public static Node reverseLinkedListRecursive(Node node, Node next) {
+		return null;
+	}
+
+	public static void printLinkedListWithLoop(Node node) {
+		Set <Integer> set = new HashSet<>();
+		while (node != null) {
+			System.out.print(node.data + " -> ");
+			set.add(node.data);
+			node = node.next;
+		}
+	}
+}

@@ -1,0 +1,28 @@
+1423992703402	Delete element
+1424069537919	Delete elements
+1424070444261	Rename local variable 'createTable'
+1424070476454	Delete element
+1424136241595	Delete element
+1424136479549	Rename type 'ProjectNode'
+1424136563916	Rename type 'SelectNode'
+1424137076591	Rename local variable 'allcolumns'
+1424137089623	Rename local variable 'alltablecolumns'
+1424137292205	Delete elements
+1424137379634	Infer generic type arguments
+1424138587307	Rename type 'SelectItemImpl'
+1424139715853	Rename type 'ExpressionVisitorImpl'
+1424141035167	Delete element
+1424141234197	Rename local variable 'selectexpressionitem'
+1424142071391	Delete element
+1424142083127	Delete element
+1424214266070	Rename field 'tableName'
+1424262484756	Rename local variable 'columnIndex'
+1424315554740	Delete element
+1424336162001	Rename method 'getGroupByValue'
+1424340606193	Delete element
+1424340849332	Delete element
+1424342107557	Rename field 'expression'
+1424405301392	Rename local variable 'childNode'
+1424407741115	Rename field 'isParentNode'
+1424408329492	Move package
+1424418777779	Rename field 'list'

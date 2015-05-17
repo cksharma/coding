@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;normal&apos; in &apos;assessment.MainClass.main(...)&apos; to &apos;brack&apos;&#x0A;- Original project: &apos;AssessmentTest&apos;&#x0A;- Original element: &apos;assessment.MainClass.main(String[]).normal&apos;&#x0A;- Renamed element: &apos;normal&apos;&#x0A;- Update references to refactored element" description="Rename local variable &apos;normal&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;assessment{MainClass.java[MainClass~main~\[QString;@normal!121!160!138!143!QStack\&lt;QCharacter;&gt;;!0!false" name="brack" references="true" stamp="1424989613445" version="1.0"/>
+</session>

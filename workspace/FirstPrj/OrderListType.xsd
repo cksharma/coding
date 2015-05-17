@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+targetNamespace="http://www.onmobile.com/OrderListType" 
+xmlns:purchase="http://www.onmobile.com/OrderListType" 
+elementFormDefault="qualified">
+    
+
+    <xsd:complexType name="Order">
+    	<xsd:sequence>
+    		<xsd:element name="orderId" type="xsd:int"></xsd:element>
+    		<xsd:element name="itemId" type="xsd:int"></xsd:element>
+    		<xsd:element name="qtyRequired" type="xsd:int"></xsd:element>
+    	</xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="OrderList">
+    	<xsd:sequence>
+    		<xsd:element name="Order" type="purchase:Order" maxOccurs="unbounded" minOccurs="1"></xsd:element>
+    	</xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:element name="OrderList" type="purchase:OrderList"></xsd:element>
+</xsd:schema>

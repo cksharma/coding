@@ -1,0 +1,90 @@
+package assessment;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.PrintWriter;
+import java.util.Arrays;
+import java.util.StringTokenizer;
+
+public class Main {
+	public static void main(String[] args) {
+		InputStream inputStream = System.in;
+		OutputStream outputStream = System.out;
+		InputReader in = new InputReader(inputStream);
+		PrintWriter out = new PrintWriter(outputStream);
+		TaskB solver = new TaskB();
+		solver.solve(1, in, out);
+		out.close();
+	}
+}
+
+class TaskB {
+
+	long MOD = 1000000007;
+
+	public int numPlaylists(int N, int M, int P) {
+		long[][] comb = new long[N + 1][N + 1];
+		comb[0][0] = 1;
+		for (int i = 1; i <= N; i++) {
+			comb[i][0] = 1;
+			for (int j = 1; j <= N; j++) {
+				comb[i][j] = (comb[i - 1][j - 1] + comb[i - 1][j]) % MOD;
+			}
+		}
+		long res = 0;
+		for (int i = M; i <= N; i++) {
+			long tmp = 1;
+			for (int j = 0; j < M; j++)
+				tmp = tmp * (i - j) % MOD;
+			for (int j = M; j < P; j++)
+				tmp = tmp * (i - M) % MOD;
+			if ((N - i) % 2 == 0)
+				res = (res + tmp * comb[N][i]) % MOD;
+			else
+				res = ((res - tmp * comb[N][i]) % MOD + MOD) % MOD;
+		}
+		return (int) res;
+	}
+
+	public void solve(int testNumber, InputReader in, PrintWriter out) {
+		
+	}
+}
+
+class InputReader {
+	private BufferedReader reader;
+	private StringTokenizer tokenizer;
+
+	public InputReader(InputStream stream) {
+		reader = new BufferedReader(new InputStreamReader(stream));
+		tokenizer = null;
+	}
+
+	public String next() {
+		while (tokenizer == null || !tokenizer.hasMoreTokens()) {
+			try {
+				tokenizer = new StringTokenizer(reader.readLine());
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
+		}
+		return tokenizer.nextToken();
+	}
+
+	public int nextInt() {
+		return Integer.parseInt(next());
+	}
+
+	public String nextLine() {
+		String inputLine = "";
+		try {
+			inputLine = reader.readLine();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return inputLine;
+	}
+}

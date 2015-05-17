@@ -1,0 +1,96 @@
+package assessment;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.PrintWriter;
+import java.util.Arrays;
+import java.util.StringTokenizer;
+
+public class Main {
+	public static void main(String[] args) {
+		InputStream inputStream = System.in;
+		OutputStream outputStream = System.out;
+		InputReader in = new InputReader(inputStream);
+		PrintWriter out = new PrintWriter(outputStream);
+		TaskB solver = new TaskB();
+		solver.solve(1, in, out);
+		out.close();
+	}
+}
+
+class TaskB {
+
+	long MOD = 1000000007;
+	long[][] dp = new long[101][101];
+	
+	int numOfPlaylist(int N, int K, int L) {		
+		dp[0][0] = 1;		
+		for (int i = 1; i <= N; i++)
+			dp[i][0] = 1;
+		for (int i = 1; i <= N; i++) {
+			for (int j = 1; j <= N; j++) {
+				dp[i][j] = dp[i - 1][j - 1] + dp[i - 1][j];
+			}
+		}
+		long ans = 0;
+		for (int i = K; i <= N; i++) {
+			long result = 1;
+			for (int j = 0; j < K; j++)
+				result = result * (i - j) % MOD;
+			for (int j = K; j < L; j++)
+				result = result * (i - K) % MOD;
+			if ((N - i) % 2 == 0)
+				ans = (ans + result * dp[N][i]) % MOD;
+			else
+				result = ((result - tmp * comb[N][i]) % MOD + MOD) % MOD; 
+		}
+		return (int) ans;
+	}
+
+	public void solve(int testNumber, InputReader in, PrintWriter out) {
+		int N = in.nextInt();
+		int K = in.nextInt();
+		int L = in.nextInt();
+		
+		int ans = numOfPlaylist(N, K, L);
+		System.out.println(ans);
+	}
+}
+
+class InputReader {
+	private BufferedReader reader;
+	private StringTokenizer tokenizer;
+
+	public InputReader(InputStream stream) {
+		reader = new BufferedReader(new InputStreamReader(stream));
+		tokenizer = null;
+	}
+
+	public String next() {
+		while (tokenizer == null || !tokenizer.hasMoreTokens()) {
+			try {
+				tokenizer = new StringTokenizer(reader.readLine());
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
+		}
+		return tokenizer.nextToken();
+	}
+
+	public int nextInt() {
+		return Integer.parseInt(next());
+	}
+
+	public String nextLine() {
+		String inputLine = "";
+		try {
+			inputLine = reader.readLine();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return inputLine;
+	}
+}

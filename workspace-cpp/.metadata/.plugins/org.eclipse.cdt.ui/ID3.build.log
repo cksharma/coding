@@ -1,0 +1,6 @@
+11:15:35 **** Rebuild of configuration Debug for project ID3 ****
+Info: Configuration "Debug" uses tool-chain "MinGW GCC" that is unsupported on this system, attempting to build anyway.
+Info: Internal Builder is used for build
+
+11:15:35 Build Finished (took 17ms)
+

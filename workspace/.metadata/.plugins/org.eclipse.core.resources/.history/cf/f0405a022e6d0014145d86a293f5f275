@@ -1,0 +1,53 @@
+/*******************************************************************************
+ * ADOBE CONFIDENTIAL
+ *   ___________________
+ * 
+ *   Copyright 2014 Adobe Systems Incorporated. All Rights Reserved.
+ * 
+ *   NOTICE:  All information contained herein is, and remains
+ *   the property of Adobe Systems Incorporated and its suppliers,
+ *   if any.  The intellectual and technical concepts contained
+ *   herein are proprietary to Adobe Systems Incorporated and its
+ *   suppliers and are protected by trade secret or copyright law.
+ *   Dissemination of this information or reproduction of this material
+ *   is strictly forbidden unless prior written permission is obtained
+ *   from Adobe Systems Incorporated.
+ ******************************************************************************/
+
+package com.adobe.cce.entps.app.context;
+
+import javax.servlet.ServletContextEvent;
+import javax.servlet.ServletContextListener;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
+import com.adobe.cce.entps.services.comm.TokenManagerJIM;
+import com.adobe.cce.entps.services.exceptions.DeploymentException;
+import com.adobe.cce.entps.services.utils.AppProperties;
+
+public class EntpsContextLoaderListener implements ServletContextListener {
+	private Log log = LogFactory.getLog(EntpsContextLoaderListener.class);
+
+	@Override
+	public void contextInitialized(ServletContextEvent contextEvent) {
+
+		EntpsWebApplicationContext.initialize(contextEvent.getServletContext());
+
+		AppProperties.loadManifestFileProperties(contextEvent.getServletContext());
+
+		TokenManagerJIM.validateLaunchProperties();
+
+		try {
+			log.info("getAdminTokenForJIM: " + TokenManagerJIM.getAdminTokenForJIM());
+		} catch (Exception e) {
+			log.error("Failed to get service token for JIM " + e.getMessage(), e);
+			throw new DeploymentException("Failed to correctly deploy the application ", e);
+		}
+	}
+
+	@Override
+	public void contextDestroyed(ServletContextEvent contextEvent) {
+		EntpsWebApplicationContext.destroy();
+	}
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+<link href = "test.css" rel = "stylesheet" type = "text/css">
+<script type = "text/javascript">
+var req; /* req is some request object */
+function getRequestObject()
+{
+	if(window.XMLHttpRequest)
+	{
+		req = new XMLHttpRequest();	
+	}
+	else if(window.ActiveXObject)
+	{
+		req = new ActiveXObject("Microsoft.XMLHttp");
+	}
+	else
+	{
+		req = null;
+	}
+}
+function sendRequest()
+{
+	getRequestObject();
+	if(req != null)
+	{
+		req.onreadystatechange = handleResponse;  // I am just specifying the address of the function .. we are not invoking it..
+		// onreadystatechange we are assigning the address of the handleResponse when any change occurs...change in state will automatically / multiple times invokes that function....
+	
+		 // only parameters are loaded... all form parameters are loaded .. not sent through the url..
+		 
+		req.open("POST", "http://localhost:8080/AjaxPrj/AddEmployeeServlet", true);
+		//asynchronus request means we are not waitin for submit.. if it is false we have to waitt till we get submit from browser/./
+		req.setRequestHeader("Content-type", "application/x-www-form-urlencoded"); // this stmt has to be invoked after opening the request...
+		
+		var data = "ID=" + document.getElementById("ID").value; // document.getElementsByName()[0] if u wanna receive by name.. it returns the array of string and do [0] to get the first one..
+		
+		data = data + "&name=" + document.getElementById("name").value;
+		data = data + "&designation=" + document.getElementById("designation").value;
+		data = data + "&salary=" + document.getElementById("salary").value;
+		
+		req.send(data); // since it is get req. this will always be null. for post request it has some relaveance.
+		
+	}
+	else
+	{
+		alert("this browser doesn't support ajax");
+	}
+}
+
+function handleResponse()
+{
+	if(req.readyState == 4 && req.status == 200)
+	{
+		document.getElementById("div1").innerHTML = req.responseText;
+	}
+}
+
+function startTimer()
+{
+	setInterval("sendRequest()", 1000);		
+}
+</script>
+</head>
+<body>
+<div id = "div1">This portion will contain ajax response</div>
+<br>
+Employee ID<input type = "text" id = "ID"><br>
+Employee Name <input type = "text" id = "name"><br>
+Designation<input type = "text" id = "designation"> <br>
+Salary<input type = "text" id = "salary"> <br>
+
+<br>
+<input type = "button" value = "Send Request" onclick = "sendRequest()">
+
+</body>
+</html>

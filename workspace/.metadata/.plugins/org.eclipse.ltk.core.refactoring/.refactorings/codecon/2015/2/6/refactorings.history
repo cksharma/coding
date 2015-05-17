@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;codeconflorida1.tables.Problme&apos; to &apos;Problem&apos;&#x0A;- Original project: &apos;codecon&apos;&#x0A;- Original element: &apos;codeconflorida1.tables.Problme&apos;&#x0A;- Renamed element: &apos;codeconflorida1.tables.Problem&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Problme&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;codeconflorida1.tables{Problme.java[Problme" matchStrategy="1" name="Problem" qualified="false" references="true" similarDeclarations="false" stamp="1422756716460" textual="false" version="1.0"/>
+</session>

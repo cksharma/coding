@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Sep 12, 2011 11:51:29 PM by Hibernate Tools 3.3.0.GA -->
+<hibernate-mapping>
+    <class name="com.onmobile.training.Employee" table="EMPLOYEE">
+        <id name="employeeId" type="int">
+            <column name="EMPLOYEEID" />
+            <generator class="assigned" />
+        </id>
+        <property name="name" type="java.lang.String">
+            <column name="NAME" />
+        </property>
+        <property name="designation" type="java.lang.String">
+            <column name="DESIGNATION" />
+        </property>
+        <property name="salary" type="double">
+            <column name="SALARY" />
+        </property>
+        <one-to-one name = "account" cascade = "all" constrained = "true">
+    	</one-to-one>
+    </class>
+</hibernate-mapping>

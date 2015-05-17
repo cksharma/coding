@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+<link href = "test.css" rel = "stylesheet" type = "text/css">
+<script type = "text/javascript">
+var req; /* req is some request object */
+function getRequestObject()
+{
+	if(window.XMLHttpRequest)
+	{
+		req = new XMLHttpRequest();	
+	}
+	else if(window.ActiveXObject)
+	{
+		req = new ActiveXObject("Microsoft.XMLHttp");
+	}
+	else
+	{
+		req = null;
+	}
+}
+function sendRequest()
+{
+	getRequestObject();
+	if(req != null)
+	{
+		req.onreadystatechange = handleResponse;  // I am just specifying the address of the function .. we are not invoking it..
+		// onreadystatechange we are assigning the address of the handleResponse when any change occurs...change in state will automatically / multiple times invokes that function....
+		var q=document.annu.hero.value;
+		if(q.length > 0)
+		{
+			req.open("GET", "http://localhost:8080/AjaxPrj/SearchServlet?action="+q, true);
+		}	//asynchronus request means we are not waitin for submit.. if it is false we have to waitt till we get submit from browser/./
+		else
+		{
+			req.open("GET", "http://localhost:8080/AjaxPrj/SearchServlet", true);
+		}
+		req.send(null); // since it is get req. this will always be null. for post request it has some relaveance.
+		
+	}
+	else
+	{
+		alert("this browser doesn't support ajax");
+	}
+}
+
+function handleResponse()
+{
+	if(req.readyState == 4 && req.status == 200)
+	{
+		document.getElementById("div3").value = req.responseText;
+	}
+}
+
+</script>
+</head>
+<body>
+<form name="annu"> 
+<input type = "text" name = "hero" onkeyup="sendRequest()">Name
+<br>
+<div id = "div2">
+<textarea rows="20" cols="30" id="div3"></textarea>
+</div>
+
+</form>
+</body>
+</html>

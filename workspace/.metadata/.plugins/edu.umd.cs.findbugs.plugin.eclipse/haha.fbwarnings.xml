@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BugCollection version="3.0.0" sequence="1" timestamp="1415441825055" analysisTimestamp="1415441822557" release="">
+  <Project projectName="haha">
+    <Jar>/home/cksharma/workspace/haha/build/classes</Jar>
+    <AuxClasspathEntry>/home/cksharma/workspace/haha/build/classes</AuxClasspathEntry>
+    <AuxClasspathEntry>/usr/lib/jvm/java-8-oracle/jre/lib/rt.jar</AuxClasspathEntry>
+    <SrcDir>/home/cksharma/workspace/haha/src</SrcDir>
+    <Cloud id="edu.umd.cs.findbugs.cloud.doNothingCloud" online="false"></Cloud>
+  </Project>
+  <Errors errors="0" missingClasses="0"></Errors>
+  <FindBugsSummary timestamp="Sat, 8 Nov 2014 05:17:02 -0500" total_classes="0" referenced_classes="0" total_bugs="0" total_size="0" num_packages="0" java_version="1.8.0_25" vm_version="25.25-b02" cpu_seconds="5.67" clock_seconds="2.50" peak_mbytes="468.24" alloc_mbytes="455.50" gc_seconds="0.04">
+    <FindBugsProfile>
+      <ClassProfile name="de.tobject.findbugs.builder.FindBugs2Eclipse" totalMilliseconds="406" invocations="2" avgMicrosecondsPerInvocation="203156" maxMicrosecondsPerInvocation="225894" standardDeviationMircosecondsPerInvocation="22738"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="223" invocations="156" avgMicrosecondsPerInvocation="1431" maxMicrosecondsPerInvocation="67436" standardDeviationMircosecondsPerInvocation="5559"/>
+    </FindBugsProfile>
+  </FindBugsSummary>
+  <ClassFeatures></ClassFeatures>
+  <History>
+    <AppVersion sequence="0" timestamp="1415441825052" release="" codeSize="0" numClasses="0"/>
+  </History>
+</BugCollection>

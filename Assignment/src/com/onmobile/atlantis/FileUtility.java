@@ -9,12 +9,12 @@ public class FileUtility {
 
 	private static int fileStartCounter;
 	private static int fileEndCounter;
-	
+
 	private static String baseFilePath = null;
 	private static ResourceBundle bundle = null;
 	private static String outputFile = null;
 	public static Logger logger = Logger.getLogger(FileUtility.class);
-	
+
 	private static String apacheLogFile = null;
 	private static String jbossLogFile = null;
 	//static initialization of properties file
@@ -27,7 +27,7 @@ public class FileUtility {
 		apacheLogFile = bundle.getString("FIRST_FILE_PATH");
 		jbossLogFile = bundle.getString("SECOND_FILE_PATH");
 	}
-	
+
 	public static void processFileReadingAndAppend() {
 		logger.info("Going to process file Reading and Appending");
 		FileReadingAppendingUtility fileReadApp = new FileReadingAppendingUtility(baseFilePath, fileStartCounter, fileEndCounter, outputFile);
@@ -38,7 +38,7 @@ public class FileUtility {
 		}
 		logger.info("processed file Reading and Appending");
 	}
-	
+
 	public static void main(String[] args) {
 		//processFileReadingAndAppend();
 		FileComparator fileComp = new FileComparator();

@@ -12,7 +12,7 @@ public class BestTimeToBuyAndSellStockII {
         	runningSum += diff;
         	if (runningSum < 0) {
         		runningSum = 0;
-        	}  
+        	}
         	if (diff >= 0) {
         		maxProfit += diff;
         	}

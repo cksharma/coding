@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="cust1" class="com.onmobile.training.Customer">
+		<property name="customerId" value="1"></property>
+		<property name="customerName" value="Arvind"></property>
+		<property name="balance" value="5000"></property>
+	</bean>
+	<bean id="cust2" class="com.onmobile.training.Customer">
+		<property name="customerId" value="2"></property>
+		<property name="customerName" value="Rajesh"></property>
+		<property name="balance" value="7000"></property>
+	</bean>
+	<bean id="cust3" class="com.onmobile.training.Customer">
+		<property name="customerId" value="3"></property>
+		<property name="customerName" value="Arjun"></property>
+		<property name="balance" value="8000"></property>
+	</bean>
+</beans>

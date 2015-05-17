@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 30 Aug, 2011 11:08:14 AM by Hibernate Tools 3.3.0.GA -->
+<hibernate-mapping>
+    <class name="com.onmobile.training.Customer" table="CUSTOMER_TABLE">
+        <id name="customerId" type="int">
+            <column name="CUSTOMER_ID" />
+           <!--   <generator class="assigned" /> -->
+        </id>
+        
+        <property name="customerName" type="java.lang.String">
+            <column name="CUSTOMER_NAME" />
+        </property>
+        
+        <set name="accountList" table="ACCOUNT" inverse="false" cascade="all">
+            <key>
+                <column name="CUSTOMER_ID" />
+            </key>
+            <one-to-many class="com.onmobile.training.Account" />
+        </set>
+    </class>
+</hibernate-mapping>

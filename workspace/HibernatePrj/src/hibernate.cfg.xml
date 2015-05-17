@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+            "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+            "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.password">root</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/first</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.hbm2ddl.auto">create-drop</property> <!-- we have given create-drop so no problem in running Customer.java many times.. if we make it update then running it many times will generate the error.. -->
+        <property name="hibernate.show_sql">true</property><!-- this statement here generates the sql statement used to run a query if set to true -->
+        <mapping resource = "com/onmobile/training/Customer.hbm.xml"/>
+    	<mapping resource = "com/onmobile/training/Address.hbm.xml"/>
+    </session-factory>
+</hibernate-configuration> 

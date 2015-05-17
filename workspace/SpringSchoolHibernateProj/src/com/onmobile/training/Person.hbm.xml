@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 15 Sep, 2011 4:56:14 PM by Hibernate Tools 3.3.0.GA -->
+<hibernate-mapping>
+    <class name="com.onmobile.training.Person"  abstract="true"  >
+       <id column="name" name="name">
+       </id>
+        <property name="gender" type="java.lang.String">
+            <column name="GENDER" />
+        </property>
+        <union-subclass name="com.onmobile.training.Student" table="student">
+        
+          <property name="rollno" column="rollno"></property>
+        </union-subclass>
+    </class>
+</hibernate-mapping>

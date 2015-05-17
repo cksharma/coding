@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;assessment.frmClient.java&apos; to &apos;frmclient.java&apos;&#x0A;- Original project: &apos;AssessmentTest&apos;&#x0A;- Original element: &apos;assessment.frmClient.java&apos;&#x0A;- Renamed element: &apos;assessment.frmclient.java&apos;" description="Rename compilation unit &apos;frmClient.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;assessment{frmClient.java" name="frmclient.java" references="false" stamp="1422540242777" version="1.0"/>
+</session>

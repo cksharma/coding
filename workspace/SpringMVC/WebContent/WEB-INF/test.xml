@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="firstController" class="com.onmobile.training.FirstController"></bean>
+	<bean id="mapping"
+		class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<property name="mappings">
+			<props>
+				<prop key="/first.form">firstController</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<bean id = "viewResolver" class = "org.springframework.web.servlet.view.InternalResourceViewResolver">
+	<property name="prefix" value = "/"></property>
+	<property name="suffix" value = ".jsp"></property>  <!-- it means prefix is / and value is  .jsp -->
+	<!--  if the path is changed in future we can simply change the name here.. i.e. prefix change kar sakte hai.. -->
+	</bean>
+</beans>

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Sep 20, 2011 10:05:56 PM by Hibernate Tools 3.3.0.GA -->
+<hibernate-mapping>
+    <class name="com.onmobile.training.RequestTracker" table="REQUESTTRACKER">
+        <id name="empid" type="int">
+            <column name="EMPID" />
+            <generator class="assigned" />
+        </id>
+        <property name="requestId" type="int">
+            <column name="REQUESTID" />
+        </property>
+        <property name="empidToBeAdded" type="int">
+            <column name="EMPIDTOBEADDED" />
+        </property>
+        <property name="empidApprover" type="int">
+            <column name="EMPIDAPPROVER" />
+        </property>
+        <property name="status" type="int">
+            <column name="STATUS" />
+        </property>
+    </class>
+</hibernate-mapping>

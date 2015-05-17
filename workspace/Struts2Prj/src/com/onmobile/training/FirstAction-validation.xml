@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE validators PUBLIC 
+
+        "-//OpenSymphony Group//XWork Validator 1.0.2//EN" 
+
+        "http://www.opensymphony.com/xwork/xwork-validator-1.0.2.dtd">
+
+<validators>
+
+	<field name="customerId">
+		<field-validator type="int">
+			<param name="min">1</param>
+			<param name="max">1000</param>
+			<message>Value should be between ${min} and ${max}</message>
+		</field-validator>
+	</field>
+	
+
+	<field name="customerName">
+		<field-validator type="requiredstring">
+			<param name="trim">true</param>
+			<message>Name shouldnot be empty</message>
+		</field-validator>
+	</field>
+
+
+	<field name="balance">
+		<field-validator type="int">
+			<param name="min">1000</param>
+			<message>Min balance is ${min}</message>
+		</field-validator>
+	</field>
+
+</validators>

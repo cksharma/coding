@@ -1,0 +1,32 @@
+1422576787366	Rename compilation unit 'Main.java'
+1422576790756	Rename compilation unit 'Problme.java'
+1422592321343	Rename type 'Problem'
+1422592330963	Rename resource 'probem3'
+1422592337273	Rename resource 'problem_ascii'
+1422592341023	Rename resource 'problem_dirty'
+1422592344682	Rename resource 'problem_giga'
+1422592385834	Rename resource 'problem1'
+1422592434683	Rename package 'codecon'
+1422592464364	Rename compilation unit 'probem3.java'
+1422592501510	Rename type 'Problem'
+1422592515820	Move compilation unit
+1422592532477	Rename compilation unit 'problem_pallindrome.java'
+1422592579946	Rename compilation unit 'problem_dirty.java'
+1422592584498	Move compilation unit
+1422592625661	Move compilation unit
+1422592637816	Rename compilation unit 'problem_giga.java'
+1422592653168	Move compilation unit
+1422592660320	Rename compilation unit 'problem_ascii.java'
+1422592713909	Delete element
+1422592837940	Delete element
+1422592850652	Rename package 'codecon1'
+1422592874667	Rename package 'codeconpalindrome'
+1422592883241	Rename type 'ProblemPalindrome'
+1422592895414	Rename package 'codecon3'
+1422592901544	Rename type 'ProblemPrimes'
+1422592909532	Rename package 'codecon4'
+1422592915374	Rename type 'ProblemAscii'
+1422592929158	Rename package 'codecon5'
+1422592935628	Rename type 'ProblemDirtyStack'
+1422592951155	Rename package 'codecon7'
+1422592958660	Rename type 'ProblemGigaBall'

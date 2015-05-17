@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Sep 13, 2011 11:59:43 AM by Hibernate Tools 3.3.0.GA -->
+<hibernate-mapping>
+    <class name="com.onmobile.training.Item" table="ITEM_TBL">
+        <id name="itemId" type="int">
+            <column name="ITEM_ID" />
+            <generator class="assigned" />
+        </id>
+        <property name="itemName" type="java.lang.String">
+            <column name="ITEM_NAME" />
+        </property>
+        <property name="price" type="double">
+            <column name="PRICE" />
+        </property>
+        <property name="quantityAvailable" type="int">
+            <column name="QUANTITY_AVAILABLE" />
+        </property>
+    </class>
+</hibernate-mapping>

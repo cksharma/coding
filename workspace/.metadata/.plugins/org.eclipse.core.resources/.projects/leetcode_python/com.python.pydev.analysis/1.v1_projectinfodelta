@@ -1,0 +1,17 @@
+INSTUPeasy.BinaryTreeLevelOrderTraversal
+/home/cksharma/data/git/coding/leetcode_python/easy/BinaryTreeLevelOrderTraversal.py
+INFOS:&&1|1|2|0&&2|3|2|1&&3|4|2|5&&3|6|2|5&&3|7|2|5&&1|8|2|0&&2|3|2|8&&3|9|2|10&&2|11|2|8&&2|12|2|8&&3|13|2|8&&3|14|2|8
+val=4
+easy.BinaryTreeLevelOrderTraversal=2
+TreeNode.__init__=5
+mp=9
+Solution.__init__=10
+right=7
+sol=14
+left=6
+TreeNode=1
+root=13
+levelOrder1=11
+__init__=3
+Solution=8
+levelOrder=12
