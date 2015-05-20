@@ -1,7 +1,6 @@
+package contest303.b;
+
 import java.io.*;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
 import java.util.StringTokenizer;
 
 public class Main {
@@ -17,52 +16,28 @@ public class Main {
 }
 
 class Solution {
-    static class Pair {
-        int x;
-        int h;
-        Pair(int x, int h) {
-            this.x = x;
-            this.h = h;
-        }
-
-        @Override
-        public String toString() {
-            return "Pair{" +
-                    "x=" + x +
-                    ", h=" + h +
-                    '}';
-        }
-    }
-    private boolean canGoLeft(int pointLeft, Pair point) {
-        return (point.x - point.h > pointLeft);
-    }
-    private boolean canGoRight(Pair point, int pointRight) {
-        return point.x + point.h < pointRight;
-    }
-
     public void solve(int testNumber, InputReader in, PrintWriter out) {
-        int n = in.nextInt();
-        Pair[] pair = new Pair[n];
-        for (int i = 0; i < n; i++) {
-            pair[i] = new Pair(in.nextInt(), in.nextInt());
+        String s1 = in.next();
+        String s2 = in.next();
+        int diff = 0;
+        for (int i = 0; i < s1.length(); i++) {
+            diff += s1.charAt(i) == s2.charAt(i) ? 0 : 1;
         }
-        int ans = 1;
-        int pointLeft = pair[0].x;
-
-        for (int i = 1; i < n; i++) {
-            if (i == n - 1 && n != 1) {
-                ans++;
-                continue;
+        if (diff % 2 == 1) {
+            out.println("impossible");
+        } else {
+            StringBuilder res = new StringBuilder("");
+            boolean zero = true;
+            for (int i = 0; i < s1.length(); i++) {
+                if (s1.charAt(i) == s2.charAt(i)) res.append(s1.charAt(i));
+                else {
+                    if (zero) res.append(s1.charAt(i));
+                    else res.append(s2.charAt(i));
+                    zero = !zero;
+                }
             }
-            if (canGoLeft(pointLeft, pair[i])) {
-                ans++;
-            } else if (canGoRight(pair[i], pair[i + 1].x)){
-                pointLeft = pair[i].x + pair[i].h;
-                ans++;
-            }
-            pointLeft = Math.max(pointLeft, pair[i].x);
+            out.println(res.toString());
         }
-        out.println(ans);
     }
 }
 

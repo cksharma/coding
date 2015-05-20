@@ -1,5 +1,6 @@
+package contest303.a;
+
 import java.io.*;
-import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.StringTokenizer;
@@ -17,52 +18,30 @@ public class Main {
 }
 
 class Solution {
-    static class Pair {
-        int x;
-        int h;
-        Pair(int x, int h) {
-            this.x = x;
-            this.h = h;
-        }
-
-        @Override
-        public String toString() {
-            return "Pair{" +
-                    "x=" + x +
-                    ", h=" + h +
-                    '}';
-        }
-    }
-    private boolean canGoLeft(int pointLeft, Pair point) {
-        return (point.x - point.h > pointLeft);
-    }
-    private boolean canGoRight(Pair point, int pointRight) {
-        return point.x + point.h < pointRight;
-    }
-
     public void solve(int testNumber, InputReader in, PrintWriter out) {
         int n = in.nextInt();
-        Pair[] pair = new Pair[n];
+        int[][] A = new int[n][n];
+        for (int i = 0; i < n; i++)
+            for (int j = 0; j < n; j++)
+                A[i][j] = in.nextInt();
+        Set set = new HashSet();
         for (int i = 0; i < n; i++) {
-            pair[i] = new Pair(in.nextInt(), in.nextInt());
-        }
-        int ans = 1;
-        int pointLeft = pair[0].x;
-
-        for (int i = 1; i < n; i++) {
-            if (i == n - 1 && n != 1) {
-                ans++;
-                continue;
+            for (int j = 0; j < i; j++) {
+                if (A[i][j] == -1) continue;
+                if (A[i][j] == 1) set.add(i + 1);
+                else if (A[i][j] == 2) set.add(j + 1);
+                else if (A[i][j] == 3) {
+                    set.add(i + 1);
+                    set.add(j + 1);
+                }
             }
-            if (canGoLeft(pointLeft, pair[i])) {
-                ans++;
-            } else if (canGoRight(pair[i], pair[i + 1].x)){
-                pointLeft = pair[i].x + pair[i].h;
-                ans++;
-            }
-            pointLeft = Math.max(pointLeft, pair[i].x);
         }
-        out.println(ans);
+        int count = n - set.size();
+        out.println(count);
+        for (int i = 1; i <= n; i++) {
+            if (set.contains(i)) continue;
+            out.print(i + " ");
+        }
     }
 }
 
