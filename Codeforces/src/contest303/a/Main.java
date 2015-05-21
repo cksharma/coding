@@ -18,6 +18,7 @@ public class Main {
 }
 
 class Solution {
+
     public void solve(int testNumber, InputReader in, PrintWriter out) {
         int n = in.nextInt();
         int[][] A = new int[n][n];
@@ -36,6 +37,7 @@ class Solution {
                 }
             }
         }
+
         int count = n - set.size();
         out.println(count);
         for (int i = 1; i <= n; i++) {

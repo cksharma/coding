@@ -9,6 +9,7 @@
 #include <array>
 #include <limits.h>
 #include <bits/stdc++.h>
+
 using namespace std;
 
 struct TreeNode {
@@ -153,5 +154,5 @@ class GasStation {
 
 class RemoveDuplicatesFromSortedArray {
 	public:
-    	int removeDuplicates(int A[], int n);
+    	int removeDuplicates(vector<int>& nums);
 };

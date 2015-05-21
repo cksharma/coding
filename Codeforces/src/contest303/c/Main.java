@@ -14,6 +14,7 @@ public class Main {
         Solution solver = new Solution();
         solver.solve(1, in, out);
         out.close();
+
     }
 }
 
@@ -64,6 +65,15 @@ class Solution {
             pointLeft = Math.max(pointLeft, pair[i].x);
         }
         out.println(ans);
+    }
+
+    public boolean isPrime(int n) {
+        if (n == 2) return true;
+        if (n % 2 == 0) return false;
+        for (int i = 3; i * i <= n; i += 2) {
+            if (n % i == 0) return false;
+        }
+        return n > 1;
     }
 }
 

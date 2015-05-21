@@ -247,8 +247,10 @@ void testGasStation() {
 
 void testRemoveDuplicates() {
 	RemoveDuplicatesFromSortedArray sol;
-	int arr[] = {1, 1, 2, 2, 3, 3, 4};
-	cout << sol.removeDuplicates(arr, 7) << endl;
+	vector<int> arr = {1, 1, 2, 2, 3, 3, 4};
+	//arr = {1, 1};
+    //arr = {1, 2, 2};
+	cout << sol.removeDuplicates(arr) << endl;
 }
 
 int main() {
