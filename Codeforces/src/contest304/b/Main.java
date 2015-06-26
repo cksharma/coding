@@ -1,3 +1,5 @@
+package contest304.b;
+
 import java.io.*;
 import java.util.Arrays;
 import java.util.StringTokenizer;
@@ -17,26 +19,26 @@ public class Main {
 class Solution {
     public void solve(int testNumber, InputReader in, PrintWriter out) {
         int n = in.nextInt();
-        int m = in.nextInt();
-        char[][] ch = new char[n][m];
+        int[] arr = new int[n];
         for (int i = 0; i < n; i++) {
-            ch[i] = in.next().toCharArray();
+            arr[i] = in.nextInt();
         }
-        int ans = 0;
-        for (int i = 0; i < n - 1; i++) {
-            char[] k = new char[4];
-            for (int j = 0 ; j < m - 1; j++) {
-                k[0] = ch[i][j];
-                k[1] = ch[i + 1][j];
-                k[2] = ch[i][j + 1];
-                k[3] = ch[i + 1][j + 1];
-                Arrays.sort(k);
-                if (new String(k).equals("acef")) {
-                    ans++;
-                }
+        Arrays.sort(arr);
+        int cost = 0;
+        int coolness = arr[0];
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] == coolness + 1) {
+                coolness += 1;
+                continue;
+            }
+            if (arr[i] < coolness + 1) {
+                cost += (coolness + 1 - arr[i]);
+                coolness += 1;
+            } else {
+                coolness = arr[i];
             }
         }
-        out.println(ans);
+        out.println(cost);
     }
 }
 
@@ -63,11 +65,9 @@ class InputReader {
     public int nextInt() {
         return Integer.parseInt(next());
     }
-
     public long nextLong() {
         return Long.parseLong(next());
     }
-
     public String nextLine() {
         String inputLine = "";
         try {

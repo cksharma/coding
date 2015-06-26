@@ -1,5 +1,6 @@
+package contest304.d;
+
 import java.io.*;
-import java.util.Arrays;
 import java.util.StringTokenizer;
 
 public class Main {
@@ -15,28 +16,44 @@ public class Main {
 }
 
 class Solution {
-    public void solve(int testNumber, InputReader in, PrintWriter out) {
-        int n = in.nextInt();
-        int m = in.nextInt();
-        char[][] ch = new char[n][m];
-        for (int i = 0; i < n; i++) {
-            ch[i] = in.next().toCharArray();
-        }
-        int ans = 0;
-        for (int i = 0; i < n - 1; i++) {
-            char[] k = new char[4];
-            for (int j = 0 ; j < m - 1; j++) {
-                k[0] = ch[i][j];
-                k[1] = ch[i + 1][j];
-                k[2] = ch[i][j + 1];
-                k[3] = ch[i + 1][j + 1];
-                Arrays.sort(k);
-                if (new String(k).equals("acef")) {
-                    ans++;
+    int n = 5000000 + 1;
+    int[] arr = new int[n];
+    int[] count = new int[n];
+
+    void preProcess() {
+        for (int i = 2; i < n; i++)
+            arr[i] = i;
+        for (int i = 2; i * i < n; i++) {
+            if (count[i] != 0)
+                continue;
+            for (int j = i; j < n; j += i) {
+                int num = arr[j];
+                while (num > 1 && num % i == 0) {
+                    num /= i;
+                    count[j]++;
                 }
+                arr[j] = num;
             }
         }
-        out.println(ans);
+
+        int cumuSum = count[1];
+        for (int i = 2; i < n; i++) {
+            if (count[i] == 0) count[i] = 1;
+            else if (arr[i] > 1) cumuSum += 1;
+            cumuSum += count[i];
+            count[i] = cumuSum;
+
+        }
+    }
+
+    public void solve(int testNumber, InputReader in, PrintWriter out) {
+        preProcess();
+        int t = in.nextInt();
+        while (t-- > 0) {
+            int a = in.nextInt();
+            int b = in.nextInt();
+            out.println(count[a] - count[b]);
+        }
     }
 }
 
