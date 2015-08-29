@@ -156,3 +156,18 @@ class RemoveDuplicatesFromSortedArray {
 	public:
     	int removeDuplicates(vector<int>& nums);
 };
+
+class MajorityElement {
+	public:
+		int majorityElement(vector<int>& nums);
+		
+};
+class LongestCommonPrefix {
+	public:
+		string longestCommonPrefix(vector<string>& strs);
+};
+
+class MajorityElementII {
+	public:
+		vector<int> majorityElement(vector<int>& v);
+};

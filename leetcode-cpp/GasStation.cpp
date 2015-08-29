@@ -1,7 +1,7 @@
 #include "header.h"
 
 int GasStation::canCompleteCircuit(vector<int> &gas, vector<int> &cost) {
-	int start = 0;
+	  int start = 0;
     int i = 0;
     int runningCost = 0;
     

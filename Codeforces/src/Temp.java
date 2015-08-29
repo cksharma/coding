@@ -6,7 +6,7 @@ import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.util.StringTokenizer;
 
-public class Main {
+public class Temp {
     public static void main(String[] args) {
         InputStream inputStream = System.in;
         OutputStream outputStream = System.out;
@@ -16,11 +16,13 @@ public class Main {
         solver.solve(1, in, out);
         out.close();
     }
+
     static class Solution {
         public void solve(int testNumber, InputReader in, PrintWriter out) {
 
         }
     }
+
     static class InputReader {
         private BufferedReader reader;
         private StringTokenizer tokenizer;
@@ -56,6 +58,3 @@ public class Main {
         }
     }
 }
-
-
-

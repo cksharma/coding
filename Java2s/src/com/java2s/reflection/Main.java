@@ -1,3 +1,4 @@
+/*
 package com.java2s.reflection;
 
 import org.jasypt.util.text.BasicTextEncryptor;
@@ -23,8 +24,10 @@ public class Main {
 		
 		//text = "64c829a3-bb1d-4a5f-a220-619b35089970";
 		
-		/*String encryptedText = encryptString(text);
-		System.out.println(encryptedText);*/
+		*/
+/*String encryptedText = encryptString(text);
+		System.out.println(encryptedText);*//*
+
 		
 		String encryptedText = "Ap353lISz4QVwDHkpU/0TWoSsbjY/dO06BDQhhBauX8lVoxhcfl065AYS2KBUs+1mNFliMkcopiRW2SauzVaQ2iN8khQSrIFplzBcZcDYP9eFcCFQo227BbBK+KLNmoIu5rfiE5TqULPBHS2gauoh57UT8NWzCnq7FrDdfgzst/9ajbfoXSBUOhh8F9+FNlHz39ZsbZC1yScIWAYnCv1yZMbHKlACaGQTiRt3UMtbd9eEob73nPMhHCdYcwzO787KWItC+vAWsoTJ6Trd+h0PsZSVhAttzEPL8pMydzIH8uCsZUSLT8Xs05ZY7VrtEE/H8vEGYPg8/xyX4H/WJ9Tey9e+lt1bTmicdgBEbDy+Hxz/2fJ8CGSWEeA9thhn3NojI5htpr6sATf9J+smxGfJVbs9DmYJvd35cUtFII5rIvCE0aNZiED++sY/t4cKhEM2kkqxQJ2suPnLUtTOxspul/NgIK/1gW2go/Xpyg1+0CyHyL2hZhyFQ0nirf34ZKhD6mz8BdrjiMCUzDgFMYszNdRwF9Get8DNAi5IU0owS7pm4181U3H6AVHl6VcZ0jLqissiCr0U6YrVtnYTdvLpjIbzEg8LVVJVDFTS4wloa4RaDHzKJ9WbQXfDZcszWAvDwytyHWUZuqGciuQJZhPnMU1LWRTVNi0PFzM8myZMElJjJgOkoJdiGLyOgCzKrKTVTSRF4L9Fg0ryn/VkkDAx2S4dciGpa/21aPZ9kwPbJREN103uJvfuGMOAu291tlzdTOMWzzXQurRi29We9/EPC7RVOQ8BouujPFO3KKt08Ab4lzemRXcn3evwWAAmFQ0irXEhfTRMNPV7V8XWAYKkOZXDSg1fkCp+A3OMFTseoWPyXht5w1I86ygyuSxLYzMn/qN/sZ8XeuK5WlWLVLBQq8NcnNG1L9cweF7OXar5PhhdAThATZzqwUNj64nlwC9";
 
@@ -34,7 +37,8 @@ public class Main {
 		
 		
 		
-		/*System.out.println("=======================");
+		*/
+/*System.out.println("=======================");
 		byte[] encodedBytes = Base64.encodeBase64(text.getBytes());
 		String encodedBase64 = new String(encodedBytes);
 		System.out.println(encodedBase64);
@@ -44,6 +48,7 @@ public class Main {
 		byte[] decodedBytes = Base64.decodeBase64(encodedBytes);
 		String decodedBase64 = new String(decodedBytes);
 		System.out.println(decodedBase64);
-		System.out.println(decodedBase64.equals(decryptedText));*/		
+		System.out.println(decodedBase64.equals(decryptedText));*//*
+
 	}
-}
+}*/

@@ -1,61 +1,93 @@
 package medium;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
+class Pair {
+    int start;
+    int end;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Pair pair = (Pair) o;
+
+        if (start != pair.start) return false;
+        return end == pair.end;
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = start;
+        result = 31 * result + end;
+        return result;
+    }
+
+    Pair(int start, int end) {
+        this.start = start;
+        this.end = end;
+    }
+}
 
 public class PalindromePartitioning {
-    
-	public List<List<String>> partition(String s) {
-		List <List <String>> ans = new ArrayList <>();
-		if (s == null || s.isEmpty())
-			return ans;
-		boolean[][] arrPalin = new boolean[s.length()][s.length()];
-		char[] ch = s.toCharArray();
-		for (int i = 0; i < ch.length; i++) {
-			for (int j = i; j < ch.length; j++) {
-				arrPalin[i][j] = isPalin(ch, i, j);
-			}
-		}
-		int n = s.length();
-		for (int i = 1; i < (1 << n); i++) {
-			List <Integer> lst = new ArrayList <>();
-			for (int j = 0; j < n; j++) {
-				if ((i & (1 << j)) != 0) 
-					lst.add(j);
-			}
-			int start = 0;
-			boolean toTake = true;
-			for (int end = 0; end < lst.size() && toTake; end++) {
-				toTake = arrPalin[start][lst.get(end)];
-				start = lst.get(end) + 1;
-			}
-			toTake = toTake & arrPalin[start - 1][s.length() - 1];
-			if (toTake) {
-				List <String> temp = new ArrayList <>();
-				start = 0;
-				for (int end = 0; end < lst.size(); end++) {
-					temp.add(s.substring(start, lst.get(end) + 1));
-					start = lst.get(end) + 1;
-				}
-				ans.add(temp);
-			}
-		}
-		
-		return ans;
+
+    private Map<Pair, String> cacheStringPool = new HashMap<>();
+    private List<List<String>> ans;
+    private boolean[][] palinArr;
+    private int n;
+
+    public void solve(int start, List<String> list) {
+        if ( start == n ) {
+            List<String> temp = new ArrayList<>();
+            for (String item : list) temp.add(item);
+            ans.add(temp);
+            return;
+        }
+        for (int e = start; e < n; e++) {
+            if ( palinArr[start][e]) {
+                list.add(cacheStringPool.get(new Pair(start, e)));
+                solve(e + 1, list);
+                list.remove(list.size() - 1);
+            }
+        }
     }
-	
-	public boolean isPalin(char[] ch, int start, int end) {
-		while (start < end) {
-			if (ch[start] != ch[end]) return false;
-			start++;
-			end--;
-		}
-		return true;
-	}
-	
-	public static void main(String[] args) {
+
+    public List<List<String>> partition(String s) {
+        this.ans      = new ArrayList<>();
+        this.palinArr = new boolean[s.length()][s.length()];
+        this.n        = s.length();
+
+        for (int i = 0; i < s.length(); i++) {
+            for (int j = i; j < s.length(); j++) {
+                palinArr[i][j] = isPalinInRange(s, i, j);
+                if (palinArr[i][j]) {
+                    cacheStringPool.put(new Pair(i, j), s.substring(i, j + 1));
+                }
+            }
+        }
+        solve(0, new ArrayList<String>());
+        return ans;
+    }
+
+    public boolean isPalinInRange(String ch, int start, int end) {
+        while (start < end) {
+            if (ch.charAt(start) != ch.charAt(end)) return false;
+            start++;
+            end--;
+        }
+        return true;
+    }
+
+    public static void main(String[] args) {
 		PalindromePartitioning sol = new PalindromePartitioning();
-		List <List <String>> ans = sol.partition("amanaplanacanalpanama");
-		System.out.println(ans);
+		//System.out.println(sol.partitionBruteForce("amanaplanacanalpanama"));
+		//System.out.println(sol.partitionBruteForce("aab"));
+        System.out.println(sol.partition("amanaplanacanalpanama"));
+        System.out.println(sol.partition("aab"));
 	}
 }

@@ -253,6 +253,29 @@ void testRemoveDuplicates() {
 	cout << sol.removeDuplicates(arr) << endl;
 }
 
+
+void testMajorityElement() {
+	MajorityElement sol;
+	vector<int> v = {1, 2, 2, 1, 1};
+	cout << sol.majorityElement(v) << endl;	
+}
+
+void testLongestCommonPrefix() {
+	LongestCommonPrefix sol;
+	vector<string> strs = {"abcd", "ab", "abxyz", "abckkl"};
+	cout << sol.longestCommonPrefix(strs)  << endl;
+}
+
+void testMajorityElementII() {
+	MajorityElementII sol;
+	vector<int> v = {1, 2, 1, 2, 3};
+	vector<int> ans = sol.majorityElement(v);
+	for (auto& item : ans) {
+		cout << item << " ";
+	}
+	cout << endl;
+}
+
 int main() {
 	//testBalancedBinaryTree();
 	//testExcelSheetColumnTitle();
@@ -275,5 +298,8 @@ int main() {
 	//testContainerWithMostWater();
 	//testLargestNumber();
 	//testGasStation();
-	testRemoveDuplicates();
+	//testRemoveDuplicates();
+	//testLongestCommonPrefix();
+	//testMajorityElement();
+	testMajorityElementII();
 }
