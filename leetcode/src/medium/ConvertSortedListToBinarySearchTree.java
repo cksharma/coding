@@ -8,6 +8,17 @@ class ListNode {
 		val = x;
 		next = null;
 	}
+
+    @Override
+    public String toString() {
+        String ans = "";
+        ListNode node = this;
+        while (node != null) {
+            ans += node.val + " -> ";
+            node = node.next;
+        }
+        return ans;
+    }
 }
 
 public class ConvertSortedListToBinarySearchTree {

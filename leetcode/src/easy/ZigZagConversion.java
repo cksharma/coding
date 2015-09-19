@@ -33,7 +33,7 @@ public class ZigZagConversion {
 
 	public static void main(String[] args) {
 		ZigZagConversion sol = new ZigZagConversion();
-		System.out.println(sol.convert("PAYPALISHIRING", 3));
+		System.out.println(sol.convert("PAYPALISHIRING", 4));
 		System.out.println(sol.convert("ABC", 2));
 		System.out.println(sol.convert("A", 1));
 		System.out.println(sol.convert("A", 2));

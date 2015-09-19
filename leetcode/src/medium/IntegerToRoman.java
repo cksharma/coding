@@ -59,7 +59,8 @@ public class IntegerToRoman {
 	public static void main(String[] args) {
 		IntegerToRoman sol = new IntegerToRoman();
 		//System.out.println(sol.intToRoman(84));
-		//System.out.println(sol.intToRoman(94));
+		System.out.println(sol.intToRoman(94));
+		System.out.println(sol.intToRoman(99));
 		//System.out.println(sol.intToRoman(49));
 		//System.out.println(sol.intToRoman(8));
 		System.out.println(sol.intToRoman(3999));

@@ -1,47 +1,36 @@
 package medium;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 public class TwoSum {
 
-    public int[] twoSum(int[] numbers, int target) {
-        Map <Integer, List <Integer>> map = new HashMap <>();
-        for (int i = 0; i < numbers.length; i++) {
-            List <Integer> lst = map.get(numbers[i]);
-            if (lst == null) {
-                lst = new ArrayList <>();
-            }
-            lst.add(i + 1);
-            map.put(numbers[i], lst);
-        }
-        Arrays.sort(numbers);
+    public int[] twoSum(int[] nums, int target) {
+        int[] originalArray = new int[nums.length];
+        for (int i = 0; i < nums.length; i++) originalArray[i] = nums[i];
+
         int[] ans = new int[2];
-        int i = 0; int j = numbers.length - 1;
-                
-        while (i < j) {
-            int sum = numbers[i] + numbers[j];
-            if (sum == target) {
-                List <Integer> lst1 = map.get(numbers[i]);
-                List <Integer> lst2 = map.get(numbers[j]);
-                if (numbers[i] == numbers[j]) {
-                    ans[0] = lst1.get(0);
-                    ans[1] = lst1.get(1);
-                } else {
-                    ans[0] = lst1.get(0);
-                    ans[1] = lst2.get(0);
-                }
-                Arrays.sort(ans);
+        Arrays.sort(nums);
+        int start = 0, end = nums.length - 1;
+        while (start < end) {
+            if (nums[start] + nums[end] == target) {
                 break;
-            } else if (sum > target) {
-                j--;   
+            } else if (nums[start] + nums[end] > target) {
+                end--;
             } else {
-                i++;
+                start++;
             }
         }
+        for (int i = 0; i < originalArray.length; i++) {
+            if (start != -1 && originalArray[i] == nums[start]) {
+                ans[0] = i + 1;
+                start = -1;
+            }
+            else if (end != -1 && originalArray[i] == nums[end]) {
+                ans[1] = i + 1;
+                end = -1;
+            }
+        }
+        Arrays.sort(ans);
         return ans;
     }
 	
@@ -49,11 +38,13 @@ public class TwoSum {
 		int[] numbers = {2, 7, 11, 15};
 		int target = 9;
 		TwoSum sol = new TwoSum();
-		
+        int[] ans = sol.twoSum(numbers, target);
+        System.out.println(ans[0] + "  =>   " + ans[1]);
+
 		numbers = new int[] {3,2,4};
 		target = 6;
 		
-		int[] ans = sol.twoSum(numbers, target);
+		ans = sol.twoSum(numbers, target);
 		System.out.println(ans[0] + "  =>   " + ans[1]);
 	}
 }

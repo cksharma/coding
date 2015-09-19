@@ -1,5 +1,5 @@
 package easy;
-public class PalidromeNumber {
+public class PalidromeNumberOld {
 	
 	private long getLong(int x) {
 		long ans = 0;
@@ -17,7 +17,7 @@ public class PalidromeNumber {
     }
 
 	public static void main(String[] args) {
-		PalidromeNumber sol = new PalidromeNumber();
+		PalidromeNumberOld sol = new PalidromeNumberOld();
 		System.out.println(sol.isPalindrome(1234321));
 		System.out.println(sol.isPalindrome(Integer.MAX_VALUE));
 		System.out.println(sol.isPalindrome(-1234321));

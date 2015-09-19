@@ -23,12 +23,13 @@ public class Main {
                 arr[R - 1][i] = ++cnt;
             }
 
-            for (int i = R - 2; i > x; i-- ) {
+            for (int i = R - 2; i > x; i--) {
                 arr[i][y] = ++cnt;
             }
             R--;
             C--;
-            x++;y++;
+            x++;
+            y++;
         }
         for (int i = 0; i < arr.length; i++) {
             ArrayList<Integer> temp = new ArrayList<>();
