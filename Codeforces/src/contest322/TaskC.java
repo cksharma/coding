@@ -1,9 +1,11 @@
+package contest322;
+
 import java.io.*;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.StringTokenizer;
 
-public class Main {
+public class TaskC {
     public static void main(String[] args) {
         InputStream inputStream = System.in;
         OutputStream outputStream = System.out;
@@ -16,36 +18,40 @@ public class Main {
 
     static class Solution {
         public void solve(int testNumber, InputReader in, PrintWriter out) {
-            Map<String, String> startMap = new HashMap<>();
-            Map<String, String> endMap = new HashMap<>();
-            String[] str = new String[]{"My story Love", "Love story"};
-
-            for (String item : str) {
-                String[] strArr = item.split(" ");
-                String first = strArr[0];
-                String last = strArr[strArr.length - 1];
-                if (startMap.containsKey(first)  && startMap.get(first).length() > item.length())
-                    startMap.put(first, item);
-                else if (startMap.containsKey(first) == false) {
-                    startMap.put(first, item);
-                }
-                endMap.put(last, item);
+            int n = in.nextInt();
+            int k = in.nextInt();
+            int[] arr = new int[n];
+            int totalSum = 0;
+            for (int i = 0; i < n; i++) {
+                arr[i] = in.nextInt();
+                totalSum += arr[i];
             }
-            int ans = Integer.MIN_VALUE;
-            String ss = null;
-            for (String key : startMap.keySet()) {
-                if (endMap.containsKey(key)) {
-                    int len = startMap.get(key).length() + key.length() + endMap.get(key).length();
-                    if (len > ans) {
-                        ss = endMap.get(key).substring(0, endMap.get(key).lastIndexOf(" ")) + " " +
-                                         key + startMap.get(key).substring(startMap.get(key).indexOf(" "));
-                        ans = len;
+            if (k >= (n * 100 -totalSum) ) {
+                out.println( n * 10 );
+                return;
+            }
+            int ans = 0;
+            Map<Integer, Integer> digitCountMap = new HashMap<>();
+            for (int item : arr) {
+                digitCountMap.put(item % 10, digitCountMap.get(item % 10) == null ? 1 : digitCountMap.get(item % 10) + 1);
+                ans += item / 10;
+            }
+            for (int i = 9; i >= 1 && k > 0; i--) {
+                int count = digitCountMap.get(i) == null ? 0 : digitCountMap.get(i);
+                if (count != 0) {
+                    int countNeeded = count * (10 - i);
+                    if (k > countNeeded) {
+                        ans += count;
+                        k -= countNeeded;
+                    } else {
+                        ans += k / (10 - i);
+                        k = 0;
                     }
                 }
             }
-            System.out.println(ss);
-            out.println(ans);
-         }
+            k = Math.max(0, k);
+            out.println(ans + k / 10);
+        }
     }
 
     static class InputReader {

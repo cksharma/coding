@@ -1,3 +1,5 @@
+package pastchallenges;
+
 public class XorBoardDivTwo {
     public int theMax(String[] board) {
         int ans = 0;

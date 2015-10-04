@@ -1,9 +1,18 @@
-import java.io.*;
-import java.util.HashMap;
-import java.util.Map;
+package contest322;
+
+/**
+ * Created by cksharma on 9/28/15.
+ */
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.PrintWriter;
 import java.util.StringTokenizer;
 
-public class Main {
+public class TaskA {
     public static void main(String[] args) {
         InputStream inputStream = System.in;
         OutputStream outputStream = System.out;
@@ -16,36 +25,10 @@ public class Main {
 
     static class Solution {
         public void solve(int testNumber, InputReader in, PrintWriter out) {
-            Map<String, String> startMap = new HashMap<>();
-            Map<String, String> endMap = new HashMap<>();
-            String[] str = new String[]{"My story Love", "Love story"};
-
-            for (String item : str) {
-                String[] strArr = item.split(" ");
-                String first = strArr[0];
-                String last = strArr[strArr.length - 1];
-                if (startMap.containsKey(first)  && startMap.get(first).length() > item.length())
-                    startMap.put(first, item);
-                else if (startMap.containsKey(first) == false) {
-                    startMap.put(first, item);
-                }
-                endMap.put(last, item);
-            }
-            int ans = Integer.MIN_VALUE;
-            String ss = null;
-            for (String key : startMap.keySet()) {
-                if (endMap.containsKey(key)) {
-                    int len = startMap.get(key).length() + key.length() + endMap.get(key).length();
-                    if (len > ans) {
-                        ss = endMap.get(key).substring(0, endMap.get(key).lastIndexOf(" ")) + " " +
-                                         key + startMap.get(key).substring(startMap.get(key).indexOf(" "));
-                        ans = len;
-                    }
-                }
-            }
-            System.out.println(ss);
-            out.println(ans);
-         }
+            int a = in.nextInt();
+            int b = in.nextInt();
+            out.println(Math.min(a, b) + " " + Math.abs(a - b) / 2);
+        }
     }
 
     static class InputReader {

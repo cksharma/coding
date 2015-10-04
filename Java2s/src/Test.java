@@ -71,8 +71,21 @@ class Heap {
 
 public class Test {
 
+    private static int findElement(int[] arr) {
+        if (arr == null || arr.length == 0) {
+            return Integer.MIN_VALUE; //retruning Integer.MIN_VALUE as default value when nothing is +nt
+        }
+        if (arr.length == 1) return arr[0];
+        for (int i = 0; i < arr.length; i++) {
+            if (i > 0 && i < arr.length - 1 && arr[i] != arr[i - 1] && arr[i] != arr[i + 1]) return arr[i];
+            else if (i == arr.length - 1 && arr[i] != arr[i - 1]) return arr[i];
+            else if (i == 0 && arr[i] != arr[i + 1]) return arr[i];
+        }
+        return Integer.MIN_VALUE;
+    }
+
     public static void main(String[] args) {
-        Heap heap = new Heap(10);
+        /*Heap heap = new Heap(10);
         heap.insert(5);
         heap.insert(4);
         heap.insert(3);
@@ -80,6 +93,44 @@ public class Test {
         heap.insert(1);
         heap.delete();
 
-        heap.printHeap();
+        heap.printHeap();*/
+
+        /*System.out.println(findElement(new int[]{1}));
+        System.out.println(findElement(new int[]{1, 1, 2, 3, 3}));
+        System.out.println(findElement(new int[]{1, 2, 2, 3, 3}));
+        System.out.println(findElement(new int[]{1, 1, 2, 2, 3}));
+        System.out.println(findElement(new int[]{1, 2}));
+        */
+        System.out.println(binarySearch(0, 7, new int[]{1, 1, 2, 2, 3, 3, 4}));
+        System.out.println(binarySearch(0, 0, new int[]{1}));
+        System.out.println(binarySearch(0, 2, new int[]{1, 1, 2}));
+        System.out.println(binarySearch(0, 5, new int[]{1, 1, 2, 3, 3}));
+        System.out.println(binarySearch(0, 10, new int[]{1, 1, 2, 3, 3, 4, 4, 5, 5, 6, 6}));
+        System.out.println(binarySearch(0, 8, new int[]{1, 1, 2, 3, 3, 4, 4, 5, 5}));
+        System.out.println(binarySearch(0, 8, new int[]{1, 1, 2, 2, 3, 4, 4, 5, 5}));
+        System.out.println(binarySearch(0, 2, new int[]{1, 2, 2}));
+        System.out.println(binarySearch(0, 4, new int[]{1, 1, 2, 2, 3}));
+        System.out.println(binarySearch(0, 12, new int[]{1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7}));
+        System.out.println(binarySearch(0, 6, new int[]{1, 2, 2, 3, 3, 4, 4}));
+        System.out.println(binarySearch(0, 6, new int[]{1, 1, 2, 3, 3, 4, 4}));
+    }
+
+    private static int binarySearch(int start, int end, int[] arr) {
+        if (start >= end) return arr[start];
+
+        int mid = (start + end) / 2;
+
+        if (mid - 1 >= 0 && mid + 1 < arr.length && arr[mid] != arr[mid - 1] && arr[mid] != arr[mid + 1])
+            return arr[mid];
+        if (mid % 2 == 1 && mid - 1 >= 0 && arr[mid] != arr[mid - 1]) {
+            return binarySearch(start, mid - 1, arr);
+        } else if (mid % 2  == 1 && mid - 1 >= 0 && arr[mid] == arr[mid - 1]) {
+            return binarySearch(mid + 1, end, arr);
+        } else if (mid % 2 == 0 && mid + 1 < arr.length && arr[mid] != arr[mid + 1]) {
+            return binarySearch(start, mid - 1, arr);
+        } else if (mid % 2 == 0 && mid + 1 < arr.length && arr[mid] == arr[mid + 1]) {
+            return binarySearch(mid + 1, end, arr);
+        }
+        return arr[mid];
     }
 }

@@ -1,3 +1,4 @@
+package pastchallenges;
 
 public class TravellingSalesmanEasy {
 	public int getMaxProfit(int M, int[] profit, int[] city, int[] visit) {

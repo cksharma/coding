@@ -1,3 +1,9 @@
+package contest322;
+
+/**
+ * Created by cksharma on 9/28/15.
+ */
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -6,7 +12,7 @@ import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.util.StringTokenizer;
 
-public class Temp {
+public class TaskB {
     public static void main(String[] args) {
         InputStream inputStream = System.in;
         OutputStream outputStream = System.out;
@@ -19,7 +25,23 @@ public class Temp {
 
     static class Solution {
         public void solve(int testNumber, InputReader in, PrintWriter out) {
-
+            int n = in.nextInt();
+            int[] H = new int[n];
+            for (int i = 0; i < n; i++)
+                H[i] = in.nextInt();
+            int[] ans = new int[n];
+            ans[n - 1] = 0;
+            int max = H[n - 1];
+            for (int i = n - 2; i >= 0; i--) {
+                if (H[i] <= max) {
+                    ans[i] = max - H[i] + 1;
+                } else {
+                    ans[i] = 0;
+                }
+                max = Math.max(max, H[i]);
+            }
+            for (int item : ans)
+                out.print(item + " ");
         }
     }
 

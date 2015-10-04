@@ -1,21 +1,26 @@
 package hard;
 
-import java.util.Arrays;
-
 /**
  * Created by cksharma on 9/18/15.
  */
 public class JumpGameII {
     public int jump(int[] nums) {
-        int[] DP = new int[nums.length];
-        Arrays.fill(DP, 1 << 28);
-        DP[0] = 0;
-        for (int i = 0; i < nums.length; i++) {
-            for (int j = i; j < Math.min(nums.length, nums[i]); j++) {
-                DP[j] = Math.min(DP[j], DP[i] + 1);
+        if (nums == null || nums.length == 0) return 0;
+        int curJump = nums[0];
+        int step = 0; int j = 0;
+        while (curJump < nums.length - 1) {
+            int temp = 0;
+            for (; j <= curJump; j++) {
+                temp = Math.max(temp, nums[j] + j);
             }
+            curJump = temp;
+            ++step;
         }
-        
-        return DP[nums.length - 1];
+        return step + 1;
+    }
+
+    public static void main(String[] args) {
+        JumpGameII sol = new JumpGameII();
+        System.out.println(sol.jump(new int[]{2,3,1,1,4}));
     }
 }

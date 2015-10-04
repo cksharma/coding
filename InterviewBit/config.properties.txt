@@ -1,0 +1,24 @@
+Support=50
+Confidence=0.7
+
+#Template1 {RULE|BODY|HEAD} HAS ({ANY|NUMBER|NONE}) OF (ITEM1,ITEM2,...,ITEMn)
+#		Part1			Part2			part3
+Template1 = Yes
+T1Part1= RULE
+T1Part2= ANY
+T1Part3=G1_UP
+
+#Template2 SizeOf({RULE|BODY|HEAD})>=NUMBER
+#			Part1	      part2
+Template2 =Yes
+T2Part1=BODY
+T2Part2=2
+
+#Template3 HEAD HAS (1|NONE) OF (ITEM1,ITEM2,...,ITEMn) {AND|OR} BODY HAS (1|NONE) OF (ITEM1,ITEM2,...,ITEMn)
+#		      p1		p2		   p3		     p4		       p5
+Template3=Yes
+p1=1
+p2=ALL,AML
+p3=AND
+p4=NONE
+p5=ALL,AML
