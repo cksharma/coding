@@ -1,32 +1,17 @@
-import java.util.Collections;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
-public class CombiningSlimes {
-
-    public int maxMascots(int[] a) {
-
-        int mascots = 0;
-        List<Integer> list = new LinkedList<>();
-        for (int item : a) {
-            list.add(item);
+public class BearSong {
+    public int countRareNotes(int[] notes) {
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int item : notes) {
+            map.put(item, map.get(item) == null ? 1 : map.get(item) + 1);
         }
-        Collections.sort(list);
-        Collections.reverse(list);
-
-        while (true) {
-            if (list.size() == 2) {
-                mascots += list.get(0) * list.get(1);
-                break;
-            }
-            int l1 = list.get(0);
-            int l2 = list.get(1);
-            mascots += l1 * l2;
-            list.remove(0); list.remove(0);
-            list.add(0, l1 + l2);
+        int ans = 0;
+        for (int key : map.keySet()) {
+            if (map.get(key) == 1) ans++;
         }
-
-        return mascots;
+        return ans;
     }
 
     // BEGIN KAWIGIEDIT TESTING
@@ -41,11 +26,11 @@ public class CombiningSlimes {
         }
         System.out.print("}");
         System.out.println("]");
-        CombiningSlimes obj;
+        BearSong obj;
         int answer;
-        obj = new CombiningSlimes();
+        obj = new BearSong();
         long startTime = System.currentTimeMillis();
-        answer = obj.maxMascots(p0);
+        answer = obj.countRareNotes(p0);
         long endTime = System.currentTimeMillis();
         boolean res;
         res = true;
@@ -85,40 +70,40 @@ public class CombiningSlimes {
 
         // ----- test 0 -----
         disabled = false;
-        p0 = new int[]{3, 4};
-        p1 = 12;
+        p0 = new int[]{9, 10, 7, 8, 9};
+        p1 = 3;
         all_right = (disabled || KawigiEdit_RunTest(0, p0, true, p1)) && all_right;
         tests_disabled = tests_disabled || disabled;
         // ------------------
 
         // ----- test 1 -----
         disabled = false;
-        p0 = new int[]{2, 2, 2};
-        p1 = 12;
+        p0 = new int[]{8, 8, 7, 6, 7, 3, 5, 10, 9, 3};
+        p1 = 4;
         all_right = (disabled || KawigiEdit_RunTest(1, p0, true, p1)) && all_right;
         tests_disabled = tests_disabled || disabled;
         // ------------------
 
         // ----- test 2 -----
         disabled = false;
-        p0 = new int[]{1, 2, 3};
-        p1 = 11;
+        p0 = new int[]{234, 462, 715, 596, 906};
+        p1 = 5;
         all_right = (disabled || KawigiEdit_RunTest(2, p0, true, p1)) && all_right;
         tests_disabled = tests_disabled || disabled;
         // ------------------
 
         // ----- test 3 -----
         disabled = false;
-        p0 = new int[]{3, 1, 2};
-        p1 = 11;
+        p0 = new int[]{17};
+        p1 = 1;
         all_right = (disabled || KawigiEdit_RunTest(3, p0, true, p1)) && all_right;
         tests_disabled = tests_disabled || disabled;
         // ------------------
 
         // ----- test 4 -----
         disabled = false;
-        p0 = new int[]{7, 6, 5, 3, 4, 6};
-        p1 = 395;
+        p0 = new int[]{1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000};
+        p1 = 0;
         all_right = (disabled || KawigiEdit_RunTest(4, p0, true, p1)) && all_right;
         tests_disabled = tests_disabled || disabled;
         // ------------------

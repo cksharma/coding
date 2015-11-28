@@ -14,17 +14,6 @@ public class LRUCache {
             this.key = key;
             this.value = value;
         }
-
-        @Override
-        public String toString() {
-            LinkedList temp = this;
-            String str = "";
-            while (temp != null) {
-                str += "(" + temp.key + "," + temp.value + ") ->";
-                temp = temp.next;
-            }
-            return str;
-        }
     }
 
     int capacity;
@@ -63,54 +52,115 @@ public class LRUCache {
     }
 
     private void deleteNode(LinkedList node) {
-        boolean flag = false;
-        if (node == head) {
-            head = head.next;
-            flag = true;
+        LinkedList prev = node.prev;
+        LinkedList next = node.next;
+        if (prev != null) {
+            prev.next = next;
+        } else {
+            head = next;
         }
-        if (node == tail) {
-            tail = tail.prev;
-            flag = true;
+
+        if (next != null) {
+            next.prev = prev;
+        } else {
+            tail = prev;
+            if (prev != null) prev.next = null;
         }
-        if (flag == false) {
-            node.prev.next = node.next.next;
-        }
+
         cache.remove(node.key);
     }
 
     private void prependNode(LinkedList node) {
         node.next = head;
-        if (head != null)
+        node.prev = null;
+        if (head != null) {
             head.prev = node;
+        }
         head = node;
-        if (tail == null) tail = node;
+        if (tail == null) tail = head;
+        cache.put(node.key, node);
     }
 
     private void removeLeastRecentlyUsed() {
-        LinkedList prev = tail.prev;
-        if (prev != null) prev.next = null;
-        cache.remove(tail.key);
-        tail = prev;
+        if (tail == head) {
+            if (tail != null) cache.remove(tail.key);
+            head = null; tail = null;
+        } else {
+            LinkedList prev = tail.prev;
+            if (prev != null) prev.next = null;
+            cache.remove(tail.key);
+            tail = prev;
+        }
     }
 
     public static void main(String[] args) {
-        LRUCache lruCache = new LRUCache(2);
-        lruCache.set(2, 1);
+        LRUCache lruCache = new LRUCache(3);
+
         lruCache.set(1, 1);
-        //lruCache.set(3, 1);
-        //lruCache.set(4, 1);
+        lruCache.set(2, 2);
+        lruCache.set(3, 3);
+        lruCache.set(4, 4);
+
         System.out.print("from head ");
         printCache(lruCache.head);
         System.out.print("from tail ");
         printCacheTail(lruCache.tail);
+
+        System.out.println(lruCache.get(4));
+        System.out.print("from head ");
+        printCache(lruCache.head);
+        System.out.print("from tail ");
+        printCacheTail(lruCache.tail);
+
+        System.out.println(lruCache.get(3));
+        System.out.print("from head ");
+        printCache(lruCache.head);
+        System.out.print("from tail ");
+        printCacheTail(lruCache.tail);
+
         System.out.println(lruCache.get(2));
         System.out.print("from head ");
         printCache(lruCache.head);
-        System.out.print("from tail ");printCacheTail(lruCache.tail);
-        lruCache.set(4, 1);
+        System.out.print("from tail ");
+        printCacheTail(lruCache.tail);
+
+
         System.out.println(lruCache.get(1));
+        System.out.print("from head ");
+        printCache(lruCache.head);
+        System.out.print("from tail ");
+        printCacheTail(lruCache.tail);
+
+        lruCache.set(5, 5);
+        System.out.println(lruCache.get(1));
+        System.out.print("from head ");
+        printCache(lruCache.head);
+        System.out.print("from tail ");
+        printCacheTail(lruCache.tail);
+
         System.out.println(lruCache.get(2));
-        System.out.println(lruCache.cache.size());
+        System.out.print("from head ");
+        printCache(lruCache.head);
+        System.out.print("from tail ");
+        printCacheTail(lruCache.tail);
+
+        System.out.println(lruCache.get(3));
+        System.out.print("from head ");
+        printCache(lruCache.head);
+        System.out.print("from tail ");
+        printCacheTail(lruCache.tail);
+
+        System.out.println(lruCache.get(4));
+        System.out.print("from head ");
+        printCache(lruCache.head);
+        System.out.print("from tail ");
+        printCacheTail(lruCache.tail);
+
+        System.out.println(lruCache.get(5));
+        System.out.print("from head ");
+        printCache(lruCache.head);
+        System.out.print("from tail ");
+        printCacheTail(lruCache.tail);
     }
 
     private static void printCache(LinkedList node) {

@@ -1,85 +1,89 @@
-import java.io.*;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
-import java.util.StringTokenizer;
 
 public class Main {
+
+    static class Hospital {
+        String name;
+        String location;
+        
+        List<Doctor> doctorList;
+        Hospital(String name, String location, List<Doctor> doctorList) {
+            this.name = name;
+            this.location = location;
+            this.doctorList = doctorList;
+
+        }
+
+        @Override
+        public String toString() {
+            return "Hospital{" +
+                    "name='" + name + '\'' +
+                    ", location='" + location + '\'' +
+                    ", doctorList=" + doctorList +
+                    '}';
+        }
+    }
+
+    static class Person {
+        String name;
+        int age;
+
+        Person(String name, int age) {
+            this.name = name;
+            this.age = age;
+        }
+
+        @Override
+        public String toString() {
+            return "Person{" +
+                    "name='" + name + '\'' +
+                    ", age=" + age +
+                    '}';
+        }
+    }
+
+    static class Doctor extends Person {
+        String qualification;
+
+        Doctor(String name, int age, String qualification) {
+            super(name, age);
+            this.qualification = qualification;
+        }
+
+        @Override
+        public String toString() {
+            return super.toString() + "Doctor{" +
+                    "qualification='" + qualification + '\'' +
+                    '}';
+        }
+    }
+
+
+    String res = "<html><head></head><title>This is a test</title><body>"+
+    "<h1>Hello World</h1>"+
+    "<p> I am trying something new</p>"+
+    "</body>" +
+    "</head>" +
+    "</html>";
+
+    static Map<String, Hospital> hospitalMap = new HashMap<>();
     public static void main(String[] args) {
-        InputStream inputStream = System.in;
-        OutputStream outputStream = System.out;
-        InputReader in = new InputReader(inputStream);
-        PrintWriter out = new PrintWriter(outputStream);
-        Solution solver = new Solution();
-        solver.solve(1, in, out);
-        out.close();
+        Doctor person1 = new Doctor("Subash", 22, "MD");
+        Doctor person2 = new Doctor("Bhisma", 23, "MBBS");
+        Hospital hospital = new Hospital("AIIMS", "Delhi", Arrays.asList(person1, person2));
+
+        hospitalMap.put("AIIMS", hospital);
+
+        getHospital();
     }
 
-    static class Solution {
-        public void solve(int testNumber, InputReader in, PrintWriter out) {
-            Map<String, String> startMap = new HashMap<>();
-            Map<String, String> endMap = new HashMap<>();
-            String[] str = new String[]{"My story Love", "Love story"};
-
-            for (String item : str) {
-                String[] strArr = item.split(" ");
-                String first = strArr[0];
-                String last = strArr[strArr.length - 1];
-                if (startMap.containsKey(first)  && startMap.get(first).length() > item.length())
-                    startMap.put(first, item);
-                else if (startMap.containsKey(first) == false) {
-                    startMap.put(first, item);
-                }
-                endMap.put(last, item);
-            }
-            int ans = Integer.MIN_VALUE;
-            String ss = null;
-            for (String key : startMap.keySet()) {
-                if (endMap.containsKey(key)) {
-                    int len = startMap.get(key).length() + key.length() + endMap.get(key).length();
-                    if (len > ans) {
-                        ss = endMap.get(key).substring(0, endMap.get(key).lastIndexOf(" ")) + " " +
-                                         key + startMap.get(key).substring(startMap.get(key).indexOf(" "));
-                        ans = len;
-                    }
-                }
-            }
-            System.out.println(ss);
-            out.println(ans);
-         }
-    }
-
-    static class InputReader {
-        private BufferedReader reader;
-        private StringTokenizer tokenizer;
-
-        public InputReader(InputStream stream) {
-            reader = new BufferedReader(new InputStreamReader(stream));
-            tokenizer = null;
-        }
-
-        public String next() {
-            while (tokenizer == null || !tokenizer.hasMoreTokens()) {
-                try {
-                    tokenizer = new StringTokenizer(reader.readLine());
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }
-            }
-            return tokenizer.nextToken();
-        }
-
-        public int nextInt() {
-            return Integer.parseInt(next());
-        }
-
-        public String nextLine() {
-            String inputLine = "";
-            try {
-                inputLine = reader.readLine();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            return inputLine;
-        }
+    private static void getHospital() {
+        String hospitalName = "AIIMS";
+        Hospital hospital = hospitalMap.get(hospitalName);
+        System.out.println(hospital);
     }
 }
+

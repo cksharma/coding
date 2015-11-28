@@ -1,49 +1,58 @@
 package medium;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class WordLadder {
-    
-    int ans = Integer.MAX_VALUE;
-	
-	public int ladderLength(String start, String end, Set<String> dict) {
-		int cnt = dict.contains(start) ? 1 : 1;
-		dict.add(end);
-		recurse(start, end, start, dict, cnt, new HashSet <>());
-        return ans == Integer.MAX_VALUE ? 0 : ans;
-    }
-    
-    private void recurse(String start, String end, String temp, Set<String> dict, int step, Set <String> taken) {
-    	if (temp.equals(end) || step > ans) {
-    		ans = Math.min(ans, step);
-    		return;
-    	}
-    	Set <String> st = getStringAtOneEditDistance(temp, dict, taken);
-    	for (String item : st) {
-    		taken.add(item);
-    		recurse(start, end, item, dict, step + 1, taken);
-    		//taken.remove(item);
-    	}
-	}   
-    
-	private Set<String> getStringAtOneEditDistance(String temp, Set <String> dict, Set <String> taken) {
-		Set <String> st = new HashSet <>();
-		char[] ch = temp.toCharArray();
-		for (int i = 0; i < ch.length; i++) {
+
+	static class State {
+		String word;
+		int steps;
+		State(String word, int steps) {
+			this.word = word;
+			this.steps = steps;
+		}
+	}
+
+	public int ladderLength(String beginWord, String endWord, Set<String> wordList) {
+		//Map<String, List<String>> neighbourMap = preprocessNeighboursAtOneEditDistance(wordList);
+		Set<String> visited = new HashSet<>();
+		visited.add(beginWord);
+		wordList.add(beginWord);wordList.add(endWord);
+		Queue<State> queue = new LinkedList<>();
+		queue.add(new State(beginWord, 1));
+		while (queue.size() > 0) {
+			State state = queue.poll();
+			String word = state.word;
+			if (word.equals(endWord)) {
+				return state.steps;
+			}
+			List<String> neighbours = getNeighboursWithOneEditDistance(word, visited, wordList);
+
+			for (String neigh : neighbours) {
+				if (visited.contains(neigh)) continue;
+				queue.add(new State(neigh, state.steps + 1));
+				visited.add(neigh);
+			}
+		}
+		return 0;
+	}
+
+	private List<String> getNeighboursWithOneEditDistance(String word, Set<String> visited, Set<String> wordList) {
+		List<String> neighbours = new ArrayList<>();
+		char[] ch = word.toCharArray();
+		for (int i = 0; i < word.length(); i++) {
+			char org = word.charAt(i);
+
 			for (char c = 'a'; c <= 'z'; c++) {
-				char k = ch[i];
 				ch[i] = c;
-				String str = new String(ch);
-				if (dict.contains(str) && k != c && !taken.contains(str)) {
-					st.add(str);
+				String temp = new String(ch);
+				if (wordList.contains(temp) && !visited.contains(temp)) {
+					neighbours.add(temp);
 				}
 			}
-			ch = temp.toCharArray();
+			ch[i] = org;
 		}
-		st.remove(temp);
-		return st;
+		return neighbours;
 	}
 
 	public static void main(String[] args) {

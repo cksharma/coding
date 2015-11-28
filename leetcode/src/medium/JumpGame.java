@@ -11,6 +11,11 @@ public class JumpGame {
 		return lastPoint >= A.length - 1;
 	}
 
+	@Override
+	public void finalize() {
+
+	}
+
 	public static void main(String[] args) {
 		JumpGame sol = new JumpGame();
 		System.out.println(sol.canJump(new int[] { 2, 3, 1, 1, 4 }));

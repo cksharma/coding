@@ -1,32 +1,32 @@
-import java.util.Collections;
-import java.util.LinkedList;
-import java.util.List;
-
-public class CombiningSlimes {
-
-    public int maxMascots(int[] a) {
-
-        int mascots = 0;
-        List<Integer> list = new LinkedList<>();
-        for (int item : a) {
-            list.add(item);
+public class BearSlowlySorts {
+    private boolean isSorted(int[] arr) {
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] < arr[i - 1]) return false;
         }
-        Collections.sort(list);
-        Collections.reverse(list);
+        return true;
+    }
+    public int minMoves(int[] w) {
+        int ans = 0;
+        if (isSorted(w)) return ans;
+        int minIndex = -1, maxIndex = -1;
+        int minNum = Integer.MAX_VALUE, maxNum = Integer.MIN_VALUE;
 
-        while (true) {
-            if (list.size() == 2) {
-                mascots += list.get(0) * list.get(1);
-                break;
+        for (int i = 0; i < w.length; i++) {
+            if (w[i] < minNum) {
+                minIndex = i;
+                minNum = w[i];
             }
-            int l1 = list.get(0);
-            int l2 = list.get(1);
-            mascots += l1 * l2;
-            list.remove(0); list.remove(0);
-            list.add(0, l1 + l2);
+            if (w[i] > maxNum) {
+                maxIndex = i;
+                maxNum = w[i];
+            }
         }
 
-        return mascots;
+        if (minIndex == w.length - 1 && maxIndex == 0) return 3;
+        if (minIndex == w.length - 1 || maxIndex == 0) return 2;
+        if (minIndex > 0 &&  maxIndex < w.length - 1) return 2;
+        if (minIndex == 0 || maxIndex == w.length - 1) return 1;
+        return ans;
     }
 
     // BEGIN KAWIGIEDIT TESTING
@@ -41,11 +41,11 @@ public class CombiningSlimes {
         }
         System.out.print("}");
         System.out.println("]");
-        CombiningSlimes obj;
+        BearSlowlySorts obj;
         int answer;
-        obj = new CombiningSlimes();
+        obj = new BearSlowlySorts();
         long startTime = System.currentTimeMillis();
-        answer = obj.maxMascots(p0);
+        answer = obj.minMoves(p0);
         long endTime = System.currentTimeMillis();
         boolean res;
         res = true;
@@ -85,40 +85,40 @@ public class CombiningSlimes {
 
         // ----- test 0 -----
         disabled = false;
-        p0 = new int[]{3, 4};
-        p1 = 12;
+        p0 = new int[]{2, 6, 8, 5};
+        p1 = 1;
         all_right = (disabled || KawigiEdit_RunTest(0, p0, true, p1)) && all_right;
         tests_disabled = tests_disabled || disabled;
         // ------------------
 
         // ----- test 1 -----
         disabled = false;
-        p0 = new int[]{2, 2, 2};
-        p1 = 12;
+        p0 = new int[]{4, 3, 1, 6, 2, 5};
+        p1 = 2;
         all_right = (disabled || KawigiEdit_RunTest(1, p0, true, p1)) && all_right;
         tests_disabled = tests_disabled || disabled;
         // ------------------
 
         // ----- test 2 -----
         disabled = false;
-        p0 = new int[]{1, 2, 3};
-        p1 = 11;
+        p0 = new int[]{93, 155, 178, 205, 213, 242, 299, 307, 455, 470, 514, 549, 581, 617, 677};
+        p1 = 0;
         all_right = (disabled || KawigiEdit_RunTest(2, p0, true, p1)) && all_right;
         tests_disabled = tests_disabled || disabled;
         // ------------------
 
         // ----- test 3 -----
         disabled = false;
-        p0 = new int[]{3, 1, 2};
-        p1 = 11;
+        p0 = new int[]{50, 20, 30, 40, 10};
+        p1 = 3;
         all_right = (disabled || KawigiEdit_RunTest(3, p0, true, p1)) && all_right;
         tests_disabled = tests_disabled || disabled;
         // ------------------
 
         // ----- test 4 -----
         disabled = false;
-        p0 = new int[]{7, 6, 5, 3, 4, 6};
-        p1 = 395;
+        p0 = new int[]{234, 462, 715, 596, 906, 231, 278, 223, 767, 925, 9, 526, 369, 319, 241, 354, 317, 880, 5, 696};
+        p1 = 2;
         all_right = (disabled || KawigiEdit_RunTest(4, p0, true, p1)) && all_right;
         tests_disabled = tests_disabled || disabled;
         // ------------------
