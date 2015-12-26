@@ -37,7 +37,7 @@ public class CourseSchedule {
             graphs[keyVal[0]].neighboursList.add(keyVal[1]);
         }
         boolean flag = true;
-        for (int i = 0; i < numCourses; i++) {
+        for (int i = 0; i < numCourses && flag; i++) {
             flag = flag && dfs(i);
         }
         return flag;

@@ -14,6 +14,17 @@ class ListNode {
     ListNode(int x) {
         val = x;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        ListNode myNode = this;
+        while (myNode != null) {
+            sb.append(myNode.val + "->");
+            myNode = myNode.next;
+        }
+        return sb.toString();
+    }
 }
 
 public class MergeKSortedLists {

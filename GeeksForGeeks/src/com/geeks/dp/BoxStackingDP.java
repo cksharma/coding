@@ -23,7 +23,7 @@ class Box implements Comparable<Box>{
 	int depth;
 	public Box(int height,int width, int depth) {
 		super();
-		this.height = height;		
+		this.height = height;
 		this.width = width;
 		this.depth = depth;		
 	}
