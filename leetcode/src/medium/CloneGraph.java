@@ -31,7 +31,6 @@ public class CloneGraph {
 		if (node == null) return null;
 		Queue<UndirectedGraphNode> queue = new LinkedList<>();
 		Map<Integer, UndirectedGraphNode> map = new HashMap<>();
-
 		queue.add(node);
 		
 		while (queue.isEmpty() == false) {
@@ -44,23 +43,26 @@ public class CloneGraph {
 			map.put(n.label, new UndirectedGraphNode(n.label));
 		}		
 		queue.clear();
+
 		queue.add(node);
 		UndirectedGraphNode copy = map.get(node.label);
-		
+
 		Set <Integer> visited = new HashSet <>();
+		visited.add(node.label);
+
 		while (queue.isEmpty() == false) {
-			UndirectedGraphNode n = queue.poll();
-			List <UndirectedGraphNode> list = new ArrayList<>();
-			for (UndirectedGraphNode nn : n.neighbors) {
-				list.add(map.get(nn.label));
+			UndirectedGraphNode orgNode = queue.poll();
+			UndirectedGraphNode copyNode = map.get(orgNode.label);
+
+			List<UndirectedGraphNode> neighbors = new ArrayList<>();
+			for (UndirectedGraphNode nn : orgNode.neighbors) {
+				neighbors.add(map.get(nn.label));
 				if (visited.contains(nn.label) == false) {
-					visited.add(nn.label);
 					queue.add(nn);
-				} 
-			}	
-			for (UndirectedGraphNode cks : list) {
-				map.get(n.label).neighbors.add(cks);
-			}	
+					visited.add(nn.label);
+				}
+			}
+			copyNode.neighbors = neighbors;
 		}
 		return copy;
 	}
