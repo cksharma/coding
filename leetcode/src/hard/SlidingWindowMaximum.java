@@ -70,10 +70,44 @@ public class SlidingWindowMaximum {
         return ans;
     }
 
+    public int[] maxSlidingWindowOpt(int[] nums, int k) {
+
+        if (nums == null || nums.length == 0 || k > nums.length) return new int[0];
+
+        int[] ans = new int[nums.length - k + 1];
+        LinkedList<Integer> deque = new LinkedList<>();
+
+        for (int i = 0; i < k; i++) {
+            while (deque.isEmpty() == false && nums[i] >= nums[deque.getLast()]) {
+                deque.removeLast();
+            }
+            deque.add(i);
+        }
+        ans[0] = nums[deque.getFirst()];
+        for (int i = k; i < nums.length; i++) {
+            ans[i - k] = nums[deque.getFirst()];
+            while (deque.isEmpty() == false && i - k >= deque.getFirst()) {
+                deque.removeFirst();
+            }
+            while (deque.isEmpty() == false && nums[i] >= nums[deque.getLast()]) {
+                deque.removeLast();
+            }
+            deque.add(i);
+        }
+        ans[nums.length - k] = nums[deque.getFirst()];
+        return ans;
+    }
+
     public static void main(String[] args) {
         int[] arr = {1, 3, -1, -3, 5, 3, 6, 7};
         int k = 3;
+        //arr = new int[]{1, -1};
+        //k = 1;
+
         SlidingWindowMaximum sol = new SlidingWindowMaximum();
         System.out.println(Arrays.toString(sol.maxSlidingWindow(arr, k)));
+
+        System.out.println(Arrays.toString(sol.maxSlidingWindowOpt(arr, k)));
+
     }
 }
