@@ -1,88 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workingSetManager>
 <workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1408047820938_1" label="coding" name="coding">
-<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/entps" type="4"/>
 <item elementID="=GeeksForGeeks" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/entps" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/CareerCup" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/CodeChef" type="4"/>
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/leetcode_python" type="4"/>
+<item elementID="=CodeforcesA" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/GeeksForGeeksPractise" type="4"/>
+<item elementID="=GOFPatterns" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 <item elementID="=leetcode" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
-<item elementID="=codecon" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/python" type="4"/>
 <item elementID="=Topcoder" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 <item elementID="=AssessmentTest" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/functional-tests" type="4"/>
-<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/CareerCup" type="4"/>
-<item elementID="=CodeforcesA" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
-<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/CodeChef" type="4"/>
-<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/GeeksForGeeksPractise" type="4"/>
-<item elementID="=GOFPatterns" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
-<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/python" type="4"/>
-<item elementID="=Practise" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 </workingSet>
 <workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1408066326164_13" label="java-jee" name="java-jee">
-<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/SpringPrj1" type="4"/>
-<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/ProjectEmployee" type="4"/>
-<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/AjaxPrj" type="4"/>
-<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/HibernateProj3" type="4"/>
-<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/FirstWProject" type="4"/>
-<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/Struts1Prj" type="4"/>
-<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/SpringMVC1" type="4"/>
-<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/ApacheDBCPPrj" type="4"/>
-<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/EmployeeRecord" type="4"/>
-<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/SpringHibernatePrj" type="4"/>
-<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/Struts2Prj" type="4"/>
-<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/Security" type="4"/>
-<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/ElectionComission" type="4"/>
-<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/TestFilterPrj" type="4"/>
-<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/ComplexPair" type="4"/>
-<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/DataMining" type="4"/>
-<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/HelloWorld" type="4"/>
-<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/SecurityPrj" type="4"/>
-<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/UserManagerPrj" type="4"/>
-<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/StrutsSpringHibernatePrj" type="4"/>
-<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/EmployeeRecordWeb" type="4"/>
-<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/HibernateSecondPrj" type="4"/>
-<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/TestInterceptorPrj" type="4"/>
-<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/HibernateWebPrj" type="4"/>
-<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/AnnotationsPrj" type="4"/>
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/SecondWebPrj" type="4"/>
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/SpringSchoolHibernateProj" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/AnnotationsPrj" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/SpringPrj1" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/ProjectEmployee" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/SpringMVC1" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/Struts1Prj" type="4"/>
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/Second project" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/HibernateProj3" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/FirstWProject" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/AjaxPrj" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/ApacheDBCPPrj" type="4"/>
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/SpringWebPrj" type="4"/>
-<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/SpringProject1" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/EmployeeRecord" type="4"/>
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/LabExam" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/SpringProject1" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/SpringPrj" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/OOBEQuestions" type="4"/>
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/SpringJdbcPrj" type="4"/>
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/HelloHibernate" type="4"/>
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/HelloWorldServer" type="4"/>
-<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/SpringPrj" type="4"/>
-<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/OOBEQuestions" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/SpringHibernatePrj" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/Struts2Prj" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/Security" type="4"/>
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/CompositeMapping" type="4"/>
-<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/ManyToMany" type="4"/>
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/EmployeeDetails" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/ComplexPair" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/ElectionComission" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/TestFilterPrj" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/ManyToMany" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/DataMining" type="4"/>
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/Employee" type="4"/>
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/FirstPrj" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/HelloWorld" type="4"/>
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/SpringMVC" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/UserManagerPrj" type="4"/>
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/HibernatePrj" type="4"/>
-<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/CompositePK" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/SecurityPrj" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/EmployeeRecordWeb" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/StrutsSpringHibernatePrj" type="4"/>
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/FirstWebPr" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/HibernateSecondPrj" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/TestInterceptorPrj" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/CompositePK" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/HibernateWebPrj" type="4"/>
 </workingSet>
 <workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1408066961030_22" label="java" name="java">
-<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/Java2s" type="4"/>
-<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/tp" type="4"/>
-<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/Reflection" type="4"/>
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/entps-platform" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/Java2s" type="4"/>
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/JavaSpec7" type="4"/>
-<item elementID="=JavaBestPractices" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/tp" type="4"/>
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/J4 - Concurrency" type="4"/>
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/Assignment" type="4"/>
-<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/Java8" type="4"/>
-<item elementID="=CommandPatternPrj" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/JavaSpec6" type="4"/>
-<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/ExecutorThreadPool" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/Java8" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/Reflection" type="4"/>
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/tp1" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/ExecutorThreadPool" type="4"/>
 </workingSet>
 <workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1409257112594_8" label="ub" name="ub">
+<item elementID="=DBProjectLab" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 <item elementID="=JSqlParserTest" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 <item elementID="=ExpressionLib" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
-<item elementID="=DBProjectLab" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 <item elementID="=DBProject" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 <item elementID="=DSScripts" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 </workingSet>

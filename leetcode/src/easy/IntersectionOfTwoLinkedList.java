@@ -7,6 +7,15 @@ class ListNode {
 		val = x;
 		next = null;
 	}
+	public String toString() {
+		ListNode ans = this;
+		StringBuilder sb = new StringBuilder();
+		while (ans != null) {
+			sb.append(ans.val + "->");
+			ans = ans.next;
+		}
+		return sb.toString();
+	}
 }
 
 public class IntersectionOfTwoLinkedList {

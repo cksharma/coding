@@ -7,41 +7,37 @@ import java.util.List;
  * Created by cksharma on 9/3/15.
  */
 public class RestoreIPAddress {
-    List<String> ans;
-    String ipAddress;
-
-    private void solve(String s, List<String> list) {
-
-        if (list.size() == 3 && Integer.parseInt(s) < 256 && isValid(s)) {
-            String temp = "";
-            for (String item : list) {
-                temp += item + ".";
-            }
-            temp += s;
-            ans.add(temp);
+    private void recurse(String s, List<String> list, List<String> ans) {
+        if (s == null || s.length() > 12) return;
+        if (list.size() == 4 && s.isEmpty()) {
+            String str = "";
+            for (String item : list) str += item + ".";
+            ans.add(str.substring(0, str.length() - 1));
             return;
         }
 
-        for (int i = 1; i < Math.min(s.length(), 4); i ++) {
-            String kk = s.substring(0, i);
-            if (Integer.parseInt(kk) < 256 && isValid(kk)) {
-                list.add(kk);
-                solve(s.substring(i), list);
+        for (int i = 0; i < s.length(); i++) {
+            String ss = s.substring(0, i + 1);
+            if (isValid(ss)) {
+                list.add(ss);
+                recurse(s.substring(i + 1), list, ans);
                 list.remove(list.size() - 1);
             }
         }
     }
 
-    private boolean isValid(String kk) {
-        String r = Integer.parseInt(kk) + "";
-        return r.length() == kk.length();
+    private boolean isValid(String s) {
+        if (s.length() < 1) return false;
+        long k = Long.parseLong(s);
+        if (k >= 256) return false;
+        return (k + "").length() == s.length();
     }
 
+
     public List<String> restoreIpAddresses(String s) {
-        this.ipAddress = s;
-        this.ans = new ArrayList<>();
-        if (s.length() > 12) return ans;
-        solve(s, new ArrayList<>());
+        List<String> list = new ArrayList<>();
+        List<String> ans = new ArrayList<>();
+        recurse(s, list, ans);
         return ans;
     }
 
