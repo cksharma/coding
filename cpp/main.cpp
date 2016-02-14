@@ -1,26 +1,35 @@
-#include <stdio.h>
+#include <bits/stdc++.h>
 
-bool isSubsetSum(int set[], int n, int sum)
-{
-    if (sum == 0)
-        return true;
-    if (n == 0 && sum != 0)
-        return false;
+using namespace std;
 
-    if (set[n-1] > sum)
-        return isSubsetSum(set, n-1, sum);
+class Human {
+private:
+    int* age;
+    string* name;
 
-    return isSubsetSum(set, n-1, sum) || isSubsetSum(set, n-1, sum-set[n-1]);
-}
+public:
+    Human(int age1, string name1) {
+        age = new int;
+        name = new string;
+        *age = age1;
+        *name = name1;
+    }
+    void print( ) {
+        cout << "print" << endl;
+        cout << *age << endl;
+        cout << *name << endl;
+    }
+    ~Human() {
+        delete age;
+        delete name;
+    }
+};
 
 int main()
 {
-    int set[] = {3, 34, 4, 12, 5, 2};
-    int sum = 9;
-    int n = sizeof(set)/sizeof(set[0]);
-    if (isSubsetSum(set, n, sum) == true)
-        printf("Found a subset with given sum");
-    else
-        printf("No subset with given sum");
+    cout << "Came her" << endl;
+    Human* human = new Human(1, "cks");
+    human->print();
+    delete human;
     return 0;
 }

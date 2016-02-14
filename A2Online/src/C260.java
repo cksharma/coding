@@ -1,8 +1,10 @@
 import java.io.*;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.StringTokenizer;
-import java.util.stream.Stream;
 
-public class PractiseMain {
+public class C260 {
     public static void main(String[] args) {
         InputStream inputStream = System.in;
         OutputStream outputStream = System.out;
@@ -12,25 +14,43 @@ public class PractiseMain {
         solver.solve(1, in, out);
         out.close();
     }
-
-    static class Solution {
-        static int[] arr = {6, 2, 5, 5, 4, 5, 6, 3, 7, 6};
-        public void solve(int testNumber, InputReader in, PrintWriter out) {
-            int a = in.nextInt();
-            int b = in.nextInt();
-            System.out.println(Stream.iterate(a, e -> e + 1)
-                                        .mapToInt(Solution::getSum)
-                                        .limit(b - a + 1)
-                                        .sum()
-            );
+    static class Item {
+        int num;
+        int cnt;
+        Item(int num, int cnt) {
+            this.num = num;
+            this.cnt = cnt;
         }
-        private static int getSum(int a) {
-            int cnt = 0;
-            while (a > 0) {
-                cnt += arr[a % 10];
-                a /= 10;
+    }
+    static class Solution {
+        public void solve(int testNumber, InputReader in, PrintWriter out) {
+            int n = in.nextInt();
+            Map<Integer, Integer> map = new HashMap<>();
+            for (int i = 0; i < n; i++) {
+                int k = in.nextInt();
+                map.put(k, map.get(k) == null ? 1 : map.get(k) + 1);
             }
-            return cnt;
+            Item[] items = new Item[map.size()];
+            int index = 0;
+            for (int key : map.keySet()) items[index++] = new Item(key, map.get(key));
+            Arrays.sort(items, (i1, i2) -> i1.num - i2.num);
+
+            long[] dp = new long[items.length];
+            for (int i = 0; i < items.length; i++) {
+                int prev = i - 1 >= 0 ? items[i - 1].num : Integer.MIN_VALUE;
+                int curr = items[i].num;
+
+                if (prev + 1 == curr) {
+                    long grand = i - 2 >= 0 ? dp[i - 2] : 0;
+                    dp[i] = Math.max(1L * items[i].num * items[i].cnt + grand, dp[i - 1]);
+                } else {
+                    long parent = i - 1 >= 0 ? dp[i - 1] : 0;
+                    dp[i] = parent + 1L * items[i].num * items[i].cnt;
+                }
+            }
+            long ans = 0;
+            for (long item : dp) ans = Math.max(ans, item);
+            System.out.println(ans);
         }
     }
 

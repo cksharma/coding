@@ -1,8 +1,8 @@
 import java.io.*;
+import java.util.Arrays;
 import java.util.StringTokenizer;
-import java.util.stream.Stream;
 
-public class PractiseMain {
+public class C273 {
     public static void main(String[] args) {
         InputStream inputStream = System.in;
         OutputStream outputStream = System.out;
@@ -14,23 +14,11 @@ public class PractiseMain {
     }
 
     static class Solution {
-        static int[] arr = {6, 2, 5, 5, 4, 5, 6, 3, 7, 6};
         public void solve(int testNumber, InputReader in, PrintWriter out) {
-            int a = in.nextInt();
-            int b = in.nextInt();
-            System.out.println(Stream.iterate(a, e -> e + 1)
-                                        .mapToInt(Solution::getSum)
-                                        .limit(b - a + 1)
-                                        .sum()
-            );
-        }
-        private static int getSum(int a) {
-            int cnt = 0;
-            while (a > 0) {
-                cnt += arr[a % 10];
-                a /= 10;
-            }
-            return cnt;
+            int[] arr = {in.nextInt(), in.nextInt(), in.nextInt()};
+            Arrays.sort(arr); long sum = Arrays.stream(arr).asLongStream().sum();
+            long ans = Math.min( sum / 3L, sum - arr[2]);
+            System.out.println(ans);
         }
     }
 

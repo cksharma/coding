@@ -1,8 +1,9 @@
 import java.io.*;
+import java.util.Arrays;
 import java.util.StringTokenizer;
 import java.util.stream.Stream;
 
-public class PractiseMain {
+public class C274 {
     public static void main(String[] args) {
         InputStream inputStream = System.in;
         OutputStream outputStream = System.out;
@@ -13,24 +14,39 @@ public class PractiseMain {
         out.close();
     }
 
-    static class Solution {
-        static int[] arr = {6, 2, 5, 5, 4, 5, 6, 3, 7, 6};
-        public void solve(int testNumber, InputReader in, PrintWriter out) {
-            int a = in.nextInt();
-            int b = in.nextInt();
-            System.out.println(Stream.iterate(a, e -> e + 1)
-                                        .mapToInt(Solution::getSum)
-                                        .limit(b - a + 1)
-                                        .sum()
-            );
+    static class ExamDay {
+        int actual;
+        int before;
+        ExamDay(int actual, int before) {
+            this.actual = actual;
+            this.before = before;
         }
-        private static int getSum(int a) {
-            int cnt = 0;
-            while (a > 0) {
-                cnt += arr[a % 10];
-                a /= 10;
+        @Override
+        public String toString() {
+            return "ExamDay{" +
+                    "actual=" + actual +
+                    ", before=" + before +
+                    '}';
+        }
+    }
+
+    static class Solution {
+        public void solve(int testNumber, InputReader in, PrintWriter out) {
+            int n = in.nextInt();
+            ExamDay[] exams = new ExamDay[n];
+            Stream  .iterate(0, i -> i + 1)
+                    .limit(n)
+                    .forEach(i -> exams[i] = new ExamDay(in.nextInt(), in.nextInt()));
+
+            Arrays.sort(exams, (o1, o2) -> o1.actual != o2.actual ? o1.actual - o2.actual : o1.before - o2.before);
+
+            int ans = 1, index = 0;
+            while (index < exams.length) {
+                if (ans <= exams[index].before) ans = exams[index].before;
+                else ans = exams[index].actual;
+                index++;
             }
-            return cnt;
+            out.println(ans);
         }
     }
 

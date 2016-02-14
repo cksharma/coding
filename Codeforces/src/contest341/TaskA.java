@@ -1,8 +1,18 @@
-import java.io.*;
-import java.util.StringTokenizer;
-import java.util.stream.Stream;
+package contest341;
 
-public class PractiseMain {
+/**
+ * Created by cksharma on 1/31/16.
+ */
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.PrintWriter;
+import java.util.StringTokenizer;
+
+public class TaskA {
     public static void main(String[] args) {
         InputStream inputStream = System.in;
         OutputStream outputStream = System.out;
@@ -14,23 +24,19 @@ public class PractiseMain {
     }
 
     static class Solution {
-        static int[] arr = {6, 2, 5, 5, 4, 5, 6, 3, 7, 6};
         public void solve(int testNumber, InputReader in, PrintWriter out) {
-            int a = in.nextInt();
-            int b = in.nextInt();
-            System.out.println(Stream.iterate(a, e -> e + 1)
-                                        .mapToInt(Solution::getSum)
-                                        .limit(b - a + 1)
-                                        .sum()
-            );
-        }
-        private static int getSum(int a) {
-            int cnt = 0;
-            while (a > 0) {
-                cnt += arr[a % 10];
-                a /= 10;
+            int n = in.nextInt();
+            long ans = 0;
+            long minOdd = Integer.MAX_VALUE, oddCnt = 0;
+            for (int i = 0; i < n; i++) {
+                int num = in.nextInt();
+                if (num % 2 == 1) {
+                    minOdd = Math.min(minOdd, num);
+                    oddCnt++;
+                }
+                ans += num;
             }
-            return cnt;
+            System.out.println( oddCnt % 2 == 0 ? ans : ans - minOdd);
         }
     }
 
