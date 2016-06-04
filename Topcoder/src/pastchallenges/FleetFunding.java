@@ -1,3 +1,5 @@
+package pastchallenges;
+
 public class FleetFunding {
     public int maxShips(int m, int[] k, int[] a, int[] b) {
         int n = k.length;

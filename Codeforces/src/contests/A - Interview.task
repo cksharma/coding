@@ -1,0 +1,35 @@
+13 A - Interview
+6 SINGLE
+8 STANDARD
+-1
+8 STANDARD
+-1
+2
+0
+23 5
+1 2 4 3 2
+2 3 3 12 1
+
+2 22
+1
+1
+47 10
+13 2 7 11 8 4 9 8 5 1
+5 7 18 9 2 3 0 11 8 6
+
+2 46
+1
+23 Codeforces/src/contests
+8 -Xmx256M
+4 Main
+14 contests.TaskA
+39 net.egork.chelper.checkers.TokenChecker
+0 
+0
+10 2016.03.03
+30 Codeforces Round #344 (Div. 2)
+1
+23 inputoutput.InputReader
+19 java.io.PrintWriter
+0
+0

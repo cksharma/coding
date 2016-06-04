@@ -1,0 +1,26 @@
+22 A - Again Twenty Five!
+6 SINGLE
+8 STANDARD
+-1
+8 STANDARD
+-1
+1
+0
+2 2
+
+2 25
+1
+23 Codeforces/src/contests
+7 -Xmx64M
+4 Main
+14 contests.TaskA
+39 net.egork.chelper.checkers.TokenChecker
+0 
+0
+10 2016.02.25
+53 Experimental Educational Round: VolBIT Formulas Blitz
+1
+23 inputoutput.InputReader
+19 java.io.PrintWriter
+0
+0
