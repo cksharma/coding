@@ -13,8 +13,6 @@ void init() {
 
 	first.insert(make_pair("D", "4"));
 	cout << "Size of first: " << first.size() << endl;
-	
-
 }
 
 void buckets() {
@@ -33,8 +31,13 @@ void buckets() {
   		cout << endl;
   	}
 }
+void test() {
+	std::cout << "This is the test function for far manager" << std::endl;
+	return;	
+}
 
 int main() {
 	init();
 	buckets();
+	test();
 }

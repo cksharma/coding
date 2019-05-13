@@ -1,26 +1,38 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void splitspace(string s) {
-	stringstream ss(s);
-	string token;
-	while (ss >> token) {
-		cout << token << endl;
-	}
+struct Person {
+	string name;
+	int age;
+	Person(const string& name_, int age_) : name(name_), age(age_) {}
+};
+
+using PersonPtr = shared_ptr<Person>;
+
+PersonPtr getPersonInstance(int num) {
+	if( num % 2 == 1) return nullptr;
+	string name = "Chandra"; int age = 25;
+	return PersonPtr( new Person(name, age) );
 }
 
-void splitc(string s) {
-	char str[s.length() + 1];
-	strcpy(str, s.c_str());
-	char *p = strtok(str, " ,");
-	while (p != NULL) {
-		cout << string(p) << endl;
-		p = strtok(NULL, " ,");
-	}
+ostream& operator<<(ostream& os, const PersonPtr& ptr) {
+	if( ptr == nullptr) os << ptr;
+	else os << "[name=" << ptr->name << ",age=" << ptr->age << "]";
+	return os;
 }
 
-int main() {
-	string s = "Hello World, is the best things,there is it?";
-	//splitspace(s);
-	splitc(s);
+void lower_upper_test() {
+    set<int> st {1, 3, 5, 7, 9, 11, 13, 15, 17};
+    auto it1 = st.lower_bound(5); cout << "CKS1 " << *it1 << endl;
+    auto it2 = st.upper_bound(14); cout << "CKS2 " << *it2 << endl;
+    for (auto it = it1; it != it2; ++it) {
+        cout << *it << ", ";
+    }
+    cout << endl;
+}
+
+int main()
+{
+	lower_upper_test();
+	return 0;
 }

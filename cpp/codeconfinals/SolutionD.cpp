@@ -7,7 +7,7 @@ int R, C;
 stack<pair<int, int>> pointsStack;
 bool visited[101][101];
 
-bool solve(int r, int c) {
+bool solve(int r, int c) {z
     if (r < 0 || c < 0 || r >= R || c >= C || visited[r][c] == true || maze[r][c] == 'X') return false;
     visited[r][c] = true;
 
