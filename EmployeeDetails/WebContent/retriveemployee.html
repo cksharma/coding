@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript">
+var validated;
+function checkForEmptyValue(text,labelId)
+{
+	//alert(text);
+	//alert(text.value);
+	//alert(form.pid.value);
+	//alert(form.msg);
+	/*alert(text.value);
+	alert(text.value.length)*/
+	if(text.value.length==0){
+		var msg="<font color='red'>Should not be empty</font>";
+		//alert("setting")
+		document.getElementById(labelId).innerHTML=msg;
+		//alert("finished");
+		validated=false;
+		
+			
+	}
+	else{
+		document.getElementById(labelId).innerHTML="";	
+	}
+}
+function resetValidated()
+{
+	validated=true;
+}
+function valid()
+{
+	//alert(validated);
+	return validated;
+}
+function formReset()
+{
+	document.getElementById("form1").reset();
+}
+</script>
+</head>
+<body>
+<table width="1200" height = "600" border="0">
+<tr>
+<td colspan="2" style="background-color:#FFA500;">
+
+<h1 align = "center">OnMobile Employee Desk</h1>
+</td>
+</tr>
+<tr valign="top">
+<td style="background-color:#FFD700;width:200px;text-align:top;">
+<h2><a href = "employee.html">Home</a></h2> <br /><br>
+</td>
+<td style="background-color:#eeeeee;height:200px;width:400px;text-align:top;">
+
+<form id="form1" action = "EmployeeController?action=retrive" method = "post" onsubmit="return valid();"> 
+<pre>
+<h1 align = "center"><blink><font color ="green">EMPLOYEE RETRIVING</font></blink></h1>
+<br>
+<h2>Employee Id    : <input type="text" id="id" name = "id"/> <label id="msg"></label> </h2><br>
+<br>
+</pre>
+<b><input type = "submit" value = "Retrive Employee" onclick="resetValidated();checkForEmptyValue(document.getElementById('id'),'msg');" >   <input type="button" onclick="formReset()" value="Reset form" /></b>
+</form>
+<br></td>
+</tr>
+
+<tr>
+<td colspan="2" style="background-color:#FFA500;text-align:center;">
+Copyright © 2011 OnMobile</td>
+
+</tr>
+
+</table>
+
+</body>
+</html>

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Sep 5, 2011 11:46:03 PM by Hibernate Tools 3.3.0.GA -->
+<hibernate-mapping>
+    <class name="EmployeeDAO" table="EMPLOYEEDAO">
+        <id name="dataSource" type="javax.sql.DataSource" access="field">
+            <column name="DATASOURCE" />
+            <generator class="assigned" />
+        </id>
+    </class>
+</hibernate-mapping>
