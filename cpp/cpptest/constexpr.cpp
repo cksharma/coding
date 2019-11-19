@@ -70,6 +70,14 @@ constexpr int initPrimes(int a) {
     return cnt;
 }
 
+constexpr int count_lower_cks(const string&& str) {
+    int ans = 0;
+    for (int i = 0; i < str.size(); ++i) {
+        if ( str[i] >= 'a' && str[i] <='z') ans++;
+    }
+    return ans;
+}
+
 int main()
 {
     std::cout << "4! = " ;
@@ -84,4 +92,9 @@ int main()
     std::cout << "CKS fibonacci" << fibonacci(10) << endl;
 
     constN<initPrimes(100)> cn;
+
+    cout << "Const count" << count_lower_cks("Chandra Kant") << endl;
+
 }
+
+

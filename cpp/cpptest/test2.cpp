@@ -20,7 +20,7 @@ void solve(vector<vector<int>>& v, int n, int start, int sum, vector<int>& runni
 }
 
 ostream& operator<<(ostream& os, const vector<int>& v) {
-    for (int item : v) os << item << ", ";
+    for (int item : v) os << item << ", ";z
     return os;
 }
 

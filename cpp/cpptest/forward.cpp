@@ -154,8 +154,7 @@ void soltie()
     solve(v, super, sub, 0);
     for (auto& vv : v) cout << vv << endl;
 
-    map<int> mp;
-    priority_queue
+    map<int, int> mp;
 }
 
 int main()

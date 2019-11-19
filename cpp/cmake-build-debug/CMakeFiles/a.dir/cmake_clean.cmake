@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/a.dir/c++17/Array/array.cpp.o"
-  "../c++17/Array/a.pdb"
-  "../c++17/Array/a.exe"
+  "../topcoder/Past SRMs/a.exe"
+  "../topcoder/Past SRMs/a.pdb"
+  "CMakeFiles/a.dir/topcoder/Past_SRMs/A0Paper.cpp.o"
   "liba.dll.a"
 )
 

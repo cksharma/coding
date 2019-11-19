@@ -6,7 +6,7 @@ import java.util.List;
 public class ThreeSum {
     public List<List<Integer>> threeSum(int[] num) {
         Arrays.sort(num);
-        List<List<Integer>> result = new ArrayList<List<Integer>>();
+        List<List<Integer>> result = new ArrayList<>();
 
         for(int i = 0; i < num.length-2; ++i) {
             if(i > 0 && num[i] == num[i-1])

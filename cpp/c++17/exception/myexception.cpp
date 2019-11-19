@@ -5,7 +5,7 @@ struct MyException : public std::runtime_error
     MyException(const std::string& message) : std::runtime_error(message)
     {}
 
-    virtual const char* what() const noexcept {
+    virtual const char* what() const noexcept override {
         return std::runtime_error::what();
     }
 };

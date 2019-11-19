@@ -22,8 +22,8 @@ ostream& operator<<(ostream& os, const PersonPtr& ptr) {
 }
 
 void lower_upper_test() {
-    set<int> st {1, 3, 5, 7, 9, 11, 13, 15, 17};
-    auto it1 = st.lower_bound(5); cout << "CKS1 " << *it1 << endl;
+    set<int> st {1, 3, 5, 7, 9, 11, 13, 14, 15, 17};
+    auto it1 = st.lower_bound(6); cout << "CKS1 " << *it1 << endl;
     auto it2 = st.upper_bound(14); cout << "CKS2 " << *it2 << endl;
     for (auto it = it1; it != it2; ++it) {
         cout << *it << ", ";

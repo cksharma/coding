@@ -24,9 +24,16 @@ ostream& operator<<(ostream& os, const Stock& stock) {
     return os;
 }
 
+struct compare {
+    bool operator()(const Stock& s1, const Stock& s2) const {
+        if (s1.qty != s2.qty) return s1.qty > s2.qty;
+        return s1.ticker > s2.ticker;
+    }
+};
+
 int main()
 {
-    priority_queue<Stock> stocks;
+    priority_queue<Stock, vector<Stock>, compare > stocks;
     vector<Stock> arr = { Stock(1000, "IBM"), Stock(10000, "GOOG"),
                           Stock(100000, "MSFT"), Stock(1000000, "AMZN") };
     for (auto& item : arr) stocks.push(item);

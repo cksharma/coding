@@ -30,7 +30,7 @@ int main()
     //t.ce.~basic_string();
     //cout << t << endl;
 
-    new (&t.vi) vector<int>( {1, 2, 3, 4} );
+    /*new (&t.vi) vector<int>( {1, 2, 3, 4} );
     cout << t << endl;
 
     Entity et = CROSS;
@@ -38,5 +38,8 @@ int main()
     et = UNKNOWN;
     cout << et << endl;
     et = BRANCH;
-    cout << et << endl;
+    cout << et << endl;*/
+
+    t.vi = {1, 2, 3, 4, 65};
+    cout << t << endl;
 }

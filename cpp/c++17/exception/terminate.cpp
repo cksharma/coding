@@ -9,7 +9,6 @@ struct Person {
     ~Person() {
         std::cout << "Cleaning the garbages Cygwin" << std::endl;
     }
-
 };
 
 int main()

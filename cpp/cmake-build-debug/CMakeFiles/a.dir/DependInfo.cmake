@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/cygdrive/g/My Drive/data/coding/cpp/c++17/Array/array.cpp" "/cygdrive/g/My Drive/data/coding/cpp/cmake-build-debug/CMakeFiles/a.dir/c++17/Array/array.cpp.o"
+  "/cygdrive/g/My Drive/data/coding/cpp/topcoder/Past SRMs/A0Paper.cpp" "/cygdrive/g/My Drive/data/coding/cpp/cmake-build-debug/CMakeFiles/a.dir/topcoder/Past_SRMs/A0Paper.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

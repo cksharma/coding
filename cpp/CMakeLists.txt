@@ -9,5 +9,5 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17")
 #add_executable(cpp ${SOURCE_FILES} codeforces/mail.ru/vector.cpp)
 
 
-add_executable(a c++17/Array/array.cpp)
-set_target_properties(a PROPERTIES RUNTIME_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/c++17/Array/")
+add_executable(a "topcoder/Past SRMs/A0Paper.cpp")
+set_target_properties(a PROPERTIES RUNTIME_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/topcoder/Past SRMs/")

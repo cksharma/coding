@@ -3,6 +3,16 @@ using namespace std;
 
 const int k = 5;
 
+constexpr int getSize() {
+    typedef mt19937_64 rng;
+    return 100 + 123;
+}
+
+template<size_t SIZE>
+auto get_array(){
+     return array<int, SIZE>();
+}
+
 //iterators
 void iteratorsArray(array<int, k> arr) {
     cout << "\n*******ITERATORS********\n";
@@ -62,12 +72,12 @@ void access(array<int, k> arr) {
 }
 
 int main() {
-
     array<int, k> arr = {2, 16, 77, 34, 50};
-
     iteratorsArray(arr);
-
     capacity(arr);
-
     access(arr);
+
+    const int sz = getSize();
+    auto newArr = get_array<sz>();
+    cout << "Array ka size <" << newArr.size() << ">" << endl;
 }

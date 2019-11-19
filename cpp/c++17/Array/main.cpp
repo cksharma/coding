@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-struct Person {
+/*struct Person {
     std::string name;
     int age;
     double salary;
@@ -15,11 +15,28 @@ struct Person {
         const Person& lhs = *this;
         return lhs.name == rhs.name && lhs.age == rhs.age && lhs.salary == rhs.salary;
     }
+};*/
+
+struct Person {
+    string name;
+    int age;
+    double salary;
+
+public:
+    Person(string name, int age, double salary) : name(name), age(age), salary(salary) {}
+
+    bool operator==(const Person& p) const {
+        return this->name == p.name and this->age == p.age and this->salary == p.salary;
+    }
+    friend ostream& operator<<(ostream& os, const Person& p);
 };
 
+inline ostream& operator<<(ostream& os, const Person& p) {
+    os << "[" << p.name << ", " << p.age << ", " << p.salary << "]";
+    return os;
+}
+
 void array_test() {
-
-
     array<int, 4> myarray;
 
     //Pushing some stuffs in array
@@ -114,7 +131,7 @@ vector<Order> get_orders_list()
 void unordered_map_test()
 {
     std:vector<Order> v = get_orders_list();
-    
+
 
     std::unordered_map<Order, std::vector<Order>, OrderHasher> uMap;
 
@@ -140,8 +157,8 @@ void unordered_map_test()
 
 struct OrderComparator {
     bool operator()(const Order& lhs, const Order& rhs)  {
-        if( lhs.ticker_ != rhs.ticker_ ) 
-            return lhs.ticker_ < rhs.ticker_; 
+        if( lhs.ticker_ != rhs.ticker_ )
+            return lhs.ticker_ < rhs.ticker_;
         return lhs.price_ < rhs.price_;
     }
 };
@@ -151,7 +168,7 @@ void ordered_map_test()
     std:vector<Order> v_temp = get_orders_list();
     std::vector<Order> v = v_temp;
     for(auto& ord : v_temp) v.push_back( ord );
-    
+
     std::map<Order, bool, OrderComparator> oMap;
     std::for_each( v.begin(), v.end(), [&oMap](const Order& ord) {
         oMap.insert( std::make_pair(ord, true) );
@@ -162,7 +179,7 @@ void ordered_map_test()
 }
 
 template <typename T, size_t N>
-constexpr arraySize(T (&)[N]) {
+constexpr size_t arraySize(T (&)[N]) {
     return N;
 }
 
@@ -195,4 +212,3 @@ int main() {
     array_template();
     return 0;
 }
-G

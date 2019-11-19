@@ -8,7 +8,7 @@ public:
     map<string, list<string>::iterator> url_map;
     list<string> urls;
     int maxNumOfURLs;
-    
+
     //////////////
     //Constructor
     //////////////
@@ -45,7 +45,7 @@ int HistoryManager::recordVisit(const std::string& url)
     //insert the record at the front of list
     urls.push_front(url);
     url_map[url] = urls.begin();
-    
+
     if (urls.size() > maxNumOfURLs) {
         const string& last_url = urls.back();
         urls.pop_back();
@@ -85,11 +85,10 @@ int main() {
     //Print it
     std::vector<std::string> visitedUrls = mgr.getAll();
     if (4 == visitedUrls.size()) cout << "PASSED" << endl;
-    
-    if (
-            std::string("http://www.bloomberg.com/articles/123") == visitedUrls[0]) cout << "GOOD" << endl;
-    if (std::string("http://www.cnn.com") == visitedUrls[1]) cout << "GOOD" << endl;
-    if (std::string("http://www.bbc.com") == visitedUrls[3]) cout << "GOOD" << endl;
+
+    if ("http://www.bloomberg.com/articles/123" == visitedUrls[0]) cout << "GOOD" << endl; else cout << "FAILED";
+    if ("http://www.cnn.com" == visitedUrls[1]) cout << "GOOD" << endl; else cout << "FAILED";
+    if ("http://www.bbc.com" == visitedUrls[3]) cout << "GOOD" << endl; else cout << "FAILED";
 
     //Clean up
     mgr.clear();

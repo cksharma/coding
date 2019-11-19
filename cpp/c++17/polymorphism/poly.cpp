@@ -39,4 +39,5 @@ public:
 int main() {
     SubClass s;
     std::cout << s.BaseClass::GetDetections("testfile.txt");
+    std::cout << s.BaseClass::GetDetections("testfile.txt");
 }

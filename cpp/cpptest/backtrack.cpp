@@ -5,9 +5,9 @@ struct Person {
     string name;
     int age;
     string company;
-    
+
     Person(const string& n, int a, const string& c) :
-    name(n), age(a), company(c) {} 
+    name(n), age(a), company(c) {}
 };
 
 struct ObjectComparator {
@@ -79,10 +79,9 @@ void permuation(){
 
 void int_to_roman()
 {
-    int num;
-    cout << "Enter the number" << endl;
-    cin >> num;
-    map<char, int> mp = { { 'I' , 1}, {'V' , 5}, {'X' , 10}, {'L' , 50}, {'C' , 100}, 
+    int num = 12;
+    //cout << "Enter the number" << endl;
+    map<char, int> mp = { { 'I' , 1}, {'V' , 5}, {'X' , 10}, {'L' , 50}, {'C' , 100},
                           {'D' , 500}, {'M' , 1000 } };
     vector<int> parts;
     while (num > 10) {
@@ -90,7 +89,8 @@ void int_to_roman()
         int fact = pow(10, d);
         int q = num / fact;
         parts.push_back( q * fact );
-        num = num - q * fact;        
+        num = num - q * fact;
+        cout << "=>" << num << ",";
     }
     cout << parts << endl;
     return;
@@ -99,19 +99,19 @@ void int_to_roman()
 struct Test {
     int num;
     string name;
-    
+
     string getName() & {
-        cout << "Onluy lvalue  call" << endl;
+        cout << "Only lvalue  call" << endl;
         return name;
     }
-    
+
     string getName() && {
         cout << "Only rvalue call" << endl;
         return name;
     }
-    
+
     Test() {
-        num = 100; name = "Chnadra ";
+        num = 100; name = "Chandra ";
     }
 };
 
@@ -129,7 +129,7 @@ struct Graph {
 };
 
 void graph() {
-    
+
 }
 
 
@@ -142,12 +142,11 @@ void lambda() {
 
 constexpr int constexpr_test(const int i)
 {
-    constexpr auto sqrt_5 = sqrt(5);
-    return static_cast<int> ( (pow( 1 + sqrt_5, i) - pow(1 - sqrt_5, i)) / ( pow(2, i) * sqrt_5) );    
+    const double sqrt_5 = sqrt(5);
+    return static_cast<int> ( (pow( 1 + sqrt_5, i) - pow(1 - sqrt_5, i)) / ( pow(2, i) * sqrt_5) );
 }
 
-
-template<int I> 
+template<int I>
 struct Fib {
     static const int i = Fib<I - 1>::i + Fib<I - 2>::i;
 };
@@ -163,15 +162,14 @@ struct Fib<1> {
 };
 
 
-int main() 
+int main()
 {
     //permuation();
-    //int_to_roman();
+    int_to_roman();
     //lvalue_rvalue();
     //graph();
     lambda();
     cout << constexpr_test(10) << endl;
-
 }
 
 
