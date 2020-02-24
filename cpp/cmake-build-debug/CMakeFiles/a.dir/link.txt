@@ -1,1 +1,0 @@
-C:/cygwin64/bin/g++.exe  -std=c++17 -g  -Wl,--enable-auto-import CMakeFiles/a.dir/topcoder/Past_SRMs/A0Paper.cpp.o  -o "../topcoder/Past SRMs/a.exe" -Wl,--out-implib,liba.dll.a -Wl,--major-image-version,0,--minor-image-version,0 

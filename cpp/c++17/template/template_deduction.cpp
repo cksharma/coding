@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+#include <string_view>
 using namespace std;
 
 template <typename T>
@@ -40,5 +41,6 @@ int main()
     my_integer_sequence seq(1, 2, 3, 4, 5);
 
     constExprLambdas();
-
+    string_view s("chandra string view");
+    cout << s << endl;
 }

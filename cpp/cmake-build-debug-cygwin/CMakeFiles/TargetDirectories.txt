@@ -1,3 +1,0 @@
-/cygdrive/g/My Drive/data/coding/cpp/cmake-build-debug-cygwin/CMakeFiles/rebuild_cache.dir
-/cygdrive/g/My Drive/data/coding/cpp/cmake-build-debug-cygwin/CMakeFiles/cpp.dir
-/cygdrive/g/My Drive/data/coding/cpp/cmake-build-debug-cygwin/CMakeFiles/edit_cache.dir

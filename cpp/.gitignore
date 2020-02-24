@@ -19,3 +19,30 @@ main.o
 **/*.o
 **/*.bin
 cmake-build-debug/
+
+# Temporary file
+*~
+*.swp
+*.swo
+.*.h.sw?
+.*.cpp.sw?
+.Makefile.swo
+
+.generated_deps
+*.pyc
+coverity-output*
+
+py/*.pkgcfg
+
+#gcov file
+*.gcno
+*.gcda
+*.info
+
+#IDE(VSCode/Clion) configs
+.vscode/
+**/cmake-build-debug/
+**/cmake-build-debug-cygwin/
+build/
+.idea/
+**/*.exe
