@@ -1,1 +1,0 @@
-C:/cygwin64/bin/g++.exe -g  -Wl,--enable-auto-import CMakeFiles/TaskA.dir/tasks/TaskA.cpp.o  -o TaskA.exe -Wl,--out-implib,libTaskA.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
