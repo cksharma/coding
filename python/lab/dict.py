@@ -5,7 +5,5 @@ Created on Jan 7, 2015
 '''
 
 def test():
-    d = {1:[1, 2, 3], 2:4};
-print "hello";
-     
-
+    d = {1:[1, 2, 3], 2:4}
+print ("hello")
